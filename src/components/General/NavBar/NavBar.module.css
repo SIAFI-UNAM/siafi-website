@@ -1,0 +1,41 @@
+.navbarContainer {
+	padding: 24px 0;
+	justify-content: space-between;
+	align-items: center;
+	display: flex;
+	background: linear-gradient(
+		180deg,
+		rgba(252, 248, 255, 0.2) 0%,
+		rgba(252, 248, 255, 0) 100%
+	);
+	backdrop-filter: blur(7.5px);
+	position: sticky;
+}
+
+.navbarLinks ul {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.navbarLinks li {
+	display: flex;
+	list-style: none;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: Cabinet Grotesk, Calibri;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 120%; /* 21.6px */
+	letter-spacing: 0.36px;
+}
+
+.navbarLinks a {
+	text-decoration: none;
+	color: var(--Negro, #000);
+}
+
+.navbarLinks a:hover {
+	color: blue;
+}
