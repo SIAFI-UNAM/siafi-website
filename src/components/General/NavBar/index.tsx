@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function NavBar() {
 	return (
-		<div>
-			<div className={`container ${styles.navbarContainer}`}>
+		<div className={styles.navbarContainer}>
+			<div className={`container ${styles.navbarContent}`}>
 				<div className={styles.logo}>
 					<Link href="/">
 						<Image src={logoSIAFI} alt="logo" width={100} />

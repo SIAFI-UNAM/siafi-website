@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import "@styles/globals.css";
+// Bootstrap grid
 import "bootstrap/dist/css/bootstrap-grid.min.css";
+// Global styles
+import "@styles/globals.css";
+// Local Fonts
+import "@assets/fonts/CabinetGrotesk/font.css";
+import "@assets/fonts/Poppins/font.css";
+import "@assets/fonts/StudyAlone/font.css";
 
 export const metadata: Metadata = {
 	title: "SIAFI UNAM - Sociedad de Inteliencia Artificial de la Facultad de Ingeniería, UNAM",

@@ -1,0 +1,146 @@
+.heroContainer {
+	/* Temporal */
+	position: relative;
+	height: 800px;
+	overflow: hidden;
+}
+
+.igFollowUS a {
+	position: absolute;
+	right: -50px;
+	top: 35%;
+	font-size: 25px;
+	color: var(--black);
+	font-family: Study Alone;
+	transform: rotate(90deg);
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: -0.7px;
+	text-decoration: none;
+}
+
+.igFollowUS span {
+	background: var(--instagram-gradient);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.igFollowUS:hover {
+	cursor: pointer;
+}
+
+.heroContent {
+	position: relative;
+}
+
+.backgroundGradient {
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+
+.backgroundGradient img {
+	width: 100vw;
+	height: auto;
+}
+
+.heroTexts {
+	position: relative;
+}
+
+.heroTitle {
+	color: var(--primary-color);
+	font-size: 70px;
+	font-style: normal;
+	font-weight: 900;
+	line-height: 120%; /* 102px */
+	text-transform: uppercase;
+}
+
+.heroActiveWord {
+	margin-top: -30px;
+	margin-bottom: -30px;
+	color: var(--accent-color);
+	font-family: Study Alone;
+	font-size: 75px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 0%;
+	letter-spacing: -3px;
+	text-transform: uppercase;
+}
+
+.weLoveAIHero {
+	position: absolute;
+	bottom: -10%;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	font-family: Study Alone;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 120%; /* 48px */
+	letter-spacing: -1.2px;
+	text-transform: uppercase;
+	color: var(--accent-color);
+	transform: rotate(-6.071deg);
+}
+
+.arrow {
+	position: absolute;
+	bottom: -50%;
+	right: -30%;
+}
+
+.robotDrawing {
+	position: absolute;
+	top: 0;
+	right: 10%;
+}
+
+.heroImages {
+	position: relative;
+}
+
+.vrHeadset {
+	position: absolute;
+	width: 414px;
+	height: auto;
+	left: 0;
+	top: -5%;
+	scale: 0.7;
+}
+
+.handsDetectionContainer {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	right: 5%;
+	top: 5%;
+	overflow: hidden;
+	transform: rotate(-17.838deg);
+	flex-shrink: 0;
+	border-radius: 5%;
+}
+
+.handsDetectionContainer img {
+	width: 100%;
+	object-fit: cover;
+	object-position: -100px -120px;
+}
+
+.siafiStudents {
+	position: absolute;
+	left: 0;
+	bottom: -15%;
+	width: 522.931px;
+	height: 336.63px;
+	object-fit: cover;
+	rotate: 8.367deg;
+	flex-shrink: 0;
+	overflow: hidden;
+	border-radius: 5%;
+	scale: 0.8;
+}

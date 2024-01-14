@@ -1,15 +1,17 @@
 .navbarContainer {
-	padding: 24px 0;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	padding: 12px 0;
+	background: var(--navbar-background);
+	backdrop-filter: blur(7.5px);
+	z-index: 100;
+}
+
+.navbarContent {
 	justify-content: space-between;
 	align-items: center;
 	display: flex;
-	background: linear-gradient(
-		180deg,
-		rgba(252, 248, 255, 0.2) 0%,
-		rgba(252, 248, 255, 0) 100%
-	);
-	backdrop-filter: blur(7.5px);
-	position: sticky;
 }
 
 .navbarLinks ul {
