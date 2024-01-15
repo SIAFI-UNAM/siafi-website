@@ -8,7 +8,10 @@
 		#fc466b 56.01%,
 		#3f5efb 99.82%
 	);
+	--footer-background: #060026;
+	--social-media-icon-bg: #130f30;
 	--black: #000;
+	--white: #fff;
 	--navbar-background: linear-gradient(
 		180deg,
 		rgba(252, 248, 255, 0.2) 0%,
