@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 	title: {
 		template: "%s | SIAFI UNAM",
 		default:
-			"SIAFI UNAM - Sociedad de Inteliencia Artificial de la Facultad de Ingeniería, UNAM",
+			"SIAFI UNAM - Sociedad de Inteligencia Artificial de la Facultad de Ingeniería de la UNAM",
 	},
 	description:
 		"SIAFI es una sociedad de estudiantes de la Facultad de Ingeniería de la UNAM que busca promover la Inteligencia Artificial en la comunidad universitaria.",

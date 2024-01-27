@@ -1,0 +1,26 @@
+.button {
+	position: relative;
+	color: var(--primary-color);
+	font-family: "Cabinet Grotesk";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: bold;
+	line-height: 120%; /* 28.8px */
+	letter-spacing: 0.48px;
+	text-decoration-line: none;
+}
+
+.button span {
+	text-decoration: underline;
+}
+
+.button img {
+	height: 0.8em;
+	transition: transform 0.3s ease-in-out;
+}
+
+.button:hover img {
+	transform: translateY(
+		-3px
+	); /* Adjust the movement distance as per your preference */
+}

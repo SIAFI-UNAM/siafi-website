@@ -1,0 +1,41 @@
+.advicesCardContainer {
+	border-radius: 16px 0px 0px 16px;
+	border: 2px solid #7b00ea;
+	max-height: 400px;
+}
+
+.adviceImage {
+	max-width: 800px;
+	max-height: 400px;
+}
+
+.adviceDescription {
+	display: flex;
+	padding: 32px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 11px;
+	flex: 1 0 0;
+	align-self: stretch;
+	border-radius: 0px 16px 16px 0px;
+	background: var(--primary-color);
+}
+
+.adviceDescription h3 {
+	color: #fff;
+	font-family: Poppins;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 140%; /* 56px */
+}
+
+.adviceDescription p {
+	color: var(--WHITE, #fff);
+	font-family: "Cabinet Grotesk";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 180%; /* 45px */
+}

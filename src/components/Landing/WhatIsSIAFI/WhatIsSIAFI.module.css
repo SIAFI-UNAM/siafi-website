@@ -1,0 +1,21 @@
+.content {
+	text-align: center;
+}
+
+.description {
+	color: var(--Negro, #000);
+	text-align: center;
+	font-family: "Cabinet Grotesk";
+	font-size: 18px;
+	font-weight: bold;
+	font-style: normal;
+	line-height: 200%; /* 60px */
+	letter-spacing: 1.2px;
+}
+
+.aboutPhoto {
+	width: 997px;
+	height: 565px;
+	border-radius: 16px;
+	object-fit: cover;
+}

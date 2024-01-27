@@ -1,8 +1,8 @@
 .heroContainer {
 	/* Temporal */
 	position: relative;
-	height: 800px;
-	overflow: hidden;
+	height: 700px;
+	/* overflow: hidden; */
 }
 
 .igFollowUS a {

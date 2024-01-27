@@ -13,7 +13,7 @@ import {
 
 export default function Hero() {
 	return (
-		<div className={`${styles.heroContainer}`}>
+		<section className={`${styles.heroContainer}`}>
 			{/* Title and hero main images */}
 			<div className="container">
 				<div className="row">
@@ -64,6 +64,6 @@ export default function Hero() {
 			<div className={styles.backgroundGradient}>
 				<Image src={landingBackgroundGradient} alt="gradient" />
 			</div>
-		</div>
+		</section>
 	);
 }
