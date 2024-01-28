@@ -2,6 +2,7 @@
 	/* Temporal */
 	position: relative;
 	height: 700px;
+	/* overflow-x: hidden; */
 	/* overflow: hidden; */
 }
 
@@ -41,7 +42,7 @@
 }
 
 .backgroundGradient img {
-	width: 100vw;
+	width: 100%;
 	height: auto;
 }
 

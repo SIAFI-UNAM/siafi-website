@@ -3,9 +3,8 @@ import PageSection from "@/components/General/PageSection";
 import styles from "./WhatIsSIAFI.module.css";
 import Image from "next/image";
 import { siafiGroup } from "@/image-paths";
-import Link from "next/link";
 import CTAButton from "@/components/General/CTAButton";
-// import { SketchCircledText } from "@/components/General/SketchCircledText";
+import SketchCircledText from "@/components/General/SketchCircledText";
 
 export default function WhatIsSIAFI() {
 	return (
@@ -20,7 +19,8 @@ export default function WhatIsSIAFI() {
 					de Ingeniería de la UNAM, conformado por estudiantes
 					apasionados por la inteligencia artificial y la ingeniería
 					de software. Nosotros estamos en busca de constantes retos,
-					desafiando los límites creando soluciones innovadoras.
+					desafiando los límites creando soluciones innovadoras.{" "}
+					{/* <SketchCircledText> ¡Únete a nosotros!</SketchCircledText> */}
 				</p>
 				<Image
 					src={siafiGroup}

@@ -6,6 +6,7 @@ import AdvicesCard from "@/components/Landing/AdvicesCard";
 import advicesDummyData from "@/data/dummy-Advices.json";
 import { Advice } from "@/models/Advice";
 import WhatIsSIAFI from "@/components/Landing/WhatIsSIAFI";
+import LatestBlogs from "@/components/Landing/LatestBlogs";
 
 export default function LandingPage() {
 	const dummyData = advicesDummyData as [Advice];
@@ -16,6 +17,7 @@ export default function LandingPage() {
 				<AdvicesCard advices={dummyData} />
 			</section> */}
 			<WhatIsSIAFI />
+			<LatestBlogs />
 		</main>
 	);
 }

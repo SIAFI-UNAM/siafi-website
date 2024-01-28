@@ -17,7 +17,7 @@ export default function PageSection({
 	children,
 }: Props) {
 	return (
-		<section id={id} className="container">
+		<section id={id} className={`container ${styles.sectionContainer}`}>
 			<div className={styles.header}>
 				<h4>{subtitle}</h4>
 				<h2>{title}</h2>

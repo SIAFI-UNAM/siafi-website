@@ -27,3 +27,8 @@ export { default as advice1 } from "@img/advices/1.gif";
 
 // Icons
 export { default as arrowRightUpIcon } from "@assets/icons/arrow_right_up.svg";
+export { default as drawedCircle } from "@assets/icons/drawed-circle.svg";
+
+// Blog
+export { default as blogImage1 } from "@img/blog/test-blog.jpeg";
+export { default as testAuthor } from "@img/blog/test-author.png";
