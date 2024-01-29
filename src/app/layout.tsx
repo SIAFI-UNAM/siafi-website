@@ -7,6 +7,7 @@ import "@styles/globals.css";
 import "@assets/fonts/CabinetGrotesk/font.css";
 import "@assets/fonts/Poppins/font.css";
 import "@assets/fonts/StudyAlone/font.css";
+import IonIcons from "@/ionicons";
 
 export const metadata: Metadata = {
 	title: {

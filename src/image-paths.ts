@@ -32,6 +32,8 @@ export { default as arrowRightUpIcon } from "@assets/icons/arrow_right_up.svg";
 export { default as drawedCircle } from "@assets/icons/drawed-circle.svg";
 export { default as drawedCrown } from "@assets/icons/drawed-crown.svg";
 export { default as drawedArrow } from "@assets/icons/drawed-arrow.svg";
+export { default as menuIconOutline } from "@assets/icons/menu-outline.svg";
+export { default as menuIcon } from "@assets/icons/menu.svg";
 
 // Blog
 export { default as blogImage1 } from "@img/blog/test-blog.jpeg";
