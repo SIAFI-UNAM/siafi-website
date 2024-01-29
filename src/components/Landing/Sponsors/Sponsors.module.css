@@ -1,0 +1,29 @@
+.container {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.title {
+	padding: 25px;
+	color: var(--black);
+	font-family: "Cabinet Grotesk";
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	letter-spacing: 0.6px;
+}
+
+.sponsors {
+	display: flex;
+	justify-content: center;
+	gap: 5rem;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.sponsors img {
+	height: 35px;
+	width: auto;
+	object-fit: contain;
+}

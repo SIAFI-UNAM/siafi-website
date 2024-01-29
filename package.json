@@ -11,6 +11,8 @@
   "dependencies": {
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.24.1",
+    "@tsparticles/engine": "^3.1.0",
+    "@tsparticles/react": "^3.0.0",
     "bootstrap": "^5.3.2",
     "next": "14.0.4",
     "next-sanity": "^5.5.11",

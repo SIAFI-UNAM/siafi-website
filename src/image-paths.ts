@@ -36,3 +36,6 @@ export { default as drawedArrow } from "@assets/icons/drawed-arrow.svg";
 // Blog
 export { default as blogImage1 } from "@img/blog/test-blog.jpeg";
 export { default as testAuthor } from "@img/blog/test-author.png";
+
+// Sponsors
+export { default as demoSponsor } from "@img/sponsors/demo-sponsor.svg";

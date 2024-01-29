@@ -98,7 +98,10 @@ export default function Footer() {
 						<h4>Instituciones</h4>
 						<ul>
 							<li>
-								<a href="/" target="_blank">
+								<a
+									href="https://www.ingenieria.unam.mx/dimei/"
+									target="_blank"
+								>
 									<Image
 										src={logoDIMEI}
 										alt="logo DIMEI"
@@ -107,7 +110,10 @@ export default function Footer() {
 								</a>
 							</li>
 							<li>
-								<a href="/" target="_blank">
+								<a
+									href="https://www.ingenieria.unam.mx/cia/"
+									target="_blank"
+								>
 									<Image
 										src={logoCIA}
 										alt="logo CIA"

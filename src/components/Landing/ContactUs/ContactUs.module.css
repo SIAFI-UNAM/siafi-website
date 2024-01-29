@@ -1,0 +1,71 @@
+.container {
+	display: flex;
+	height: 600px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	background-image: url("/network-background.gif");
+	background-size: cover;
+	background-position: center;
+}
+
+.card {
+	display: flex;
+	padding: 60px;
+	flex-direction: column;
+	background-color: var(--white);
+	border-radius: 20px;
+	width: 70%;
+}
+
+.contactus h4 {
+	color: var(--primary-color);
+	font-family: Poppins;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 1.066px;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.contactus h2 {
+	color: var(--Grayscale-900, #121127);
+	font-family: Poppins;
+	font-size: 45px;
+	font-style: normal;
+	font-weight: bold;
+	margin: 0;
+	margin-bottom: 2rem;
+}
+
+.contactus a {
+	color: var(--accent-color);
+	font-family: Poppins;
+	font-size: 45px;
+	font-style: normal;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.contactus a:hover {
+	text-decoration: underline;
+}
+
+.direction h3 {
+	color: var(--grayscale-900);
+	font-family: Poppins;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 140%; /* 29.852px */
+}
+
+.direction p {
+	color: rgba(18, 17, 39, 0.56);
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%; /* 38.125px */
+	letter-spacing: -0.477px;
+}

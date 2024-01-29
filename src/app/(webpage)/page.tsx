@@ -9,6 +9,8 @@ import WhatIsSIAFI from "@/components/Landing/WhatIsSIAFI";
 import LatestBlogs from "@/components/Landing/LatestBlogs";
 import MeetExecutiveBoard from "@/components/Landing/MeetExecutiveBoard";
 import OurProjects from "@/components/Landing/OurProjects";
+import Sponsors from "@/components/Landing/Sponsors";
+import ContactUs from "@/components/Landing/ContactUs";
 
 export default function LandingPage() {
 	const dummyData = advicesDummyData as [Advice];
@@ -22,8 +24,8 @@ export default function LandingPage() {
 			<LatestBlogs />
 			<MeetExecutiveBoard />
 			<OurProjects />
-			<div>Ellos confian en nosotros</div>
-			<div>Contactanos!</div>
+			<Sponsors />
+			<ContactUs />
 		</main>
 	);
 }
