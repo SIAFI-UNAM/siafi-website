@@ -17,6 +17,7 @@
 		rgba(252, 248, 255, 0.2) 0%,
 		rgba(252, 248, 255, 0) 100%
 	);
+	--avatars-background: #dcdcdc;
 	--grayscale-900: #121127;
 	/* Font sizes */
 	--body-size: 16px;

@@ -14,6 +14,7 @@ export { default as vrHeadset } from "@img/landing/vr-headset.png";
 export { default as handsDetectionGIF } from "@img/landing/hands-detection.gif";
 export { default as siafiStudentsHero } from "@img/landing/siafi-students.png";
 export { default as siafiGroup } from "@img/siafi-photos/siafi-group.png";
+export { default as demoExecMember } from "@img/landing/demo-exec-memoji.png";
 
 // Footer Assets
 export { default as facebookFooterIcon } from "@img/footer/fb-icon.svg";
@@ -28,6 +29,8 @@ export { default as advice1 } from "@img/advices/1.gif";
 // Icons
 export { default as arrowRightUpIcon } from "@assets/icons/arrow_right_up.svg";
 export { default as drawedCircle } from "@assets/icons/drawed-circle.svg";
+export { default as drawedCrown } from "@assets/icons/drawed-crown.svg";
+export { default as drawedArrow } from "@assets/icons/drawed-arrow.svg";
 
 // Blog
 export { default as blogImage1 } from "@img/blog/test-blog.jpeg";

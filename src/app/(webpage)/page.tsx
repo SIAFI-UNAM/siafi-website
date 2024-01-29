@@ -7,6 +7,8 @@ import advicesDummyData from "@/data/dummy-Advices.json";
 import { Advice } from "@/models/Advice";
 import WhatIsSIAFI from "@/components/Landing/WhatIsSIAFI";
 import LatestBlogs from "@/components/Landing/LatestBlogs";
+import MeetExecutiveBoard from "@/components/Landing/MeetExecutiveBoard";
+import OurProjects from "@/components/Landing/OurProjects";
 
 export default function LandingPage() {
 	const dummyData = advicesDummyData as [Advice];
@@ -18,6 +20,10 @@ export default function LandingPage() {
 			</section> */}
 			<WhatIsSIAFI />
 			<LatestBlogs />
+			<MeetExecutiveBoard />
+			<OurProjects />
+			<div>Ellos confian en nosotros</div>
+			<div>Contactanos!</div>
 		</main>
 	);
 }
