@@ -1,0 +1,45 @@
+.sectionInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.sectionInfo h2 {
+	color: var(--black);
+	font-family: "Cabinet Grotesk";
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 700;
+	letter-spacing: 1.28px;
+	margin: 0;
+}
+
+.sectionInfo p {
+	color: var(--black);
+	font-family: "Cabinet Grotesk";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 180%; /* 43.2px */
+	letter-spacing: 0.48px;
+	margin: 0;
+}
+
+.sectionInfo .cta {
+	font-size: 20px;
+}
+
+.moreProjectsSoon {
+	color: var(--Azul-SIAFI, #07f);
+	text-align: center;
+	font-family: "Cabinet Grotesk";
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	margin: 0;
+}
+
+.moreProjectsSoon p {
+	margin: 0;
+}

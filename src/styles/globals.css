@@ -18,6 +18,7 @@
 		rgba(252, 248, 255, 0) 100%
 	);
 	--avatars-background: #dcdcdc;
+	--project-card-border: #333;
 	--grayscale-900: #121127;
 	/* Font sizes */
 	--body-size: 16px;

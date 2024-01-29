@@ -8,18 +8,28 @@ type Props = {
 	text: string;
 	link: string;
 	external?: boolean;
+	className?: string;
 };
 
-export default function CTAButton({ text, link, external = false }: Props) {
+export default function CTAButton({
+	text,
+	link,
+	external = false,
+	className = "",
+}: Props) {
 	const buttonIcon = <Image src={arrowRightUpIcon} alt="Arrow Right Up" />;
 
 	{
 		return external ? (
-			<a className={styles.button} href={link} target="_blank">
+			<a
+				className={`${styles.button} ${className}`}
+				href={link}
+				target="_blank"
+			>
 				<span>{text}</span> {buttonIcon}{" "}
 			</a>
 		) : (
-			<Link className={styles.button} href={link}>
+			<Link className={`${styles.button} ${className}`} href={link}>
 				<span>{text}</span> {buttonIcon}
 			</Link>
 		);
