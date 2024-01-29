@@ -1,12 +1,19 @@
 import React from "react";
 import styles from "./ContactUs.module.css";
+import Image from "next/image";
+import { signArrow } from "@/image-paths";
 
 export default function ContactUs() {
 	return (
 		<div className={styles.container}>
 			<div className={styles.card}>
+				<Image
+					src={signArrow}
+					alt="Sign arrow"
+					className={styles.signArrow}
+				/>
 				<div className="row">
-					<div className="col-8">
+					<div className="col-12 col-lg-8">
 						<div className={styles.contactus}>
 							<h4>CONTACTANOS</h4>
 							<h2>¿Quieres decirnos o proponernos algo?</h2>
@@ -15,7 +22,7 @@ export default function ContactUs() {
 							</a>
 						</div>
 					</div>
-					<div className={`col-4 ${styles.direction}`}>
+					<div className={`col-12 col-lg-4 ${styles.direction}`}>
 						<h3>Encuentranos en:</h3>
 						<p>
 							Edificio CIA, 4to piso, conjunto sur, Circuito

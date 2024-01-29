@@ -1,21 +1,21 @@
 .container {
 	display: flex;
-	height: 600px;
+	min-height: 600px;
 	width: 100%;
 	align-items: center;
 	justify-content: center;
-	background-image: url("/network-background.gif");
 	background-size: cover;
 	background-position: center;
 }
 
 .card {
+	position: relative;
 	display: flex;
 	padding: 60px;
 	flex-direction: column;
 	background-color: var(--white);
-	border-radius: 20px;
-	width: 70%;
+	border-radius: 0px;
+	width: 100%;
 }
 
 .contactus h4 {
@@ -32,20 +32,21 @@
 .contactus h2 {
 	color: var(--Grayscale-900, #121127);
 	font-family: Poppins;
-	font-size: 45px;
+	font-size: 30px;
 	font-style: normal;
 	font-weight: bold;
 	margin: 0;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 }
 
 .contactus a {
 	color: var(--accent-color);
 	font-family: Poppins;
-	font-size: 45px;
+	font-size: 30px;
 	font-style: normal;
 	font-weight: 700;
 	text-decoration: none;
+	margin-bottom: 1rem;
 }
 
 .contactus a:hover {
@@ -68,4 +69,81 @@
 	font-weight: 400;
 	line-height: 160%; /* 38.125px */
 	letter-spacing: -0.477px;
+}
+
+.signArrow {
+	position: absolute;
+	display: none;
+}
+
+/* Responsive BREAKPOINTS */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.container {
+		background-image: url("/network-background.gif");
+	}
+	.contactus h2 {
+		color: var(--Grayscale-900, #121127);
+		font-family: Poppins;
+		font-size: 40px;
+		font-style: normal;
+		font-weight: bold;
+		margin: 0;
+		margin-bottom: 0rem;
+	}
+	.card {
+		display: flex;
+		padding: 60px;
+		flex-direction: column;
+		background-color: var(--white);
+		border-radius: 20px;
+		width: 70%;
+	}
+	.contactus a {
+		color: var(--accent-color);
+		font-family: Poppins;
+		font-size: 40px;
+		font-style: normal;
+		font-weight: 700;
+		text-decoration: none;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.contactus h2 {
+		color: var(--Grayscale-900, #121127);
+		font-family: Poppins;
+		font-size: 45px;
+		font-style: normal;
+		font-weight: bold;
+		margin: 0;
+		margin-bottom: 2rem;
+	}
+	.contactus a {
+		color: var(--accent-color);
+		font-family: Poppins;
+		font-size: 45px;
+		font-style: normal;
+		font-weight: 700;
+		text-decoration: none;
+	}
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.signArrow {
+		display: block;
+		left: -15%;
+		bottom: 15%;
+	}
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
 }

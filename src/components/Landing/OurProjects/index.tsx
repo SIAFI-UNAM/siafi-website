@@ -10,7 +10,9 @@ export default function OurProjects() {
 	return (
 		<PageSection>
 			<div className="row">
-				<div className={`col-12 col-md-4 ${styles.sectionInfo}`}>
+				<div
+					className={`col-12 col-md-6 col-lg-4 ${styles.sectionInfo}`}
+				>
 					<h2>Sorprendete con nuestros proyectos</h2>
 					<p>
 						As a sponsor, we re promising reach to thousands of
@@ -23,7 +25,7 @@ export default function OurProjects() {
 						className={styles.cta}
 					/>
 				</div>
-				<div className="col-12 col-md-8">
+				<div className="col-12 col-md-6 col-lg-8">
 					<div className="row g-2">
 						<div className="col-4">
 							<ProjectCard linkTo="/">

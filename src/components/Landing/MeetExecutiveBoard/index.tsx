@@ -9,7 +9,9 @@ export default function MeetExecutiveBoard() {
 	return (
 		<PageSection>
 			<div className="row">
-				<div className={`col-12 col-md-4 ${styles.meetExecBox}`}>
+				<div
+					className={`col-12 col-md-6 col-lg-4 ${styles.meetExecBox}`}
+				>
 					<h2>Conoce a la</h2>
 					<h1>Mesa Directiva</h1>
 					<Image
@@ -24,7 +26,7 @@ export default function MeetExecutiveBoard() {
 					/>
 					<CTAButton link="/nosotros" text="Estructura de SIAFI" />
 				</div>
-				<div className="col"></div>
+				<div className="col d-none d-lg-block"></div>
 				<div className={`col-12 col-md-6 ${styles.execMembers}`}>
 					<h1>Alexis Sosa</h1>
 					<div className={styles.execMemberAvatar}>

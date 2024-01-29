@@ -20,7 +20,7 @@ export default function Footer() {
 		<div className={`${styles.footerContainer}`}>
 			<div className={`container`}>
 				<div className={`row ${styles.footerContent}`}>
-					<div className={`col-4 ${styles.footerColumn}`}>
+					<div className={`col-12 col-md-4 ${styles.footerColumn}`}>
 						<Image src={logoSIAFIWhite} alt="logo" width={125} />
 						<div className={styles.socialMediaRow}>
 							<SocialMediaIcon
@@ -57,9 +57,9 @@ export default function Footer() {
 							</p>
 						</div>
 					</div>
-					<div className="col-2"></div>
+					<div className="col-md-1 col-lg-2 d-none d-md-block"></div>
 					<div
-						className={`col-2 ${styles.footerColumn} ${styles.institutes}`}
+						className={`col-6 col-md-2 ${styles.footerColumn} ${styles.institutes}`}
 					>
 						<h4>Contacto</h4>
 						<ul>
@@ -71,7 +71,7 @@ export default function Footer() {
 						</ul>
 					</div>
 					<div
-						className={`col-2 ${styles.footerColumn} ${styles.institutes}`}
+						className={`col-6 col-md-2 ${styles.footerColumn} ${styles.institutes}`}
 					>
 						<h4>Navegación</h4>
 						<ul>
@@ -93,7 +93,7 @@ export default function Footer() {
 						</ul>
 					</div>
 					<div
-						className={`col-2 ${styles.footerColumn} ${styles.institutes}`}
+						className={`col-12 col-md-3 col-lg-2 mt-5 mt-md-0 ${styles.footerColumn} ${styles.institutes}`}
 					>
 						<h4>Instituciones</h4>
 						<ul>

@@ -1,20 +1,20 @@
 .meetExecBox {
 	position: relative;
 	display: flex;
-	/* height: 541px; */
 	padding: 16px;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-end;
-	border-radius: 16px;
+	border-radius: 0;
 	background: #eaf0f2;
+	margin-bottom: 2rem;
 }
 
 .meetExecBox h2 {
 	width: 100%;
 	color: var(--black);
 	font-family: "Cabinet Grotesk";
-	font-size: 40px;
+	font-size: 35px;
 	font-style: normal;
 	font-weight: 500;
 	letter-spacing: 1.28px;
@@ -25,12 +25,12 @@
 	width: 100%;
 	color: var(--black);
 	font-family: "Cabinet Grotesk";
-	font-size: 68px;
+	font-size: 60px;
 	font-style: normal;
 	font-weight: 700;
 	letter-spacing: 2.16px;
 	margin: 0;
-	margin-bottom: 8.5rem;
+	margin-bottom: 2rem;
 }
 
 .meetExecBox a {
@@ -39,12 +39,13 @@
 
 .crown {
 	position: absolute;
-	right: 100px;
-	bottom: 250px;
+	right: 75px;
+	bottom: 125px;
 	scale: 0.7;
 }
 
 .arrow {
+	display: none;
 	position: absolute;
 	right: -150px;
 	bottom: 35%;
@@ -117,6 +118,7 @@
 	line-height: 180%; /* 43.2px */
 	letter-spacing: 0.48px;
 	overflow-y: auto;
+	margin-top: 2rem;
 }
 
 .execMembersCarrousel {
@@ -134,4 +136,77 @@
 
 .execMembersCarrousel .execMemberPhoto:hover {
 	cursor: pointer;
+}
+
+/* Responsive BREAKPOINTS */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.meetExecBox {
+		position: relative;
+		display: flex;
+		/* height: 541px; */
+		padding: 16px;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-end;
+		border-radius: 16px;
+		background: #eaf0f2;
+		margin-bottom: 0;
+	}
+
+	.meetExecBox h2 {
+		width: 100%;
+		color: var(--black);
+		font-family: "Cabinet Grotesk";
+		font-size: 40px;
+		font-style: normal;
+		font-weight: 500;
+		letter-spacing: 1.28px;
+		margin: 0;
+	}
+
+	.meetExecBox h1 {
+		width: 100%;
+		color: var(--black);
+		font-family: "Cabinet Grotesk";
+		font-size: 68px;
+		font-style: normal;
+		font-weight: 700;
+		letter-spacing: 2.16px;
+		margin: 0;
+		margin-bottom: 8.5rem;
+	}
+
+	.crown {
+		position: absolute;
+		right: 5px;
+		bottom: 235px;
+		scale: 0.7;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.arrow {
+		display: block;
+	}
+	.crown {
+		position: absolute;
+		right: 100px;
+		bottom: 250px;
+		scale: 0.7;
+	}
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
 }
