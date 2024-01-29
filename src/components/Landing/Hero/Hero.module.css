@@ -1,0 +1,348 @@
+.heroContainer {
+	margin-top: 2rem;
+	position: relative;
+	min-height: 500px;
+	/* overflow-x: hidden; */
+	/* overflow: hidden; */
+}
+
+.igFollowUS {
+	display: none;
+}
+
+.igFollowUS a {
+	position: absolute;
+	right: -50px;
+	top: 45%;
+	font-size: 25px;
+	color: var(--black);
+	font-family: Study Alone;
+	transform: rotate(90deg);
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: -0.7px;
+	text-decoration: none;
+}
+
+.igFollowUS span {
+	background: var(--instagram-gradient);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.igFollowUS:hover {
+	cursor: pointer;
+}
+
+.heroContent {
+	position: relative;
+}
+
+.backgroundGradient {
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+
+.backgroundGradient img {
+	width: 100%;
+	height: auto;
+}
+
+.heroTexts {
+	position: relative;
+}
+
+.heroTitle {
+	color: var(--primary-color);
+	font-size: 50px;
+	font-style: normal;
+	font-weight: 900;
+	line-height: 120%; /* 102px */
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.heroActiveWord {
+	color: var(--accent-color);
+	font-family: Study Alone;
+	font-size: 50px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: -3px;
+	text-transform: uppercase;
+	line-height: 3rem;
+	/* margin-top: -0.4rem ; */
+	margin-bottom: -0.2rem;
+}
+
+.weLoveAIHero {
+	/* position: absolute ; */
+	bottom: -10%;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	font-family: Study Alone;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 120%; /* 48px */
+	letter-spacing: -1.2px;
+	text-transform: uppercase;
+	color: var(--accent-color);
+	transform: rotate(-6.071deg);
+}
+
+.arrow {
+	display: none;
+	position: absolute;
+	bottom: -70%;
+	right: -20%;
+	rotate: 5deg;
+}
+
+.robotDrawing {
+	position: absolute;
+	top: 25%;
+	right: 5%;
+	scale: 0.6;
+}
+
+.heroImages {
+	position: relative;
+}
+
+.vrHeadset {
+	display: none;
+}
+
+.handsDetectionContainer {
+	display: none;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	right: 5%;
+	top: 5%;
+	overflow: hidden;
+	transform: rotate(-17.838deg);
+	flex-shrink: 0;
+	border-radius: 5%;
+}
+
+.handsDetectionContainer img {
+	width: 100%;
+	object-fit: cover;
+	object-position: -100px -120px;
+}
+
+.siafiStudents {
+	margin-top: 1.5rem;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	rotate: 8.367deg;
+	flex-shrink: 0;
+	overflow: hidden;
+	border-radius: 5%;
+	scale: 0.8;
+}
+
+/* Responsive BREAKPOINTS */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+	.heroTitle {
+		font-size: 70px;
+		font-style: normal;
+		font-weight: 900;
+		line-height: 120%; /* 102px */
+	}
+	.robotDrawing {
+		position: absolute;
+		top: 0;
+		right: -100%;
+		scale: 1;
+	}
+
+	.heroActiveWord {
+		font-size: 75px;
+		font-style: normal;
+		font-weight: 400;
+		letter-spacing: -3px;
+		line-height: 5rem;
+		margin-top: -0;
+		margin-bottom: 0;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.robotDrawing {
+		position: absolute;
+		top: -5%;
+		right: -55%;
+		scale: 0.8;
+	}
+
+	.vrHeadset {
+		display: block;
+		position: absolute;
+		width: 414px;
+		height: auto;
+		left: 10%;
+		top: 0%;
+		scale: 0.5;
+	}
+
+	.siafiStudents {
+		position: absolute;
+		left: -10%;
+		bottom: 12.5%;
+		width: 522.931px;
+		height: 336.63px;
+		object-fit: cover;
+		rotate: 10deg;
+		flex-shrink: 0;
+		overflow: hidden;
+		border-radius: 5%;
+		scale: 0.5;
+		margin-top: 0;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.robotDrawing {
+		position: absolute;
+		top: 0;
+		right: -15%;
+		scale: 1;
+	}
+	.arrow {
+		display: block;
+	}
+
+	.igFollowUS {
+		display: block;
+	}
+
+	.vrHeadset {
+		position: absolute;
+		width: 414px;
+		height: auto;
+		left: 15%;
+		top: -5%;
+		scale: 0.7;
+	}
+
+	.siafiStudents {
+		position: absolute;
+		left: 0;
+		bottom: -15%;
+		width: 522.931px;
+		height: 336.63px;
+		object-fit: cover;
+		rotate: 8.367deg;
+		flex-shrink: 0;
+		overflow: hidden;
+		border-radius: 5%;
+		scale: 0.8;
+	}
+
+	.arrow {
+		rotate: 0deg;
+		bottom: -45%;
+		right: -40%;
+		scale: 0.8;
+	}
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.robotDrawing {
+		position: absolute;
+		top: 0;
+		right: 10%;
+	}
+
+	.robotDrawing {
+		top: -5%;
+		right: 0%;
+	}
+
+	.handsDetectionContainer {
+		display: block;
+	}
+	.vrHeadset {
+		position: absolute;
+		width: 414px;
+		height: auto;
+		left: 0;
+		top: 5%;
+		scale: 0.7;
+	}
+	.siafiStudents {
+		position: absolute;
+		left: 10%;
+		bottom: -30%;
+		width: 522.931px;
+		height: 336.63px;
+		object-fit: cover;
+		rotate: 8.367deg;
+		flex-shrink: 0;
+		overflow: hidden;
+		border-radius: 5%;
+		scale: 0.8;
+	}
+
+	.arrow {
+		rotate: 5deg;
+		bottom: -60%;
+		scale: 1;
+	}
+
+	.heroContainer {
+		min-height: 700px;
+	}
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+	.robotDrawing {
+		top: -10%;
+		right: 15%;
+	}
+	.vrHeadset {
+		position: absolute;
+		width: 414px;
+		height: auto;
+		left: 0;
+		top: -5%;
+		scale: 0.7;
+	}
+
+	.siafiStudents {
+		position: absolute;
+		left: 10%;
+		bottom: -45%;
+		width: 522.931px;
+		height: 336.63px;
+		object-fit: cover;
+		rotate: 8.367deg;
+		flex-shrink: 0;
+		overflow: hidden;
+		border-radius: 5%;
+		scale: 0.8;
+	}
+
+	.heroContainer {
+		min-height: 500px;
+	}
+
+	.arrow {
+		rotate: 10deg;
+		bottom: -70%;
+		scale: 1;
+	}
+}

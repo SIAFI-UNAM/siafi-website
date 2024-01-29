@@ -1,0 +1,72 @@
+.footerContainer {
+	display: flex;
+	padding-top: 84px;
+	padding-bottom: 84px;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 13.238px;
+	align-self: stretch;
+	background: var(--footer-background);
+}
+
+.footerContent {
+	color: var(--white);
+}
+
+.footerContent h4 {
+	font-family: Poppins;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	margin: 0;
+}
+
+.footerColumn {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.socialMediaRow {
+	display: flex;
+	gap: 10px;
+}
+
+.footerDirection p {
+	color: #fff;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%; /* 38.125px */
+	letter-spacing: -0.477px;
+	align-self: stretch;
+}
+
+.footerContent ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.footerContent li,
+.footerContent li a {
+	color: #fff;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%; /* 38.125px */
+	letter-spacing: -0.477px;
+	align-self: stretch;
+	text-decoration: none;
+	margin-top: 10px;
+}
+
+.footerContent a:hover {
+	color: var(--accent-color);
+	text-decoration: underline;
+}
+
+.institutes {
+	text-align: center;
+}

@@ -1,0 +1,52 @@
+.content {
+	text-align: center;
+}
+
+.description {
+	color: var(--Negro, #000);
+	text-align: center;
+	font-family: "Cabinet Grotesk";
+	font-size: 18px;
+	font-weight: bold;
+	font-style: normal;
+	line-height: 200%; /* 60px */
+	letter-spacing: 1.2px;
+}
+
+.aboutPhoto {
+	width: 100%;
+	padding: 1rem;
+	height: auto;
+	border-radius: 2rem;
+	object-fit: cover;
+}
+
+/* Responsive BREAKPOINTS */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.aboutPhoto {
+		max-width: 600px;
+		max-height: 400px;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.aboutPhoto {
+		max-width: 800px;
+		max-height: 500px;
+	}
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}

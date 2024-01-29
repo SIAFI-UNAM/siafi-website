@@ -1,0 +1,8 @@
+@font-face {
+	font-family: "Study Alone";
+	src: url("StudyAlone.woff2") format("woff2"),
+		url("StudyAlone.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

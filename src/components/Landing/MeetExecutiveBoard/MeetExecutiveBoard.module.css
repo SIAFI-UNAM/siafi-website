@@ -1,0 +1,212 @@
+.meetExecBox {
+	position: relative;
+	display: flex;
+	padding: 16px;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+	border-radius: 0;
+	background: #eaf0f2;
+	margin-bottom: 2rem;
+}
+
+.meetExecBox h2 {
+	width: 100%;
+	color: var(--black);
+	font-family: "Cabinet Grotesk";
+	font-size: 35px;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 1.28px;
+	margin: 0;
+}
+
+.meetExecBox h1 {
+	width: 100%;
+	color: var(--black);
+	font-family: "Cabinet Grotesk";
+	font-size: 60px;
+	font-style: normal;
+	font-weight: 700;
+	letter-spacing: 2.16px;
+	margin: 0;
+	margin-bottom: 2rem;
+}
+
+.meetExecBox a {
+	font-size: 25px;
+}
+
+.crown {
+	position: absolute;
+	right: 75px;
+	bottom: 125px;
+	scale: 0.7;
+}
+
+.arrow {
+	display: none;
+	position: absolute;
+	right: -150px;
+	bottom: 35%;
+}
+
+.execMembers h1 {
+	color: var(--black);
+	font-family: "Cabinet Grotesk";
+	font-size: 50px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 120%; /* 96px */
+	letter-spacing: 1.6px;
+	margin: 0;
+	margin-bottom: 1rem;
+}
+
+.execMemberPhoto {
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+	object-fit: cover;
+	background: var(--avatars-background);
+}
+
+.execMemberAvatar {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+}
+
+.execMemberAvatar .execMemberPhoto {
+	width: 72px;
+	height: 72px;
+}
+
+.excecMemberAvatarInfo h4 {
+	color: var(--black);
+	font-family: "Cabinet Grotesk";
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 1px;
+	margin: 0;
+}
+
+.excecMemberAvatarInfo a {
+	color: var(--Azul-SIAFI, #07f);
+	font-family: "Cabinet Grotesk";
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.8px;
+	margin: 0;
+	text-decoration: none;
+}
+
+.excecMemberAvatarInfo a:hover {
+	text-decoration: underline;
+}
+
+.execMemberDescription {
+	color: var(--black);
+	height: 150px;
+	max-height: 150px;
+	font-family: "Cabinet Grotesk";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 180%; /* 43.2px */
+	letter-spacing: 0.48px;
+	overflow-y: auto;
+	margin-top: 2rem;
+}
+
+.execMembersCarrousel {
+	margin-top: 4rem;
+	width: 100%;
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	overflow-x: auto;
+}
+
+.execMembersCarrousel .execMemberPhoto.active {
+	border: 2px solid var(--Azul-SIAFI, #07f);
+}
+
+.execMembersCarrousel .execMemberPhoto:hover {
+	cursor: pointer;
+}
+
+/* Responsive BREAKPOINTS */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.meetExecBox {
+		position: relative;
+		display: flex;
+		/* height: 541px; */
+		padding: 16px;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-end;
+		border-radius: 16px;
+		background: #eaf0f2;
+		margin-bottom: 0;
+	}
+
+	.meetExecBox h2 {
+		width: 100%;
+		color: var(--black);
+		font-family: "Cabinet Grotesk";
+		font-size: 40px;
+		font-style: normal;
+		font-weight: 500;
+		letter-spacing: 1.28px;
+		margin: 0;
+	}
+
+	.meetExecBox h1 {
+		width: 100%;
+		color: var(--black);
+		font-family: "Cabinet Grotesk";
+		font-size: 68px;
+		font-style: normal;
+		font-weight: 700;
+		letter-spacing: 2.16px;
+		margin: 0;
+		margin-bottom: 8.5rem;
+	}
+
+	.crown {
+		position: absolute;
+		right: 5px;
+		bottom: 235px;
+		scale: 0.7;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.arrow {
+		display: block;
+	}
+	.crown {
+		position: absolute;
+		right: 100px;
+		bottom: 250px;
+		scale: 0.7;
+	}
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}

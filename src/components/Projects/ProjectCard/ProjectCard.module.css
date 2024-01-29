@@ -1,0 +1,9 @@
+.cardContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 150px;
+	cursor: pointer;
+	border: 1px solid var(--project-card-border);
+}
