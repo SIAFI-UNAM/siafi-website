@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 // Bootstrap grid
-import "bootstrap/dist/css/bootstrap-grid.min.css";
+// import "bootstrap/dist/css/bootstrap-grid.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 // Global styles
 import "@styles/globals.css";
 // Local Fonts

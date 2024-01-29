@@ -1,7 +1,7 @@
 .heroContainer {
-	/* Temporal */
+	margin-top: 2rem;
 	position: relative;
-	height: 700px;
+	min-height: 500px;
 	/* overflow-x: hidden; */
 	/* overflow: hidden; */
 }
@@ -61,6 +61,7 @@
 	font-weight: 900;
 	line-height: 120%; /* 102px */
 	text-transform: uppercase;
+	margin: 0;
 }
 
 .heroActiveWord {
@@ -72,12 +73,12 @@
 	letter-spacing: -3px;
 	text-transform: uppercase;
 	line-height: 3rem;
-	margin-top: -2.5rem;
-	margin-bottom: -2.5rem;
+	/* margin-top: -0.4rem ; */
+	margin-bottom: -0.2rem;
 }
 
 .weLoveAIHero {
-	position: absolute;
+	/* position: absolute ; */
 	bottom: -10%;
 	display: flex;
 	align-items: center;
@@ -96,8 +97,9 @@
 .arrow {
 	display: none;
 	position: absolute;
-	bottom: -50%;
-	right: -30%;
+	bottom: -70%;
+	right: -20%;
+	rotate: 5deg;
 }
 
 .robotDrawing {
@@ -162,14 +164,15 @@
 		right: -100%;
 		scale: 1;
 	}
+
 	.heroActiveWord {
 		font-size: 75px;
 		font-style: normal;
 		font-weight: 400;
 		letter-spacing: -3px;
 		line-height: 5rem;
-		margin-top: -65px;
-		margin-bottom: -65px;
+		margin-top: -0;
+		margin-bottom: 0;
 	}
 }
 
@@ -177,22 +180,25 @@
 @media (min-width: 768px) {
 	.robotDrawing {
 		position: absolute;
-		top: 0;
-		right: -50%;
+		top: -5%;
+		right: -55%;
+		scale: 0.8;
 	}
+
 	.vrHeadset {
 		display: block;
 		position: absolute;
 		width: 414px;
 		height: auto;
 		left: 10%;
-		top: 10%;
+		top: 0%;
 		scale: 0.5;
 	}
+
 	.siafiStudents {
 		position: absolute;
 		left: -10%;
-		bottom: 10%;
+		bottom: 12.5%;
 		width: 522.931px;
 		height: 336.63px;
 		object-fit: cover;
@@ -211,10 +217,12 @@
 		position: absolute;
 		top: 0;
 		right: -15%;
+		scale: 1;
 	}
 	.arrow {
 		display: block;
 	}
+
 	.igFollowUS {
 		display: block;
 	}
@@ -224,9 +232,10 @@
 		width: 414px;
 		height: auto;
 		left: 15%;
-		top: 5%;
+		top: -5%;
 		scale: 0.7;
 	}
+
 	.siafiStudents {
 		position: absolute;
 		left: 0;
@@ -240,6 +249,13 @@
 		border-radius: 5%;
 		scale: 0.8;
 	}
+
+	.arrow {
+		rotate: 0deg;
+		bottom: -45%;
+		right: -40%;
+		scale: 0.8;
+	}
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
@@ -251,7 +267,7 @@
 	}
 
 	.robotDrawing {
-		top: 0;
+		top: -5%;
 		right: 0%;
 	}
 
@@ -268,8 +284,8 @@
 	}
 	.siafiStudents {
 		position: absolute;
-		left: 0;
-		bottom: -15%;
+		left: 10%;
+		bottom: -30%;
 		width: 522.931px;
 		height: 336.63px;
 		object-fit: cover;
@@ -279,12 +295,22 @@
 		border-radius: 5%;
 		scale: 0.8;
 	}
+
+	.arrow {
+		rotate: 5deg;
+		bottom: -60%;
+		scale: 1;
+	}
+
+	.heroContainer {
+		min-height: 700px;
+	}
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
 	.robotDrawing {
-		top: 0;
+		top: -10%;
 		right: 15%;
 	}
 	.vrHeadset {
@@ -294,5 +320,29 @@
 		left: 0;
 		top: -5%;
 		scale: 0.7;
+	}
+
+	.siafiStudents {
+		position: absolute;
+		left: 10%;
+		bottom: -45%;
+		width: 522.931px;
+		height: 336.63px;
+		object-fit: cover;
+		rotate: 8.367deg;
+		flex-shrink: 0;
+		overflow: hidden;
+		border-radius: 5%;
+		scale: 0.8;
+	}
+
+	.heroContainer {
+		min-height: 500px;
+	}
+
+	.arrow {
+		rotate: 10deg;
+		bottom: -70%;
+		scale: 1;
 	}
 }
