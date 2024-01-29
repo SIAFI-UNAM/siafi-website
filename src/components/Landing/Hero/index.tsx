@@ -17,7 +17,7 @@ export default function Hero() {
 			{/* Title and hero main images */}
 			<div className="container">
 				<div className="row">
-					<div className={`col-6 ${styles.heroTexts}`}>
+					<div className={`col-12 col-md-6 ${styles.heroTexts}`}>
 						<p className={styles.heroTitle}>
 							Inteligencia Artificial
 						</p>
@@ -35,7 +35,7 @@ export default function Hero() {
 							<Image src={robotDrawing} alt="Robot hero" />
 						</div>
 					</div>
-					<div className={`col-6 ${styles.heroImages}`}>
+					<div className={`col-12 col-md-6 ${styles.heroImages}`}>
 						<Image
 							src={vrHeadset}
 							className={styles.vrHeadset}

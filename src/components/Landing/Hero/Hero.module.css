@@ -6,10 +6,14 @@
 	/* overflow: hidden; */
 }
 
+.igFollowUS {
+	display: none;
+}
+
 .igFollowUS a {
 	position: absolute;
 	right: -50px;
-	top: 35%;
+	top: 45%;
 	font-size: 25px;
 	color: var(--black);
 	font-family: Study Alone;
@@ -52,7 +56,7 @@
 
 .heroTitle {
 	color: var(--primary-color);
-	font-size: 70px;
+	font-size: 50px;
 	font-style: normal;
 	font-weight: 900;
 	line-height: 120%; /* 102px */
@@ -60,16 +64,16 @@
 }
 
 .heroActiveWord {
-	margin-top: -30px;
-	margin-bottom: -30px;
 	color: var(--accent-color);
 	font-family: Study Alone;
-	font-size: 75px;
+	font-size: 50px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 0%;
 	letter-spacing: -3px;
 	text-transform: uppercase;
+	line-height: 3rem;
+	margin-top: -2.5rem;
+	margin-bottom: -2.5rem;
 }
 
 .weLoveAIHero {
@@ -90,6 +94,7 @@
 }
 
 .arrow {
+	display: none;
 	position: absolute;
 	bottom: -50%;
 	right: -30%;
@@ -97,8 +102,9 @@
 
 .robotDrawing {
 	position: absolute;
-	top: 0;
-	right: 10%;
+	top: 25%;
+	right: 5%;
+	scale: 0.6;
 }
 
 .heroImages {
@@ -106,15 +112,11 @@
 }
 
 .vrHeadset {
-	position: absolute;
-	width: 414px;
-	height: auto;
-	left: 0;
-	top: -5%;
-	scale: 0.7;
+	display: none;
 }
 
 .handsDetectionContainer {
+	display: none;
 	position: absolute;
 	width: 200px;
 	height: 200px;
@@ -133,15 +135,164 @@
 }
 
 .siafiStudents {
-	position: absolute;
-	left: 0;
-	bottom: -15%;
-	width: 522.931px;
-	height: 336.63px;
+	margin-top: 1.5rem;
+	width: 100%;
+	height: auto;
 	object-fit: cover;
 	rotate: 8.367deg;
 	flex-shrink: 0;
 	overflow: hidden;
 	border-radius: 5%;
 	scale: 0.8;
+}
+
+/* Responsive BREAKPOINTS */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+	.heroTitle {
+		font-size: 70px;
+		font-style: normal;
+		font-weight: 900;
+		line-height: 120%; /* 102px */
+	}
+	.robotDrawing {
+		position: absolute;
+		top: 0;
+		right: -100%;
+		scale: 1;
+	}
+	.heroActiveWord {
+		font-size: 75px;
+		font-style: normal;
+		font-weight: 400;
+		letter-spacing: -3px;
+		line-height: 5rem;
+		margin-top: -65px;
+		margin-bottom: -65px;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.robotDrawing {
+		position: absolute;
+		top: 0;
+		right: -50%;
+	}
+	.vrHeadset {
+		display: block;
+		position: absolute;
+		width: 414px;
+		height: auto;
+		left: 10%;
+		top: 10%;
+		scale: 0.5;
+	}
+	.siafiStudents {
+		position: absolute;
+		left: -10%;
+		bottom: 10%;
+		width: 522.931px;
+		height: 336.63px;
+		object-fit: cover;
+		rotate: 10deg;
+		flex-shrink: 0;
+		overflow: hidden;
+		border-radius: 5%;
+		scale: 0.5;
+		margin-top: 0;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.robotDrawing {
+		position: absolute;
+		top: 0;
+		right: -15%;
+	}
+	.arrow {
+		display: block;
+	}
+	.igFollowUS {
+		display: block;
+	}
+
+	.vrHeadset {
+		position: absolute;
+		width: 414px;
+		height: auto;
+		left: 15%;
+		top: 5%;
+		scale: 0.7;
+	}
+	.siafiStudents {
+		position: absolute;
+		left: 0;
+		bottom: -15%;
+		width: 522.931px;
+		height: 336.63px;
+		object-fit: cover;
+		rotate: 8.367deg;
+		flex-shrink: 0;
+		overflow: hidden;
+		border-radius: 5%;
+		scale: 0.8;
+	}
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.robotDrawing {
+		position: absolute;
+		top: 0;
+		right: 10%;
+	}
+
+	.robotDrawing {
+		top: 0;
+		right: 0%;
+	}
+
+	.handsDetectionContainer {
+		display: block;
+	}
+	.vrHeadset {
+		position: absolute;
+		width: 414px;
+		height: auto;
+		left: 0;
+		top: 5%;
+		scale: 0.7;
+	}
+	.siafiStudents {
+		position: absolute;
+		left: 0;
+		bottom: -15%;
+		width: 522.931px;
+		height: 336.63px;
+		object-fit: cover;
+		rotate: 8.367deg;
+		flex-shrink: 0;
+		overflow: hidden;
+		border-radius: 5%;
+		scale: 0.8;
+	}
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+	.robotDrawing {
+		top: 0;
+		right: 15%;
+	}
+	.vrHeadset {
+		position: absolute;
+		width: 414px;
+		height: auto;
+		left: 0;
+		top: -5%;
+		scale: 0.7;
+	}
 }

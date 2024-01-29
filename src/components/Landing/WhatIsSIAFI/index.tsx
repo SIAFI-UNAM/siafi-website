@@ -19,7 +19,7 @@ export default function WhatIsSIAFI() {
 					de Ingeniería de la UNAM, conformado por estudiantes
 					apasionados por la inteligencia artificial y la ingeniería
 					de software. Nosotros estamos en busca de constantes retos,
-					desafiando los límites creando soluciones innovadoras.{" "}
+					desafiando los límites creando soluciones innovadoras.
 					{/* <SketchCircledText> ¡Únete a nosotros!</SketchCircledText> */}
 				</p>
 				<Image
