@@ -25,9 +25,12 @@ export default function ContactUs() {
 					<div className={`col-12 col-lg-4 ${styles.direction}`}>
 						<h3>Encuentranos en:</h3>
 						<p>
-							Edificio CIA, 4to piso, conjunto sur, Circuito
-							interior 3000 Col. Universidad Nacional Autónoma de
-							México Coyoacán, C.P. 04510 Ciudad de México, México
+							<b>
+								Edificio CIA, 4to piso, conjunto sur, Circuito
+								interior 3000 Col. Universidad Nacional Autónoma
+								de México Coyoacán, C.P. 04510 Ciudad de México,
+								México
+							</b>
 						</p>
 					</div>
 				</div>
