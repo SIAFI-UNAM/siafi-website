@@ -33,7 +33,7 @@ export default function NavBar() {
 	return (
 		<div className={styles.navbarContainer}>
 			<div className={`container ${styles.navbarContent}`}>
-				<div className={styles.logo}>
+				<div className={`${styles.logo} ${styles["hvr-pop"]}`}>
 					<Link href="/">
 						<Image src={logoSIAFI} alt="logo" width={100} />
 					</Link>

@@ -1,11 +1,24 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import CTAButton from "@/components/General/CTAButton";
 import PageSection from "@/components/General/PageSection";
 import styles from "./MeetExecutiveBoard.module.css";
 import Image from "next/image";
 import { demoExecMember, drawedArrow, drawedCrown } from "@/image-paths";
+import { Member } from "@/models/Member";
 
-export default function MeetExecutiveBoard() {
+type Props = {
+	members: Array<Member>;
+};
+
+export default function MeetExecutiveBoard({ members }: Props) {
+	const [activeMember, setActiveMember] = useState(0);
+	const [selectedMember, setSelectedMember] = useState<Member>(members[0]);
+
+	useEffect(() => {
+		setSelectedMember(members[activeMember]);
+	}, [members, activeMember]);
+
 	return (
 		<PageSection>
 			<div className="row">
@@ -28,70 +41,41 @@ export default function MeetExecutiveBoard() {
 				</div>
 				<div className="col d-none d-lg-block"></div>
 				<div className={`col-12 col-md-6 ${styles.execMembers}`}>
-					<h1>Alexis Sosa</h1>
+					<h1>
+						{selectedMember.firstName} {selectedMember.lastName}
+					</h1>
 					<div className={styles.execMemberAvatar}>
 						<Image
-							src={demoExecMember}
-							alt="Alexis Sosa"
+							src={selectedMember.image}
+							alt={selectedMember.userName}
+							width={48}
+							height={48}
 							className={styles.execMemberPhoto}
 						/>
 						<div className={styles.excecMemberAvatarInfo}>
-							<h4>El Presi</h4>
-							<a
-								href="https://www.instagram.com/"
-								target="_blank"
-							>
-								@alexissosa
+							<h4>{selectedMember.role}</h4>
+							<a href={selectedMember.instagram} target="_blank">
+								{selectedMember.userName}
 							</a>
 						</div>
 					</div>
 					<p className={styles.execMemberDescription}>
-						Andikan is one of the amazing kreatives of KND. He has
-						over 4 years of design experience and is currently
-						creating design solutions as a freelancer. Want to know
-						more about Andikan? Follow his socials!
+						{selectedMember.description}
 					</p>
 					<div className={styles.execMembersCarrousel}>
-						<Image
-							src={demoExecMember}
-							alt="Alexis Sosa"
-							className={`${styles.execMemberPhoto} ${styles.active}`}
-						/>
-						<Image
-							src={demoExecMember}
-							alt="Alexis Sosa"
-							className={styles.execMemberPhoto}
-						/>
-						<Image
-							src={demoExecMember}
-							alt="Alexis Sosa"
-							className={styles.execMemberPhoto}
-						/>
-						<Image
-							src={demoExecMember}
-							alt="Alexis Sosa"
-							className={styles.execMemberPhoto}
-						/>
-						<Image
-							src={demoExecMember}
-							alt="Alexis Sosa"
-							className={styles.execMemberPhoto}
-						/>
-						<Image
-							src={demoExecMember}
-							alt="Alexis Sosa"
-							className={styles.execMemberPhoto}
-						/>
-						<Image
-							src={demoExecMember}
-							alt="Alexis Sosa"
-							className={styles.execMemberPhoto}
-						/>
-						<Image
-							src={demoExecMember}
-							alt="Alexis Sosa"
-							className={styles.execMemberPhoto}
-						/>
+						{members.map((member, indx) => (
+							<Image
+								key={member.id}
+								src={member.image}
+								alt={`${member.userName} photo`}
+								width={48}
+								height={48}
+								onClick={() => setActiveMember(indx)}
+								className={`${styles.execMemberPhoto} ${
+									activeMember === indx ? styles.active : ""
+								}`}
+							/>
+						))}
 					</div>
 				</div>
 			</div>

@@ -11,6 +11,7 @@ import MeetExecutiveBoard from "@/components/Landing/MeetExecutiveBoard";
 import OurProjects from "@/components/Landing/OurProjects";
 import Sponsors from "@/components/Landing/Sponsors";
 import ContactUs from "@/components/Landing/ContactUs";
+import mockMembers from "@/data/dummy-Members.json";
 
 export default function LandingPage() {
 	const dummyData = advicesDummyData as [Advice];
@@ -22,7 +23,7 @@ export default function LandingPage() {
 			</section> */}
 			<WhatIsSIAFI />
 			<LatestBlogs />
-			<MeetExecutiveBoard />
+			<MeetExecutiveBoard members={mockMembers} />
 			<OurProjects />
 			<Sponsors />
 			<ContactUs />

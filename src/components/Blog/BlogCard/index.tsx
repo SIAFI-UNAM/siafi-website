@@ -31,7 +31,9 @@ export default function BlogCard({
 }: Props) {
 	return (
 		<Link href={link} className={styles.cardLink}>
-			<div className={styles.cardContainer}>
+			<div
+				className={`${styles.cardContainer} ${styles["hvr-wobble-horizontal"]}`}
+			>
 				<Image
 					src={image}
 					alt={title}
