@@ -5,7 +5,7 @@ import { signArrow } from "@/image-paths";
 
 export default function ContactUs() {
 	return (
-		<div className={styles.container}>
+		<div className={styles.container} id="contact">
 			<div className={styles.card}>
 				<Image
 					src={signArrow}
@@ -26,9 +26,8 @@ export default function ContactUs() {
 						<h3>Encuentranos en:</h3>
 						<p>
 							Edificio CIA, 4to piso, conjunto sur, Circuito
-							interior 3000 Col. Universidad Nacional Autónoma
-							de México Coyoacán, C.P. 04510 Ciudad de México,
-							México
+							interior 3000 Col. Universidad Nacional Autónoma de
+							México Coyoacán, C.P. 04510 Ciudad de México, México
 						</p>
 					</div>
 				</div>

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
 import Image from "next/image";
 import {
@@ -10,8 +11,29 @@ import {
 	siafiStudentsHero,
 	vrHeadset,
 } from "@/image-paths";
+import TextTransition, { presets } from "react-text-transition";
 
 export default function Hero() {
+	// Strings demo (change every 3 seconds) (TEMPORAL, then we will update them via sanity)
+	// Words that can fit between "Inteligencia Artificial" and "Por estudiantes"
+
+	const [index, setIndex] = useState(0);
+
+	const DEMO_TEXTS = [
+		"Super Cargada",
+		"Creada",
+		"Reimaginada",
+		"Desarrollada",
+	];
+
+	useEffect(() => {
+		const intervalId = setInterval(
+			() => setIndex((index) => (index + 1) % DEMO_TEXTS.length),
+			5000 // every 3 seconds
+		);
+		return () => clearTimeout(intervalId);
+	}, [DEMO_TEXTS.length]);
+
 	return (
 		<section className={`${styles.heroContainer}`}>
 			{/* Title and hero main images */}
@@ -21,7 +43,13 @@ export default function Hero() {
 						<p className={styles.heroTitle}>
 							Inteligencia Artificial
 						</p>
-						<p className={styles.heroActiveWord}>Super Cargada</p>
+						<TextTransition
+							springConfig={presets.wobbly}
+							className={styles.heroActiveWord}
+						>
+							{DEMO_TEXTS[index]}
+						</TextTransition>
+						{/* <p className={styles.heroActiveWord}>Super Cargada</p> */}
 						<p className={styles.heroTitle}>Por estudiantes</p>
 						<div className={styles.weLoveAIHero}>
 							<p>WE</p>

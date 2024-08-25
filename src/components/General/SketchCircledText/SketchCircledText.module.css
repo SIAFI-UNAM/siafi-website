@@ -1,6 +1,18 @@
 .textContainer {
 	position: relative;
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 150px;
+}
+
+.textContainer a {
+	padding: 0 1rem;
+	z-index: 10;
+	text-decoration: none;
+	color: var(--accent-color);
+	font-size: 1.5rem;
+	font-weight: 700;
 }
 
 .circle {
@@ -9,7 +21,4 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	border-radius: 50%;
-	/* padding: 5px; */
-	/* border: 2px solid var(--accent-color); */
 }

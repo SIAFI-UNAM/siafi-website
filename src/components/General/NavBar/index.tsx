@@ -25,7 +25,7 @@ export default function NavBar() {
 				<Link href={"#"}>Proyectos</Link>
 			</li>
 			<li>
-				<Link href={"#"}>Contacto</Link>
+				<Link href={"#contact"}>Contacto</Link>
 			</li>
 		</>
 	);

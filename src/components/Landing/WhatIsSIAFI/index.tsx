@@ -5,6 +5,7 @@ import Image from "next/image";
 import { siafiGroup } from "@/image-paths";
 import CTAButton from "@/components/General/CTAButton";
 import SketchCircledText from "@/components/General/SketchCircledText";
+import Link from "next/link";
 
 export default function WhatIsSIAFI() {
 	return (
@@ -20,7 +21,10 @@ export default function WhatIsSIAFI() {
 					apasionados por la inteligencia artificial y la ingeniería
 					de software. Nosotros estamos en busca de constantes retos,
 					desafiando los límites creando soluciones innovadoras.
-					{/* <SketchCircledText> ¡Únete a nosotros!</SketchCircledText> */}
+					<SketchCircledText>
+						{" "}
+						<Link href="/contacto">¡Únete a nosotros!</Link>
+					</SketchCircledText>
 				</p>
 				<Image
 					src={siafiGroup}
