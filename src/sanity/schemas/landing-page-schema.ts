@@ -42,32 +42,33 @@ const AboutUsSection: FieldDefinition = {
 		"La sección de 'Sobre Nosotros' contiene una breve descripción de la organización, así como una imagen de la organización.",
 	fields: [
 		{
-			name: "aboutus_title",
+			name: "title",
 			title: "Título",
 			type: "string",
 		},
 		{
-			name: "aboutus_subtitle",
+			name: "subtitle",
 			title: "Subtítulo",
 			type: "string",
 		},
 		{
-			name: "aboutus_description",
+			name: "description",
 			title: "Descripción",
-			type: "text",
+			type: "array",
+			of: [{ type: "block" }],
 		},
 		{
-			name: "aboutus_image",
+			name: "image",
 			title: "Imagen",
 			type: "image",
 		},
 		{
-			name: "aboutus_cta",
+			name: "cta",
 			title: "Titulo de llamado a la acción (botón)",
 			type: "string",
 		},
 		{
-			name: "aboutus_cta_link",
+			name: "cta_link",
 			title: "Link de llamado a la acción (botón)",
 			type: "string",
 		},
@@ -82,14 +83,35 @@ const ContactSection: FieldDefinition = {
 		"La sección de 'Contacto' contiene la información de contacto de la organización. Nota: En esta sección solo se modifican los textos de la sección en la homepage, la información como el correo de contacto y/o dirección se modifica en 'Contacto y otros'.",
 	fields: [
 		{
-			name: "contact_title",
+			name: "title",
 			title: "Título",
 			type: "string",
 		},
 		{
-			name: "contact_subtitle",
+			name: "subtitle",
 			title: "Subtítulo",
 			type: "string",
+		},
+	],
+};
+
+const ProjectsSection: FieldDefinition = {
+	name: "projects_section",
+	title: "Proyectos",
+	type: "object",
+	description:
+		"La sección de 'Proyectos' contiene una lista de los proyectos de la organización.",
+	fields: [
+		{
+			name: "title",
+			title: "Título",
+			type: "string",
+		},
+		{
+			name: "description",
+			title: "Descripción",
+			type: "array",
+			of: [{ type: "block" }],
 		},
 	],
 };
@@ -99,5 +121,5 @@ export const landingPageSchema: SchemaTypeDefinition = {
 	title: "Página de inicio (Landing)",
 	type: "document",
 	icon: HomeIcon,
-	fields: [HeroSection, AboutUsSection, ContactSection],
+	fields: [HeroSection, AboutUsSection, ProjectsSection, ContactSection],
 };

@@ -9,19 +9,19 @@ const ContactSection: FieldDefinition = {
 		"En esta sección se modifica la información de contacto de la organización, la cual se muestra en diversas partes del sitio.",
 	fields: [
 		{
-			name: "contact_email",
+			name: "email",
 			title: "Email",
 			type: "string",
 		},
 		{
-			name: "contact_phone",
+			name: "phone",
 			title: "Teléfono",
 			type: "string",
 		},
 		{
-			name: "contact_address",
+			name: "address",
 			title: "Dirección",
-			type: "string",
+			type: "text",
 		},
 	],
 };
@@ -44,13 +44,28 @@ const SocialMediaSection: FieldDefinition = {
 			type: "string",
 		},
 		{
+			name: "linkedin",
+			title: "LinkedIn",
+			type: "string",
+		},
+		{
+			name: "youtube",
+			title: "YouTube",
+			type: "string",
+		},
+		{
+			name: "tiktok",
+			title: "TikTok",
+			type: "string",
+		},
+		{
 			name: "twitter",
 			title: "Twitter",
 			type: "string",
 		},
 		{
-			name: "linkedin",
-			title: "LinkedIn",
+			name: "github",
+			title: "GitHub",
 			type: "string",
 		},
 	],
@@ -64,19 +79,14 @@ const MetaDataSection: FieldDefinition = {
 		"En esta sección se modifican los metadatos del sitio, como el título, descripción y la imagen que se muestra en las redes sociales.",
 	fields: [
 		{
-			name: "page_title",
+			name: "title",
 			title: "Título de la página",
 			type: "string",
 		},
 		{
-			name: "page_description",
+			name: "description",
 			title: "Descripción de la página",
 			type: "text",
-		},
-		{
-			name: "image",
-			title: "Favicon de la página",
-			type: "image",
 		},
 	],
 };

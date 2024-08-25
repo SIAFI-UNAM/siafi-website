@@ -12,27 +12,27 @@ import {
 	vrHeadset,
 } from "@/image-paths";
 import TextTransition, { presets } from "react-text-transition";
+import type { HeroInfo } from "@/models/Hero";
+import type { Contact } from "@/models/Contact";
 
-export default function Hero() {
-	// Strings demo (change every 3 seconds) (TEMPORAL, then we will update them via sanity)
-	// Words that can fit between "Inteligencia Artificial" and "Por estudiantes"
+type HeroProps = {
+	hero: HeroInfo;
+	contact: Contact;
+};
 
+export default function Hero({ hero, contact }: HeroProps) {
+	const { upperTitle, middleWords, lowerTitle, siafiGroupImage } = hero;
+	const { instagram } = contact;
+	// Index for words array that can fit between "Inteligencia Artificial" and "Por estudiantes"
 	const [index, setIndex] = useState(0);
-
-	const DEMO_TEXTS = [
-		"Super Cargada",
-		"Creada",
-		"Reimaginada",
-		"Desarrollada",
-	];
 
 	useEffect(() => {
 		const intervalId = setInterval(
-			() => setIndex((index) => (index + 1) % DEMO_TEXTS.length),
+			() => setIndex((index) => (index + 1) % middleWords.length),
 			5000 // every 3 seconds
 		);
 		return () => clearTimeout(intervalId);
-	}, [DEMO_TEXTS.length]);
+	}, [middleWords.length]);
 
 	return (
 		<section className={`${styles.heroContainer}`}>
@@ -40,17 +40,15 @@ export default function Hero() {
 			<div className="container">
 				<div className="row">
 					<div className={`col-12 col-md-6 ${styles.heroTexts}`}>
-						<p className={styles.heroTitle}>
-							Inteligencia Artificial
-						</p>
+						<p className={styles.heroTitle}>{upperTitle}</p>
 						<TextTransition
 							springConfig={presets.wobbly}
 							className={styles.heroActiveWord}
 						>
-							{DEMO_TEXTS[index]}
+							{middleWords[index]}
 						</TextTransition>
 						{/* <p className={styles.heroActiveWord}>Super Cargada</p> */}
-						<p className={styles.heroTitle}>Por estudiantes</p>
+						<p className={styles.heroTitle}>{lowerTitle}</p>
 						<div className={styles.weLoveAIHero}>
 							<p>WE</p>
 							<Image src={heartDrawingIcon} alt="Heart icon" />
@@ -76,7 +74,9 @@ export default function Hero() {
 							/>
 						</div>
 						<Image
-							src={siafiStudentsHero}
+							src={siafiGroupImage}
+							width={700}
+							height={500}
 							className={styles.siafiStudents}
 							alt="SIAFI students"
 						/>
@@ -85,7 +85,7 @@ export default function Hero() {
 			</div>
 			{/* Absolute posisioned elements on hero */}
 			<p className={styles.igFollowUS}>
-				<a href="https://www.instagram.com/unam.siafi/" target="_blank">
+				<a href={instagram} target="_blank">
 					Siguenos en <span>Instagram</span>
 				</a>
 			</p>
