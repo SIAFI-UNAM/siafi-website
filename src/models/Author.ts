@@ -1,5 +1,8 @@
+import { PortableTextBlock } from "sanity";
+
 export type Author = {
-	id: number;
+	_id: string;
 	name: string;
-	image: string;
+	avatar: string;
+	bio: PortableTextBlock[];
 };

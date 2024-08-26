@@ -4,15 +4,14 @@ import Image from "next/image";
 import { blogImage1, testAuthor } from "@/image-paths";
 import Link from "next/link";
 import { Author } from "@/models/Author";
+import { BlogInfo } from "@/models/Blog";
+import {
+	getDescriptionFromPortableText,
+	getReadingTimeFromPortableText,
+} from "@/lib/portableTextUtils";
 
 type Props = {
-	title: string;
-	description: string;
-	category: string;
-	image: string;
-	link: string;
-	author: Author;
-	publishedAt: string;
+	blog: BlogInfo;
 };
 
 /**
@@ -20,41 +19,43 @@ type Props = {
  *
  * TODO: Turn dynamic the color of the card category.
  */
-export default function BlogCard({
-	title,
-	description,
-	category,
-	image,
-	link,
-	author,
-	publishedAt,
-}: Props) {
+export default function BlogCard({ blog }: Props) {
+	const dateFormater = new Intl.DateTimeFormat("es-MX", {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+	});
+
 	return (
-		<Link href={link} className={styles.cardLink}>
+		<Link href={`/blog/${blog.slug}`} className={styles.cardLink}>
 			<div
 				className={`${styles.cardContainer} ${styles["hvr-wobble-horizontal"]}`}
 			>
 				<Image
-					src={image}
-					alt={title}
+					src={blog.image}
+					alt={blog.title}
 					className={styles.cardImage}
 					width={250}
 					height={250}
 				/>
 				<div className={styles.cardContent}>
-					<h4>{category}</h4>
-					<h2>{title}</h2>
-					<p>{description}</p>
+					<h4>{blog.category}</h4>
+					<h2>{blog.title}</h2>
+					<p>{getDescriptionFromPortableText(blog.content)}</p>
 					<div className={styles.cardAuthor}>
 						<Image
-							src={author.image}
-							alt={`${author.name} photo`}
+							src={blog.author.avatar}
+							alt={`${blog.author.name} photo`}
 							width={48}
 							height={48}
 						/>
 						<div className={styles.authorInfo}>
-							<h4>{author.name}</h4>
-							<p>{`${publishedAt} · X min lectura`}</p>
+							<h4>{blog.author.name}</h4>
+							<p>{`${dateFormater.format(
+								new Date(blog.publishedAt)
+							)} · ${getReadingTimeFromPortableText(
+								blog.content
+							)} min lectura`}</p>
 						</div>
 					</div>
 				</div>

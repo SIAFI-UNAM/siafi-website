@@ -2,6 +2,7 @@ import { client } from "./lib/client";
 import { groq } from "next-sanity";
 import type { Contact } from "@/models/Contact";
 import type { LandingInfo, HeroInfo } from "@/models/Landing";
+import { BlogInfo } from "@/models/Blog";
 
 export async function getLandingInfo(): Promise<LandingInfo> {
 	return client.fetch(
@@ -56,6 +57,48 @@ export async function getContactInfo(): Promise<Contact> {
             "tiktok": social_media.tiktok,
             "twitter": social_media.twitter,
             "github": social_media.github
+        }`
+	);
+}
+
+export async function getBlogs(): Promise<BlogInfo[]> {
+	return client.fetch(
+		groq`*[_type == "blog"] | order(publishedAt desc){
+            _id,
+            _createdAt,
+            title,
+            "slug": slug.current,
+            "image": image.asset->url,
+            "category": category -> name,
+            publishedAt,
+            author ->{
+                _id,
+                name,
+                "avatar": avatar.asset->url,
+                bio
+            },
+            content
+        }`
+	);
+}
+
+export async function getLatestBlogs(): Promise<BlogInfo[]> {
+	return client.fetch(
+		groq`*[_type == "blog"][0..3] | order(publishedAt desc){
+            _id,
+            _createdAt,
+            title,
+            "slug": slug.current,
+            "image": image.asset->url,
+            "category": category -> name,
+            publishedAt,
+            author ->{
+                _id,
+                name,
+                "avatar": avatar.asset->url,
+                bio
+            },
+            content
         }`
 	);
 }

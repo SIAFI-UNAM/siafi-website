@@ -1,9 +1,14 @@
 import BlogCard from "@/components/Blog/BlogCard";
 import PageSection from "@/components/General/PageSection";
 import { blogImage1, testAuthor } from "@/image-paths";
+import type { BlogInfo } from "@/models/Blog";
 import React from "react";
 
-export default function LatestBlogs() {
+type LatestBlogsProps = {
+	blogs: BlogInfo[];
+};
+
+export default function LatestBlogs({ blogs }: LatestBlogsProps) {
 	return (
 		<PageSection
 			title="Publicaciones recientes"
@@ -11,52 +16,14 @@ export default function LatestBlogs() {
 			description="Nuestros miembros publican frecuentemente posts interesantes sobre la Inteligencia Artificial"
 		>
 			<div className="row">
-				<div className="col-12 col-md-6 col-lg-4 mt-4">
-					<BlogCard
-						title="La IA en Apple"
-						category="Prueba"
-						description="Esta es una prueba de las publicaciones de los blogs"
-						image={blogImage1.src}
-						link="/blog/la-ia-en-apple"
-						publishedAt="28 ene 2024"
-						author={{
-							name: "Test Author",
-							image: testAuthor.src,
-							id: 1,
-						}}
-					/>
-				</div>
-				<div className="col-12 col-md-6 col-lg-4 mt-4">
-					<BlogCard
-						title="La IA en Apple"
-						category="Prueba"
-						description="Esta es una prueba de las publicaciones de los blogs"
-						image={blogImage1.src}
-						link="/blog/la-ia-en-apple"
-						publishedAt="28 ene 2024"
-						author={{
-							name: "Test Author",
-							image: testAuthor.src,
-							id: 1,
-						}}
-					/>
-				</div>
-				<div className="col d-none d-md-block d-lg-none"></div>
-				<div className="col-12 col-md-6 col-lg-4 mt-4">
-					<BlogCard
-						title="La IA en Apple"
-						category="Prueba"
-						description="Esta es una prueba de las publicaciones de los blogs"
-						image={blogImage1.src}
-						link="/blog/la-ia-en-apple"
-						publishedAt="28 ene 2024"
-						author={{
-							name: "Test Author",
-							image: testAuthor.src,
-							id: 1,
-						}}
-					/>
-				</div>
+				{blogs.map((blog) => (
+					<div
+						key={blog._id}
+						className="col-12 col-md-6 col-lg-4 mt-4"
+					>
+						<BlogCard blog={blog} />
+					</div>
+				))}
 				<div className="col d-none d-md-block d-lg-none"></div>
 			</div>
 		</PageSection>

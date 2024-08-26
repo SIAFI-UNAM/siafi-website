@@ -11,7 +11,11 @@ import ContactUs from "@/components/Landing/ContactUs";
 import mockMembers from "@/data/dummy-Members.json";
 import type { LandingInfo } from "@/models/Landing";
 import type { Contact } from "@/models/Contact";
-import { getContactInfo, getLandingInfo } from "@/sanity/sanity-utils";
+import {
+	getContactInfo,
+	getLandingInfo,
+	getLatestBlogs,
+} from "@/sanity/sanity-utils";
 // import { Metadata } from "next";
 
 // type Params = {
@@ -28,6 +32,7 @@ import { getContactInfo, getLandingInfo } from "@/sanity/sanity-utils";
 export default async function LandingPage() {
 	const landingInfo = await getLandingInfo();
 	const contact = await getContactInfo();
+	const blogs = await getLatestBlogs();
 
 	return (
 		<main>
@@ -36,7 +41,7 @@ export default async function LandingPage() {
 				<AdvicesCard advices={dummyData} />
 			</section> */}
 			<WhatIsSIAFI aboutInfo={landingInfo.aboutSection} />
-			<LatestBlogs />
+			<LatestBlogs blogs={blogs} />
 			<MeetExecutiveBoard members={mockMembers} />
 			<OurProjects projectsSection={landingInfo.projectsSection} />
 			<Sponsors />
