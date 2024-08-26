@@ -10,7 +10,7 @@ type Props = {
 
 export default function SketchCircledText({ children }: Props) {
 	return (
-		<span className={styles.textContainer}>
+		<span className={`${styles.textContainer} ${styles["hvr-bounce-in"]}`}>
 			{children}
 			<Image
 				src={drawedCircle}
