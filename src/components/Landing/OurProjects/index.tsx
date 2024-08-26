@@ -5,20 +5,22 @@ import styles from "./OurProjects.module.css";
 import ProjectCard from "@/components/Projects/ProjectCard";
 import Image from "next/image";
 import { demoProjectLogo } from "@/image-paths";
+import { ProjectsSection } from "@/models/Landing";
+import { PortableText } from "@portabletext/react";
 
-export default function OurProjects() {
+type OurProjectsProps = {
+	projectsSection: ProjectsSection;
+};
+
+export default function OurProjects({ projectsSection }: OurProjectsProps) {
 	return (
 		<PageSection>
 			<div className="row">
 				<div
 					className={`col-12 col-md-6 col-lg-4 ${styles.sectionInfo}`}
 				>
-					<h2>Sorprendete con nuestros proyectos</h2>
-					<p>
-						As a sponsor, we re promising reach to thousands of
-						people who are interested in your brand. What better way
-						to get your brand in front of people.
-					</p>
+					<h2>{projectsSection.title}</h2>
+					<PortableText value={projectsSection.description} />
 					<CTAButton
 						link="/proyectos"
 						text="Ver proyectos"

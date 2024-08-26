@@ -12,7 +12,7 @@ import {
 	vrHeadset,
 } from "@/image-paths";
 import TextTransition, { presets } from "react-text-transition";
-import type { HeroInfo } from "@/models/Hero";
+import type { HeroInfo } from "@/models/Landing";
 import type { Contact } from "@/models/Contact";
 
 type HeroProps = {
