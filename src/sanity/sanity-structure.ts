@@ -29,8 +29,9 @@ export const sanityCustomStructure: StructureResolver = (S) => {
 			S.divider(),
 			...S.documentTypeListItems().filter((listItem) => {
 				return (
-					!["contact_and_others"].includes(listItem.getId()) &&
-					!["landingPage"].includes(listItem.getId())
+					!["contact_and_others"].includes(
+						listItem.getId() as string
+					) && !["landingPage"].includes(listItem.getId() as string)
 				);
 			}),
 		]);
