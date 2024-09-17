@@ -2,10 +2,8 @@ import React from "react";
 import PageSection from "@/components/General/PageSection";
 import styles from "./WhatIsSIAFI.module.css";
 import Image from "next/image";
-import { siafiGroup } from "@/image-paths";
 import CTAButton from "@/components/General/CTAButton";
 import SketchCircledText from "@/components/General/SketchCircledText";
-import Link from "next/link";
 import { AboutSection } from "@/models/Landing";
 import { PortableText } from "@portabletext/react";
 

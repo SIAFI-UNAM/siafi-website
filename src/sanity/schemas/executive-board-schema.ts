@@ -28,6 +28,30 @@ export const ExecutiveSchema: SchemaTypeDefinition = {
 			],
 		},
 		{
+			name: "position",
+			title: "Cargo",
+			type: "string",
+		},
+		{
+			name: "email",
+			title: "Correo Electrónico",
+			type: "string",
+		},
+		{
+			name: "username",
+			title: "Nombre de usuario",
+			description:
+				"Nombre de usuario en la red social a compartir (aparece en el landing page) (añadir @)",
+			type: "string",
+		},
+		{
+			name: "social_media_link",
+			title: "Link de la red social",
+			description:
+				"Link de la red social a compartir (aparece en el landing page)",
+			type: "string",
+		},
+		{
 			name: "bio",
 			title: "Biografia",
 			type: "array",

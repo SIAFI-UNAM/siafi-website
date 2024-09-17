@@ -4,13 +4,21 @@ import CTAButton from "@/components/General/CTAButton";
 import PageSection from "@/components/General/PageSection";
 import styles from "./MeetExecutiveBoard.module.css";
 import Image from "next/image";
-import { demoExecMember, drawedArrow, drawedCrown } from "@/image-paths";
-import { Member } from "@/models/Member";
+import { drawedArrow, drawedCrown } from "@/image-paths";
+import type { Member } from "@/models/Member";
+import { PortableText } from "@portabletext/react";
 
 type Props = {
 	members: Array<Member>;
 };
 
+/**
+ * This component displays the executive board members of SIAFI on the landing page.
+ * @param {Props} props - The props of the component.
+ * @param {Array<Member>} props.members - The members of the executive board.
+ * @returns {JSX.Element} MeetExecutiveBoard component.
+ * @todo Add arrow functionality to the carousel.
+ */
 export default function MeetExecutiveBoard({ members }: Props) {
 	const [activeMember, setActiveMember] = useState(0);
 	const [selectedMember, setSelectedMember] = useState<Member>(members[0]);
@@ -18,6 +26,13 @@ export default function MeetExecutiveBoard({ members }: Props) {
 	useEffect(() => {
 		setSelectedMember(members[activeMember]);
 	}, [members, activeMember]);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setActiveMember((prev) => (prev + 1) % members.length);
+		}, 3500);
+		return () => clearInterval(interval);
+	}, [members.length]);
 
 	return (
 		<PageSection>
@@ -41,33 +56,34 @@ export default function MeetExecutiveBoard({ members }: Props) {
 				</div>
 				<div className="col d-none d-lg-block"></div>
 				<div className={`col-12 col-md-6 ${styles.execMembers}`}>
-					<h1>
-						{selectedMember.firstName} {selectedMember.lastName}
-					</h1>
+					<h1>{selectedMember.name}</h1>
 					<div className={styles.execMemberAvatar}>
 						<Image
-							src={selectedMember.image}
-							alt={selectedMember.userName}
+							src={selectedMember.image.url}
+							alt={selectedMember.image.alt}
 							width={48}
 							height={48}
-							className={styles.execMemberPhoto}
+							className={styles.selectedExecMemberPhoto}
 						/>
 						<div className={styles.excecMemberAvatarInfo}>
 							<h4>{selectedMember.role}</h4>
-							<a href={selectedMember.instagram} target="_blank">
-								{selectedMember.userName}
+							<a
+								href={selectedMember.socialMediaLink}
+								target="_blank"
+							>
+								{selectedMember.username}
 							</a>
 						</div>
 					</div>
-					<p className={styles.execMemberDescription}>
-						{selectedMember.description}
-					</p>
+					<div className={styles.execMemberDescription}>
+						<PortableText value={selectedMember.description} />
+					</div>
 					<div className={styles.execMembersCarrousel}>
 						{members.map((member, indx) => (
 							<Image
-								key={member.id}
-								src={member.image}
-								alt={`${member.userName} photo`}
+								key={member._id}
+								src={member.image.url}
+								alt={member.image.alt}
 								width={48}
 								height={48}
 								onClick={() => setActiveMember(indx)}

@@ -1,20 +1,18 @@
 import Hero from "@/components/Landing/Hero";
 // import AdvicesCard from "@/components/Landing/AdvicesCard";
-import advicesDummyData from "@/data/dummy-Advices.json";
-import { Advice } from "@/models/Advice";
 import WhatIsSIAFI from "@/components/Landing/WhatIsSIAFI";
 import LatestBlogs from "@/components/Landing/LatestBlogs";
 import MeetExecutiveBoard from "@/components/Landing/MeetExecutiveBoard";
 import OurProjects from "@/components/Landing/OurProjects";
 import Sponsors from "@/components/Landing/Sponsors";
 import ContactUs from "@/components/Landing/ContactUs";
-import mockMembers from "@/data/dummy-Members.json";
-import type { LandingInfo } from "@/models/Landing";
-import type { Contact } from "@/models/Contact";
 import {
 	getContactInfo,
+	getExecutiveBoardMembers,
 	getLandingInfo,
+	getLandingProjects,
 	getLatestBlogs,
+	getSponsors,
 } from "@/sanity/sanity-utils";
 // import { Metadata } from "next";
 
@@ -33,6 +31,9 @@ export default async function LandingPage() {
 	const landingInfo = await getLandingInfo();
 	const contact = await getContactInfo();
 	const blogs = await getLatestBlogs();
+	const execMembers = await getExecutiveBoardMembers();
+	const projects = await getLandingProjects();
+	const sponsors = await getSponsors();
 
 	return (
 		<main>
@@ -42,9 +43,12 @@ export default async function LandingPage() {
 			</section> */}
 			<WhatIsSIAFI aboutInfo={landingInfo.aboutSection} />
 			<LatestBlogs blogs={blogs} />
-			<MeetExecutiveBoard members={mockMembers} />
-			<OurProjects projectsSection={landingInfo.projectsSection} />
-			<Sponsors />
+			<MeetExecutiveBoard members={execMembers} />
+			<OurProjects
+				projectsSection={landingInfo.projectsSection}
+				projects={projects}
+			/>
+			<Sponsors sponsors={sponsors} />
 			<ContactUs
 				contactUsSection={landingInfo.contactSection}
 				contactInfo={contact}

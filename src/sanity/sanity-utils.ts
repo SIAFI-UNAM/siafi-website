@@ -2,7 +2,10 @@ import { client } from "./lib/client";
 import { groq } from "next-sanity";
 import type { Contact } from "@/models/Contact";
 import type { LandingInfo, HeroInfo } from "@/models/Landing";
-import { BlogInfo } from "@/models/Blog";
+import type { BlogInfo } from "@/models/Blog";
+import type { Member } from "@/models/Member";
+import type { ProjectInfo } from "@/models/Project";
+import { SponsorInfo } from "@/models/Sponsor";
 
 export async function getLandingInfo(): Promise<LandingInfo> {
 	return client.fetch(
@@ -102,3 +105,109 @@ export async function getLatestBlogs(): Promise<BlogInfo[]> {
         }`
 	);
 }
+
+export async function getBlogBySlug(slug: string): Promise<BlogInfo> {
+	return client.fetch(
+		groq`*[_type == "blog" && slug.current == $slug][0]{
+            _id,
+            _createdAt,
+            title,
+            "slug": slug.current,
+            "image": image.asset->url,
+            "category": category -> name,
+            publishedAt,
+            author ->{
+                _id,
+                name,
+                "avatar": avatar.asset->url,
+                bio
+            },
+            content
+        }`,
+		{ slug }
+	) as BlogInfo;
+}
+
+export async function getExecutiveBoardMembers(): Promise<Member[]> {
+	return client.fetch(
+		groq`*[_type == "executive_board"]{
+            _id,
+            name,
+            username,
+            "socialMediaLink": social_media_link,
+            "image":{
+                "url": avatar.asset->url,
+                "alt": avatar.alt
+            },
+            "description": bio,
+            "role": position,
+            email
+        }`
+	);
+}
+
+export async function getLandingProjects(): Promise<ProjectInfo[]> {
+	return client.fetch(
+		groq`*[_type == "project"][0..8]{
+            _id,
+            title,
+            "slug": slug.current,
+            "description": content,
+            "image":{
+                "url": image.asset->url,
+                "alt": image.alt
+            },
+            "last_updated": _updatedAt,
+            authors
+        }`
+	);
+}
+
+export async function getProjects(): Promise<ProjectInfo[]> {
+	return client.fetch(
+		groq`*[_type == "project"]{
+            _id,
+            title,
+            "slug": slug.current,
+            "description": content,
+            "image":{
+                "url": image.asset->url,
+                "alt": image.alt
+            },
+            "last_updated": _updatedAt,
+            authors
+        }`
+	);
+}
+
+export async function getProjectBySlug(slug: string): Promise<ProjectInfo> {
+	return client.fetch(
+		groq`*[_type == "project" && slug.current == $slug][0]{
+            _id,
+            title,
+            "slug": slug.current,
+            "description": content,
+            "image":{
+                "url": image.asset->url,
+                "alt": image.alt
+            },
+            "last_updated": _updatedAt,
+            authors
+        }`,
+		{ slug }
+	) as ProjectInfo;
+}
+
+export const getSponsors = (): Promise<SponsorInfo[]> => {
+	return client.fetch(
+		groq`*[_type == "partner"]{
+            _id,
+            "name": partner_name,
+            "image":{
+                "url": partner_logo.asset->url,
+                "alt": partner_logo.alt
+            },
+            description
+        }`
+	);
+};

@@ -1,5 +1,5 @@
-import { PortableTextBlock } from "sanity";
-import { Author } from "./Author";
+import type { PortableTextBlock } from "sanity";
+import type { Author } from "./Author";
 
 export type BlogInfo = {
 	_id: string;

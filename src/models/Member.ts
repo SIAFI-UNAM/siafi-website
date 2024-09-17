@@ -1,15 +1,15 @@
+import type { PortableTextBlock } from "sanity";
+
 export type Member = {
-	id: number;
-	order: number;
-	firstName: string;
-	lastName: string;
-	userName: string;
+	_id: string;
+	name: string;
+	username: string;
+	socialMediaLink: string;
 	role: string;
-	description: string;
-	image: string;
-	linkedin: string;
-	instagram: string;
-	twitter: string;
-	github: string;
+	description: PortableTextBlock[];
+	image: {
+		alt: string;
+		url: string;
+	};
 	email: string;
 };

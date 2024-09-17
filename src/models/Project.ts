@@ -1,6 +1,14 @@
+import type { PortableTextBlock } from "sanity";
+
 export type ProjectInfo = {
-	name: string;
-	description: string;
-	image: string;
-	link: string;
+	_id: string;
+	title: string;
+	slug: string;
+	description: PortableTextBlock[];
+	image: {
+		alt: string;
+		url: string;
+	};
+	last_updated: string;
+	authors: string[];
 };
