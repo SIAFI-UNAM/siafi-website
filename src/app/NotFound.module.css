@@ -1,0 +1,14 @@
+.titleContainer {
+	display: flex;
+	align-items: center;
+}
+
+.title {
+	font-family: "Study Alone", "Cabinet Grotesk", Calibri;
+	color: var(--accent-color);
+	font-size: 3rem;
+}
+
+.description {
+	font-size: 1.5rem;
+}

@@ -5,6 +5,9 @@ export { default as logoCIA } from "@img/logos/cia-logo.png";
 export { default as logoDIMEI } from "@img/logos/dimei-logo.png";
 export { default as logoFI } from "@img/logos/fi-logo.png";
 
+// SIAFI BALL
+export { default as siafiBallGlasses } from "@img/siafi-ball/siafi-ball-glasses.png";
+
 // Landing Assets
 export { default as landingBackgroundGradient } from "@img/landing/background-gradient.svg";
 export { default as heartDrawingIcon } from "@img/landing/heart-drawing-icon.svg";
@@ -42,3 +45,6 @@ export { default as testAuthor } from "@img/blog/test-author.png";
 
 // Sponsors
 export { default as demoSponsor } from "@img/sponsors/demo-sponsor.svg";
+
+// Misc
+export { default as heartbreakDoodle } from "@img/misc/heartbreak.svg";
