@@ -12,11 +12,12 @@
 	--social-media-icon-bg: #130f30;
 	--black: #000;
 	--white: #fff;
-	--navbar-background: linear-gradient(
+	/* --navbar-background: linear-gradient(
 		180deg,
 		rgba(252, 248, 255, 0.2) 0%,
 		rgba(252, 248, 255, 0) 100%
-	);
+	);*/
+	--navbar-background: #fdfdfe;
 	--avatars-background: #dcdcdc;
 	--project-card-border: #333;
 	--grayscale-900: #121127;

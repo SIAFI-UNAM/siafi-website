@@ -2,10 +2,20 @@ import React from "react";
 import styles from "./ContactUs.module.css";
 import Image from "next/image";
 import { signArrow } from "@/image-paths";
+import { ContactSection } from "@/models/Landing";
+import { Contact } from "@/models/Contact";
 
-export default function ContactUs() {
+type ContactUsProps = {
+	contactUsSection: ContactSection;
+	contactInfo: Contact;
+};
+
+export default function ContactUs({
+	contactUsSection,
+	contactInfo,
+}: ContactUsProps) {
 	return (
-		<div className={styles.container}>
+		<div className={styles.container} id="contact">
 			<div className={styles.card}>
 				<Image
 					src={signArrow}
@@ -15,20 +25,16 @@ export default function ContactUs() {
 				<div className="row">
 					<div className="col-12 col-lg-8">
 						<div className={styles.contactus}>
-							<h4>CONTACTANOS</h4>
-							<h2>¿Quieres decirnos o proponernos algo?</h2>
+							<h4>{contactUsSection.subtitle}</h4>
+							<h2>{contactUsSection.title}</h2>
 							<a href="mailto:contacto@siafi-unam.org">
-								contacto@siafi-unam.org
+								{contactInfo.email}
 							</a>
 						</div>
 					</div>
 					<div className={`col-12 col-lg-4 ${styles.direction}`}>
 						<h3>Encuentranos en:</h3>
-						<p>
-							Edificio CIA, 4to piso, conjunto sur, Circuito
-							interior 3000 Col. Universidad Nacional Autónoma de
-							México Coyoacán, C.P. 04510 Ciudad de México, México
-						</p>
+						<p>{contactInfo.address}</p>
 					</div>
 				</div>
 			</div>

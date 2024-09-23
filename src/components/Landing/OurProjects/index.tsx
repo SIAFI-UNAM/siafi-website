@@ -5,20 +5,27 @@ import styles from "./OurProjects.module.css";
 import ProjectCard from "@/components/Projects/ProjectCard";
 import Image from "next/image";
 import { demoProjectLogo } from "@/image-paths";
+import { ProjectsSection } from "@/models/Landing";
+import { PortableText } from "@portabletext/react";
+import type { ProjectInfo } from "@/models/Project";
 
-export default function OurProjects() {
+type OurProjectsProps = {
+	projectsSection: ProjectsSection;
+	projects: ProjectInfo[];
+};
+
+export default function OurProjects({
+	projectsSection,
+	projects,
+}: OurProjectsProps) {
 	return (
-		<PageSection>
+		<PageSection id="proyectos">
 			<div className="row">
 				<div
 					className={`col-12 col-md-6 col-lg-4 ${styles.sectionInfo}`}
 				>
-					<h2>Sorprendete con nuestros proyectos</h2>
-					<p>
-						As a sponsor, we re promising reach to thousands of
-						people who are interested in your brand. What better way
-						to get your brand in front of people.
-					</p>
+					<h2>{projectsSection.title}</h2>
+					<PortableText value={projectsSection.description} />
 					<CTAButton
 						link="/proyectos"
 						text="Ver proyectos"
@@ -27,77 +34,21 @@ export default function OurProjects() {
 				</div>
 				<div className="col-12 col-md-6 col-lg-8">
 					<div className="row g-2">
-						<div className="col-4">
-							<ProjectCard linkTo="/">
-								<Image
-									src={demoProjectLogo}
-									alt="Demo Project"
+						{projects.map((proj) => (
+							<div key={proj._id} className="col-4">
+								<ProjectCard
+									linkTo={`/proyectos/${proj.slug}`}
+									title={proj.title}
+									projectImage={proj.image}
 								/>
-							</ProjectCard>
-						</div>
+							</div>
+						))}
 						<div className="col-4">
-							<ProjectCard linkTo="/">
-								<Image
-									src={demoProjectLogo}
-									alt="Demo Project"
-								/>
-							</ProjectCard>
-						</div>
-						<div className="col-4">
-							<ProjectCard linkTo="/">
-								<Image
-									src={demoProjectLogo}
-									alt="Demo Project"
-								/>
-							</ProjectCard>
-						</div>
-						<div className="col-4">
-							<ProjectCard linkTo="/">
-								<Image
-									src={demoProjectLogo}
-									alt="Demo Project"
-								/>
-							</ProjectCard>
-						</div>
-						<div className="col-4">
-							<ProjectCard linkTo="/">
-								<Image
-									src={demoProjectLogo}
-									alt="Demo Project"
-								/>
-							</ProjectCard>
-						</div>
-						<div className="col-4">
-							<ProjectCard linkTo="/">
-								<Image
-									src={demoProjectLogo}
-									alt="Demo Project"
-								/>
-							</ProjectCard>
-						</div>
-						<div className="col-4">
-							<ProjectCard linkTo="/">
-								<Image
-									src={demoProjectLogo}
-									alt="Demo Project"
-								/>
-							</ProjectCard>
-						</div>
-						<div className="col-4">
-							<ProjectCard linkTo="/">
-								<Image
-									src={demoProjectLogo}
-									alt="Demo Project"
-								/>
-							</ProjectCard>
-						</div>
-						<div className="col-4">
-							<ProjectCard linkTo="/">
-								<div className={styles.moreProjectsSoon}>
-									<p>+</p>
-									<p>En desarrollo</p>
-								</div>
-							</ProjectCard>
+							<ProjectCard
+								title="Ver + proyectos"
+								linkTo="#proyectos"
+								variant="blank"
+							></ProjectCard>
 						</div>
 					</div>
 				</div>
