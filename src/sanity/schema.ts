@@ -7,10 +7,12 @@ import { BlogCategorySchema } from "./schemas/blog-category-schema";
 import { ExecutiveSchema } from "./schemas/executive-board-schema";
 import { ProjectSchema } from "./schemas/project-schema";
 import { PartnerSchema } from "./schemas/partner-schema";
+import { aboutUsSchema } from "./schemas/about-us-schema";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
 	types: [
 		landingPageSchema,
+		aboutUsSchema,
 		ContactAndOthersSchema,
 		BlogSchema,
 		AuthorSchema,

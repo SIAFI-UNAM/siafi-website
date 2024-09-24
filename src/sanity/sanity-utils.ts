@@ -6,6 +6,7 @@ import type { BlogInfo } from "@/models/Blog";
 import type { Member } from "@/models/Member";
 import type { ProjectInfo } from "@/models/Project";
 import { SponsorInfo } from "@/models/Sponsor";
+import { AboutUsPage } from "@/models/AboutUs";
 
 /**
  * Gets the landing page information from Sanity.
@@ -244,7 +245,7 @@ export async function getProjectBySlug(slug: string): Promise<ProjectInfo> {
  * Gets the sponsors from Sanity.
  * @returns The sponsors info.
  */
-export const getSponsors = (): Promise<SponsorInfo[]> => {
+export const getSponsors = async (): Promise<SponsorInfo[]> => {
 	return client.fetch(
 		groq`*[_type == "partner"]{
             _id,
@@ -254,6 +255,25 @@ export const getSponsors = (): Promise<SponsorInfo[]> => {
                 "alt": partner_logo.alt
             },
             description
+        }`
+	);
+};
+
+/**
+ * Gets the about us page information from Sanity.
+ * @returns The about us page information.
+ */
+export const getAboutUsInfo = async (): Promise<AboutUsPage> => {
+	return client.fetch(
+		groq`*[_type == "about_us"][0]{
+            "title": hero.title,
+            "subtitle": hero.subtitle,
+            "hero_image":{
+                "url": hero.image.asset->url,
+                "alt": hero.image.alt
+            },
+            identity,
+            siafi_cores,
         }`
 	);
 };

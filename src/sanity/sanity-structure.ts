@@ -1,6 +1,11 @@
 import { StructureResolver } from "sanity/desk";
-import { HomeIcon, CogIcon } from "@sanity/icons";
+import { HomeIcon, CogIcon, BookIcon } from "@sanity/icons";
 
+/**
+ * Custom structure for the Sanity Studio, this allows us to have "Singleton" documents (documents that are unique and only one of them can exist) and also to have a custom order of the documents in the sidebar.
+ * @param {StructureResolver} S The structure resolver from Sanity.
+ * @returns {StructureResolver} The custom structure for the Sanity Studio.
+ */
 export const sanityCustomStructure: StructureResolver = (S) => {
 	return S.list()
 		.title("Contenido")
@@ -15,6 +20,16 @@ export const sanityCustomStructure: StructureResolver = (S) => {
 						.schemaType("landingPage")
 						.documentId("landingPage")
 						.title("Página de inicio (Landing)")
+				),
+			S.listItem()
+				// Nosotros page singleton
+				.title("Página: Nosotros")
+				.icon(BookIcon)
+				.child(
+					S.document()
+						.schemaType("about_us")
+						.documentId("about_us")
+						.title("Página: Nosotros")
 				),
 			S.listItem()
 				// Nosotros page singleton

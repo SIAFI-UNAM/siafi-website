@@ -36,7 +36,7 @@ export default function WhatIsSIAFI({ aboutInfo }: WhatIsSIAFIProps) {
 					className={styles.aboutPhoto}
 				/>
 				<div className="mt-2 mb-2">
-					<CTAButton text="Ver más" link="/sobre-nosotros" />
+					<CTAButton text="Ver más" link="/nosotros" />
 				</div>
 			</div>
 		</PageSection>
