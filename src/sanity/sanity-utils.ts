@@ -7,6 +7,10 @@ import type { Member } from "@/models/Member";
 import type { ProjectInfo } from "@/models/Project";
 import { SponsorInfo } from "@/models/Sponsor";
 
+/**
+ * Gets the landing page information from Sanity.
+ * @returns {Promise<LandingInfo>} The landing page information.
+ */
 export async function getLandingInfo(): Promise<LandingInfo> {
 	return client.fetch(
 		groq`*[_type == "landingPage" && _id == "landingPage"][0]{
@@ -36,6 +40,10 @@ export async function getLandingInfo(): Promise<LandingInfo> {
 	);
 }
 
+/**
+ * Gets the landing page hero information from Sanity.
+ * @returns {Promise<HeroInfo>} The landing page hero information.
+ */
 export async function getHeroInfo(): Promise<HeroInfo> {
 	return client.fetch(
 		groq`*[_type == "landingPage" && _id == "landingPage"][0]{
@@ -47,6 +55,10 @@ export async function getHeroInfo(): Promise<HeroInfo> {
 	);
 }
 
+/**
+ * Gets the contact information (social media, contact email, address, etc) from Sanity.
+ * @returns {Promise<Contact>} The contact information.
+ */
 export async function getContactInfo(): Promise<Contact> {
 	return client.fetch(
 		groq`*[_type == "contact_and_others" && _id == "contact_and_others"][0]{
@@ -64,6 +76,10 @@ export async function getContactInfo(): Promise<Contact> {
 	);
 }
 
+/**
+ * Gets all the blogs from Sanity.
+ * @returns {Promise<BlogInfo[]>} The latest blogs.
+ */
 export async function getBlogs(): Promise<BlogInfo[]> {
 	return client.fetch(
 		groq`*[_type == "blog"] | order(publishedAt desc){
@@ -85,6 +101,10 @@ export async function getBlogs(): Promise<BlogInfo[]> {
 	);
 }
 
+/**
+ * Gets the 3 latest blogs from Sanity.
+ * @returns {Promise<BlogInfo[]>} The latest blogs.
+ */
 export async function getLatestBlogs(): Promise<BlogInfo[]> {
 	return client.fetch(
 		groq`*[_type == "blog"][0..3] | order(publishedAt desc){
@@ -106,6 +126,11 @@ export async function getLatestBlogs(): Promise<BlogInfo[]> {
 	);
 }
 
+/**
+ * Gets a blog by its slug from Sanity.
+ * @param slug The slug of the blog.
+ * @returns The blog information.
+ */
 export async function getBlogBySlug(slug: string): Promise<BlogInfo> {
 	return client.fetch(
 		groq`*[_type == "blog" && slug.current == $slug][0]{
@@ -128,6 +153,10 @@ export async function getBlogBySlug(slug: string): Promise<BlogInfo> {
 	) as BlogInfo;
 }
 
+/**
+ * Gets the members of the executive board from Sanity.
+ * @returns The members of the executive board.
+ */
 export async function getExecutiveBoardMembers(): Promise<Member[]> {
 	return client.fetch(
 		groq`*[_type == "executive_board"]{
@@ -146,6 +175,10 @@ export async function getExecutiveBoardMembers(): Promise<Member[]> {
 	);
 }
 
+/**
+ * Gets the latest 8 projects from Sanity.
+ * @returns The 8 latest projects info.
+ */
 export async function getLandingProjects(): Promise<ProjectInfo[]> {
 	return client.fetch(
 		groq`*[_type == "project"][0..8]{
@@ -163,6 +196,10 @@ export async function getLandingProjects(): Promise<ProjectInfo[]> {
 	);
 }
 
+/**
+ * Gets all the projects from Sanity.
+ * @returns All the projects info.
+ */
 export async function getProjects(): Promise<ProjectInfo[]> {
 	return client.fetch(
 		groq`*[_type == "project"]{
@@ -180,6 +217,11 @@ export async function getProjects(): Promise<ProjectInfo[]> {
 	);
 }
 
+/**
+ * Gets a project by its slug from Sanity.
+ * @param slug The slug of the project.
+ * @returns The project information.
+ */
 export async function getProjectBySlug(slug: string): Promise<ProjectInfo> {
 	return client.fetch(
 		groq`*[_type == "project" && slug.current == $slug][0]{
@@ -198,6 +240,10 @@ export async function getProjectBySlug(slug: string): Promise<ProjectInfo> {
 	) as ProjectInfo;
 }
 
+/**
+ * Gets the sponsors from Sanity.
+ * @returns The sponsors info.
+ */
 export const getSponsors = (): Promise<SponsorInfo[]> => {
 	return client.fetch(
 		groq`*[_type == "partner"]{
