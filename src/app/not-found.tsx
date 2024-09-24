@@ -6,6 +6,10 @@ import Image from "next/image";
 import { heartbreakDoodle, siafiBallGlasses } from "@/image-paths";
 import CTAButton from "@/components/General/CTAButton";
 
+/**
+ * Error 404 page component.
+ * @returns {React.ReactElement} The 404 page component.
+ */
 const Error404Page = () => {
 	return (
 		<PagesLayout>
