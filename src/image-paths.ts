@@ -39,6 +39,7 @@ export { default as aboutUsdrawedArrow } from "@assets/icons/aboutUsArrow.svg";
 export { default as menuIconOutline } from "@assets/icons/menu-outline.svg";
 export { default as menuIcon } from "@assets/icons/menu.svg";
 export { default as signArrow } from "@assets/icons/sign-arrow.svg";
+export { default as starIcon } from "@assets/icons/star-icon.svg";
 
 // Blog
 export { default as blogImage1 } from "@img/blog/test-blog.jpeg";

@@ -3,6 +3,7 @@ import PageSection from "@/components/General/PageSection";
 import React from "react";
 import AboutUsHero from "@/components/AboutUs/AboutUsHero";
 import { getAboutUsInfo, getContactInfo } from "@/sanity/sanity-utils";
+import AboutUsIdentity from "@/components/AboutUs/AboutUsIdentity";
 
 export const metadata: Metadata = {
 	title: "Sobre nosotros",
@@ -24,6 +25,7 @@ const AboutUsPage = async () => {
 				heroImage={aboutInfo.hero_image}
 				contactInfo={contactInfo}
 			/>
+			<AboutUsIdentity identityInfo={aboutInfo.identity} />
 		</>
 	);
 };
