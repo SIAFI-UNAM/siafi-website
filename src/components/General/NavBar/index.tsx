@@ -16,7 +16,7 @@ export default function NavBar() {
 	const navbarLinks = (
 		<>
 			<li>
-				<Link href={"#"}>Nosotros</Link>
+				<Link href={"/nosotros"}>Nosotros</Link>
 			</li>
 			<li>
 				<Link href={"#"}>Blog</Link>
