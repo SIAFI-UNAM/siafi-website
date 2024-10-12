@@ -20,6 +20,7 @@ export type AboutUsPage = {
 	siafi_cores: {
 		title: string;
 		subtitle: string;
+		description: string;
 		cores: SIAFICore[];
 	};
 	identity: {

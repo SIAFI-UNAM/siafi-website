@@ -273,7 +273,19 @@ export const getAboutUsInfo = async (): Promise<AboutUsPage> => {
                 "alt": hero.image.alt
             },
             identity,
-            siafi_cores,
+            "siafi_cores": {
+                "title": siafi_cores.title,
+                "subtitle": siafi_cores.subtitle,
+                "description": siafi_cores.description,
+                "cores": siafi_cores.cores[] {
+                "name": name,
+                "description": description,
+                "image": {
+                    "url": image.asset->url,
+                    "alt": image.alt
+                    }
+                }
+            },
         }`
 	);
 };

@@ -4,6 +4,7 @@ import React from "react";
 import AboutUsHero from "@/components/AboutUs/AboutUsHero";
 import { getAboutUsInfo, getContactInfo } from "@/sanity/sanity-utils";
 import AboutUsIdentity from "@/components/AboutUs/AboutUsIdentity";
+import AboutUsCores from "@/components/AboutUs/AboutUsCores";
 
 export const metadata: Metadata = {
 	title: "Sobre nosotros",
@@ -26,6 +27,7 @@ const AboutUsPage = async () => {
 				contactInfo={contactInfo}
 			/>
 			<AboutUsIdentity identityInfo={aboutInfo.identity} />
+			<AboutUsCores coreInfo={aboutInfo.siafi_cores} />
 		</>
 	);
 };

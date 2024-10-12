@@ -38,7 +38,7 @@ const AboutUsIdentity = ({ identityInfo }: AboutUsIdentityProps) => {
 			<Carousel
 				className={styles.identityCarousel}
 				variant="dark"
-				controls={false}
+				// controls={false}
 			>
 				<Carousel.Item>
 					<PageSection subtitle="NUESTRA IDENTIDAD" title="Misión">

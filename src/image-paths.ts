@@ -7,6 +7,7 @@ export { default as logoFI } from "@img/logos/fi-logo.png";
 
 // SIAFI BALL
 export { default as siafiBallGlasses } from "@img/siafi-ball/siafi-ball-glasses.png";
+export { default as siafiBallSad } from "@img/siafi-ball/siafi-ball-sad.svg";
 
 // Landing Assets
 export { default as landingBackgroundGradient } from "@img/landing/background-gradient.svg";

@@ -16,6 +16,9 @@
 }
 
 .identityDescription {
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 2rem;
 	font-family: "Cabinet Grotesk", Calibri;
 	font-weight: bold;
 	font-size: 20px;

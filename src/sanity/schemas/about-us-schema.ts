@@ -84,6 +84,11 @@ export const siafiCoresSection: FieldDefinition = {
 			type: "string",
 		},
 		{
+			name: "description",
+			title: "Descripción",
+			type: "text",
+		},
+		{
 			name: "cores",
 			title: "Núcleos",
 			type: "array",
