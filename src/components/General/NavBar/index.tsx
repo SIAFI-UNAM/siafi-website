@@ -19,13 +19,13 @@ export default function NavBar() {
 				<Link href={"/nosotros"}>Nosotros</Link>
 			</li>
 			<li>
-				<Link href={"#"}>Blog</Link>
+				<Link href={"/blog"}>Blog</Link>
 			</li>
 			<li>
-				<Link href={"#"}>Proyectos</Link>
+				<Link href={"/proyectos"}>Proyectos</Link>
 			</li>
 			<li>
-				<Link href={"#contact"}>Contacto</Link>
+				<Link href={"/#contact"}>Contacto</Link>
 			</li>
 		</>
 	);

@@ -28,7 +28,7 @@ export default function AboutUsExecutiveBoard({ members }: Props) {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setActiveMember((prev) => (prev + 1) % members.length);
-		}, 3500);
+		}, 5000);
 		return () => clearInterval(interval);
 	}, [members.length]);
 
