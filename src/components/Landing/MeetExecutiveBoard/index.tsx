@@ -18,6 +18,7 @@ type Props = {
  * @param {Array<Member>} props.members - The members of the executive board.
  * @returns {JSX.Element} MeetExecutiveBoard component.
  * @todo Add arrow functionality to the carousel.
+ * @todo Add degree to the member information.
  */
 export default function MeetExecutiveBoard({ members }: Props) {
 	const [activeMember, setActiveMember] = useState(0);
