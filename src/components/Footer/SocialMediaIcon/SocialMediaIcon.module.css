@@ -5,6 +5,11 @@
 	height: 40px;
 	justify-content: center;
 	align-items: center;
+	transition: all 0.3s;
+}
+
+.iconContainer:hover {
+	scale: 1.2;
 }
 
 .iconContainer img {
