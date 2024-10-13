@@ -14,47 +14,76 @@ import {
 } from "@/image-paths";
 import SocialMediaIcon from "@/components/Footer/SocialMediaIcon";
 import Link from "next/link";
+import { Contact } from "@/models/Contact";
+import { getContactInfo } from "@/sanity/sanity-utils";
 
-export default function Footer() {
+/**
+ * Footer component to display the footer of the website.
+ * @param props - The props of the component.
+ * @returns The footer component.
+ */
+export default async function Footer() {
+	const contactInfo = await getContactInfo();
+
 	return (
 		<div className={`${styles.footerContainer}`}>
 			<div className={`container`}>
 				<div className={`row ${styles.footerContent}`}>
 					<div className={`col-12 col-md-4 ${styles.footerColumn}`}>
-						<Image src={logoSIAFIWhite} alt="logo" width={125} />
-						<div className={styles.socialMediaRow}>
-							<SocialMediaIcon
-								icon={instagramFooterIcon}
-								link={"https://www.instagram.com/unam.siafi/"}
-							/>{" "}
-							<SocialMediaIcon
-								icon={facebookFooterIcon}
-								link={"https://www.facebook.com/UNAM.SIAFI"}
-							/>{" "}
-							<SocialMediaIcon
-								icon={linkedinFooterIcon}
-								link={
-									"https://www.linkedin.com/company/siafiunam/"
-								}
-							/>{" "}
-							<SocialMediaIcon
-								icon={tikTokFooterIcon}
-								link={"https://www.tiktok.com/@unam.siafi"}
-								isPureIcon
-							/>{" "}
-							<SocialMediaIcon
-								icon={youtubeFooterIcon}
-								link={"https://www.youtube.com/c/SIAFIUNAM"}
+						<Link href="/">
+							<Image
+								src={logoSIAFIWhite}
+								alt="logo"
+								width={125}
 							/>
+						</Link>
+						<div className={styles.socialMediaRow}>
+							{contactInfo.instagram && (
+								<SocialMediaIcon
+									icon={instagramFooterIcon}
+									link={contactInfo.instagram}
+								/>
+							)}
+							{contactInfo.facebook && (
+								<SocialMediaIcon
+									icon={facebookFooterIcon}
+									link={contactInfo.facebook}
+								/>
+							)}
+							{contactInfo.linkedin && (
+								<SocialMediaIcon
+									icon={linkedinFooterIcon}
+									link={contactInfo.linkedin}
+								/>
+							)}
+							{contactInfo.tiktok && (
+								<SocialMediaIcon
+									icon={tikTokFooterIcon}
+									link={contactInfo.tiktok}
+								/>
+							)}
+							{contactInfo.youtube && (
+								<SocialMediaIcon
+									icon={youtubeFooterIcon}
+									link={contactInfo.youtube}
+								/>
+							)}
+							{/* {contactInfo.twitter && (
+								<SocialMediaIcon
+									icon={youtubeFooterIcon}
+									link={contactInfo.twitter}
+								/>
+							)} */}
+							{/* {contactInfo.github && (
+								<SocialMediaIcon
+									icon={youtubeFooterIcon}
+									link={contactInfo.github}
+								/>
+							)} */}
 						</div>
 						<div className={styles.footerDirection}>
 							<h4>Dirección</h4>
-							<p>
-								Edificio CIA, 4to piso, conjunto sur, Circuito
-								interior 3000 Col. Universidad Nacional Autónoma
-								de México Coyoacán, C.P. 04510 Ciudad de México,
-								México
-							</p>
+							<p>{contactInfo.address}</p>
 						</div>
 					</div>
 					<div className="col-md-1 col-lg-2 d-none d-md-block"></div>
@@ -64,8 +93,8 @@ export default function Footer() {
 						<h4>Contacto</h4>
 						<ul>
 							<li>
-								<a href="mailto:contacto@siafi-unam.org">
-									contacto@siafi-unam.org
+								<a href={`mailto:${contactInfo.email}`}>
+									{contactInfo.email}
 								</a>
 							</li>
 						</ul>

@@ -1,0 +1,29 @@
+.card {
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); /* TEMPORAL */
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition: all 0.3s;
+	background: var(--background-color);
+	padding: 1rem;
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+.coreImage {
+	width: auto;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 2rem;
+}
+
+.coreName {
+	font-size: 1.5rem;
+	font-weight: bold;
+	/* color: var(--accent-color); */
+}

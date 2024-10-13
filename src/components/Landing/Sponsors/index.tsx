@@ -10,7 +10,8 @@ type Props = {
 /**
  * This component displays the sponsors of SIAFI on the landing page.
  * @param {Props} props - The props of the component.
- * @returns {JSX.Element} Sponsors component.
+ * @returns {JSX.Element} Sponsors component.}
+ * @todo: Implement a carousel for the sponsors.
  */
 export default function Sponsors({ sponsors }: Props) {
 	return (

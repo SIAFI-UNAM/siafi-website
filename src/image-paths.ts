@@ -7,6 +7,7 @@ export { default as logoFI } from "@img/logos/fi-logo.png";
 
 // SIAFI BALL
 export { default as siafiBallGlasses } from "@img/siafi-ball/siafi-ball-glasses.png";
+export { default as siafiBallSad } from "@img/siafi-ball/siafi-ball-sad.svg";
 
 // Landing Assets
 export { default as landingBackgroundGradient } from "@img/landing/background-gradient.svg";
@@ -35,9 +36,11 @@ export { default as arrowRightUpIcon } from "@assets/icons/arrow_right_up.svg";
 export { default as drawedCircle } from "@assets/icons/drawed-circle.svg";
 export { default as drawedCrown } from "@assets/icons/drawed-crown.svg";
 export { default as drawedArrow } from "@assets/icons/drawed-arrow.svg";
+export { default as aboutUsdrawedArrow } from "@assets/icons/aboutUsArrow.svg";
 export { default as menuIconOutline } from "@assets/icons/menu-outline.svg";
 export { default as menuIcon } from "@assets/icons/menu.svg";
 export { default as signArrow } from "@assets/icons/sign-arrow.svg";
+export { default as starIcon } from "@assets/icons/star-icon.svg";
 
 // Blog
 export { default as blogImage1 } from "@img/blog/test-blog.jpeg";
