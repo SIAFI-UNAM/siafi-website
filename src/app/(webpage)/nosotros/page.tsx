@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import PageSection from "@/components/General/PageSection";
 import React from "react";
 import AboutUsHero from "@/components/AboutUs/AboutUsHero";
-import { getAboutUsInfo, getContactInfo } from "@/sanity/sanity-utils";
+import {
+	getAboutUsInfo,
+	getContactInfo,
+	getExecutiveBoardMembers,
+} from "@/sanity/sanity-utils";
 import AboutUsIdentity from "@/components/AboutUs/AboutUsIdentity";
 import AboutUsCores from "@/components/AboutUs/AboutUsCores";
+import AboutUsExecutiveBoard from "@/components/AboutUs/AboutUsExecutiveBoard";
 
 export const metadata: Metadata = {
 	title: "Sobre nosotros",
@@ -17,6 +22,7 @@ export const metadata: Metadata = {
 const AboutUsPage = async () => {
 	const aboutInfo = await getAboutUsInfo();
 	const contactInfo = await getContactInfo();
+	const executiveBoard = await getExecutiveBoardMembers();
 
 	return (
 		<>
@@ -28,6 +34,7 @@ const AboutUsPage = async () => {
 			/>
 			<AboutUsIdentity identityInfo={aboutInfo.identity} />
 			<AboutUsCores coreInfo={aboutInfo.siafi_cores} />
+			<AboutUsExecutiveBoard members={executiveBoard} />
 		</>
 	);
 };
