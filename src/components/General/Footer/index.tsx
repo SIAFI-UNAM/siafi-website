@@ -21,6 +21,7 @@ import { getContactInfo } from "@/sanity/sanity-utils";
  * Footer component to display the footer of the website.
  * @param props - The props of the component.
  * @returns The footer component.
+ * @todo Add year of last update to the footer.
  */
 export default async function Footer() {
 	const contactInfo = await getContactInfo();
