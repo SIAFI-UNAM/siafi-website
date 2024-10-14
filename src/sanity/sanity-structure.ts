@@ -1,12 +1,13 @@
-import { StructureResolver } from "sanity/desk";
-import { HomeIcon, CogIcon, BookIcon } from "@sanity/icons";
+import { StructureResolver } from "sanity/structure";
+import { HomeIcon, CogIcon, BookIcon, DiamondIcon } from "@sanity/icons";
+import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 
 /**
  * Custom structure for the Sanity Studio, this allows us to have "Singleton" documents (documents that are unique and only one of them can exist) and also to have a custom order of the documents in the sidebar.
  * @param {StructureResolver} S The structure resolver from Sanity.
  * @returns {StructureResolver} The custom structure for the Sanity Studio.
  */
-export const sanityCustomStructure: StructureResolver = (S) => {
+export const sanityCustomStructure: StructureResolver = (S, context) => {
 	return S.list()
 		.title("Contenido")
 		.items([
@@ -42,11 +43,21 @@ export const sanityCustomStructure: StructureResolver = (S) => {
 						.title("Contacto y otros")
 				),
 			S.divider(),
+			// Orderable items
+			orderableDocumentListDeskItem({
+				type: "executive_board",
+				S,
+				context,
+				icon: DiamondIcon,
+				title: "Miembros Mesa Directiva",
+			}),
 			...S.documentTypeListItems().filter((listItem) => {
 				return (
 					!["contact_and_others"].includes(
 						listItem.getId() as string
-					) && !["landingPage"].includes(listItem.getId() as string)
+					) &&
+					!["landingPage"].includes(listItem.getId() as string) &&
+					!["executive_board"].includes(listItem.getId() as string)
 				);
 			}),
 		]);

@@ -1,5 +1,6 @@
 import type { SchemaTypeDefinition } from "sanity";
 import { DiamondIcon } from "@sanity/icons";
+import { orderRankField } from "@sanity/orderable-document-list";
 
 export const ExecutiveSchema: SchemaTypeDefinition = {
 	name: "executive_board",
@@ -63,5 +64,6 @@ export const ExecutiveSchema: SchemaTypeDefinition = {
 				},
 			],
 		},
+		orderRankField({ type: "executive_board" }),
 	],
 };
