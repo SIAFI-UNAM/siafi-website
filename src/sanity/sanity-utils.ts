@@ -128,33 +128,6 @@ export async function getLatestBlogs(): Promise<BlogInfo[]> {
 }
 
 /**
- * Gets a blog by its slug from Sanity.
- * @param slug The slug of the blog.
- * @returns The blog information.
- */
-export async function getBlogBySlug(slug: string): Promise<BlogInfo> {
-	return client.fetch(
-		groq`*[_type == "blog" && slug.current == $slug][0]{
-            _id,
-            _createdAt,
-            title,
-            "slug": slug.current,
-            "image": image.asset->url,
-            "category": category -> name,
-            publishedAt,
-            author ->{
-                _id,
-                name,
-                "avatar": avatar.asset->url,
-                bio
-            },
-            content
-        }`,
-		{ slug }
-	) as BlogInfo;
-}
-
-/**
  * Gets the members of the executive board from Sanity.
  * @returns The members of the executive board.
  */
