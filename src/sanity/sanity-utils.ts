@@ -223,7 +223,7 @@ export async function getProjects(): Promise<ProjectInfo[]> {
  * @param slug The slug of the project.
  * @returns The project information.
  */
-export async function getProjectBySlug(slug: string): Promise<ProjectInfo> {
+/*export async function getProjectBySlug(slug: string): Promise<ProjectInfo> {
 	return client.fetch(
 		groq`*[_type == "project" && slug.current == $slug][0]{
             _id,
@@ -239,7 +239,7 @@ export async function getProjectBySlug(slug: string): Promise<ProjectInfo> {
         }`,
 		{ slug }
 	) as ProjectInfo;
-}
+}*/
 
 /**
  * Gets the sponsors from Sanity.
