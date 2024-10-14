@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import PageSection from "@/components/General/PageSection";
 import React from "react";
 import AboutUsHero from "@/components/AboutUs/AboutUsHero";
 import {

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./AboutUsExecutiveBoard.module.css";
 import Image from "next/image";
-import { drawedArrow, drawedCrown } from "@/image-paths";
+import { drawedArrow, drawedCrown, siafiBallGlasses } from "@/image-paths";
 import type { Member } from "@/models/Member";
 import { PortableText } from "@portabletext/react";
 
@@ -62,7 +62,7 @@ export default function AboutUsExecutiveBoard({ members }: Props) {
 						className={`col-12 col-md-3 ${styles.memberPhotoContainer}`}
 					>
 						<Image
-							src={selectedMember.image.url}
+							src={selectedMember.image.url ?? siafiBallGlasses}
 							alt={selectedMember.image.alt}
 							width={250}
 							height={250}
@@ -90,7 +90,7 @@ export default function AboutUsExecutiveBoard({ members }: Props) {
 							{members.map((member, indx) => (
 								<Image
 									key={member._id}
-									src={member.image.url}
+									src={member.image.url ?? siafiBallGlasses}
 									alt={member.image.alt}
 									width={48}
 									height={48}

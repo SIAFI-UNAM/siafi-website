@@ -128,33 +128,6 @@ export async function getLatestBlogs(): Promise<BlogInfo[]> {
 }
 
 /**
- * Gets a blog by its slug from Sanity.
- * @param slug The slug of the blog.
- * @returns The blog information.
- */
-export async function getBlogBySlug(slug: string): Promise<BlogInfo> {
-	return client.fetch(
-		groq`*[_type == "blog" && slug.current == $slug][0]{
-            _id,
-            _createdAt,
-            title,
-            "slug": slug.current,
-            "image": image.asset->url,
-            "category": category -> name,
-            publishedAt,
-            author ->{
-                _id,
-                name,
-                "avatar": avatar.asset->url,
-                bio
-            },
-            content
-        }`,
-		{ slug }
-	) as BlogInfo;
-}
-
-/**
  * Gets the members of the executive board from Sanity.
  * @returns The members of the executive board.
  */
@@ -217,29 +190,6 @@ export async function getProjects(): Promise<ProjectInfo[]> {
         }`
 	);
 }
-
-/**
- * Gets a project by its slug from Sanity.
- * @param slug The slug of the project.
- * @returns The project information.
- */
-/*export async function getProjectBySlug(slug: string): Promise<ProjectInfo> {
-	return client.fetch(
-		groq`*[_type == "project" && slug.current == $slug][0]{
-            _id,
-            title,
-            "slug": slug.current,
-            "description": content,
-            "image":{
-                "url": image.asset->url,
-                "alt": image.alt
-            },
-            "last_updated": _updatedAt,
-            authors
-        }`,
-		{ slug }
-	) as ProjectInfo;
-}*/
 
 /**
  * Gets the sponsors from Sanity.
