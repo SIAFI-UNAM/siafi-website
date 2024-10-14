@@ -37,7 +37,7 @@ export default function ProjectCard({
 						height={200}
 						src={projectImage.url}
 						alt={projectImage.alt}
-						className="img-fluid"
+						className={styles.cardImage}
 					/>
 				)}
 			</div>

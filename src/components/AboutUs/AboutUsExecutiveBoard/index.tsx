@@ -20,6 +20,7 @@ type Props = {
 export default function AboutUsExecutiveBoard({ members }: Props) {
 	const [activeMember, setActiveMember] = useState(0);
 	const [selectedMember, setSelectedMember] = useState<Member>(members[0]);
+	const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
 
 	useEffect(() => {
 		setSelectedMember(members[activeMember]);
@@ -29,8 +30,20 @@ export default function AboutUsExecutiveBoard({ members }: Props) {
 		const interval = setInterval(() => {
 			setActiveMember((prev) => (prev + 1) % members.length);
 		}, 5000);
+		setIntervalId(interval);
 		return () => clearInterval(interval);
 	}, [members.length]);
+
+	const handleMemberClick = (indx: number) => {
+		setActiveMember(indx);
+		if (intervalId) {
+			clearInterval(intervalId);
+		}
+		const newInterval = setInterval(() => {
+			setActiveMember((prev) => (prev + 1) % members.length);
+		}, 5000);
+		setIntervalId(newInterval);
+	};
 
 	return (
 		<div className={styles.container}>
@@ -81,7 +94,7 @@ export default function AboutUsExecutiveBoard({ members }: Props) {
 									alt={member.image.alt}
 									width={48}
 									height={48}
-									onClick={() => setActiveMember(indx)}
+									onClick={() => handleMemberClick(indx)}
 									className={`${styles.execMemberPhoto} ${
 										activeMember === indx
 											? styles.active
