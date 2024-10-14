@@ -4,7 +4,7 @@ import CTAButton from "@/components/General/CTAButton";
 import PageSection from "@/components/General/PageSection";
 import styles from "./MeetExecutiveBoard.module.css";
 import Image from "next/image";
-import { drawedArrow, drawedCrown } from "@/image-paths";
+import { drawedArrow, drawedCrown, siafiBallGlasses } from "@/image-paths";
 import type { Member } from "@/models/Member";
 import { PortableText } from "@portabletext/react";
 
@@ -23,6 +23,7 @@ type Props = {
 export default function MeetExecutiveBoard({ members }: Props) {
 	const [activeMember, setActiveMember] = useState(0);
 	const [selectedMember, setSelectedMember] = useState<Member>(members[0]);
+	const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
 
 	useEffect(() => {
 		setSelectedMember(members[activeMember]);
@@ -32,8 +33,20 @@ export default function MeetExecutiveBoard({ members }: Props) {
 		const interval = setInterval(() => {
 			setActiveMember((prev) => (prev + 1) % members.length);
 		}, 5000);
+		setIntervalId(interval);
 		return () => clearInterval(interval);
 	}, [members.length]);
+
+	const handleMemberClick = (indx: number) => {
+		setActiveMember(indx);
+		if (intervalId) {
+			clearInterval(intervalId);
+		}
+		const newInterval = setInterval(() => {
+			setActiveMember((prev) => (prev + 1) % members.length);
+		}, 5000);
+		setIntervalId(newInterval);
+	};
 
 	return (
 		<PageSection>
@@ -60,7 +73,7 @@ export default function MeetExecutiveBoard({ members }: Props) {
 					<h1>{selectedMember.name}</h1>
 					<div className={styles.execMemberAvatar}>
 						<Image
-							src={selectedMember.image.url}
+							src={selectedMember.image.url ?? siafiBallGlasses}
 							alt={selectedMember.image.alt}
 							width={48}
 							height={48}
@@ -83,11 +96,11 @@ export default function MeetExecutiveBoard({ members }: Props) {
 						{members.map((member, indx) => (
 							<Image
 								key={member._id}
-								src={member.image.url}
+								src={member.image.url ?? siafiBallGlasses}
 								alt={member.image.alt}
 								width={48}
 								height={48}
-								onClick={() => setActiveMember(indx)}
+								onClick={() => handleMemberClick(indx)}
 								className={`${styles.execMemberPhoto} ${
 									activeMember === indx ? styles.active : ""
 								}`}
