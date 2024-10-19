@@ -1,0 +1,29 @@
+.blogCategoriesContainer {
+	display: flex;
+	justify-content: center;
+	padding: 1rem 0;
+}
+
+.blogCategoryButton {
+	background-color: var(--inactive-color);
+	color: var(--primary-text-color);
+	border: solid 1px #d8d8d8;
+	border-radius: 2rem;
+	padding: 0.5rem 1rem;
+	margin: 0 0.5rem;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.blogCategoryButton:hover {
+	background-color: var(--primary-color);
+	color: white;
+	border: solid 1px var(--accent-color);
+	scale: 1.1;
+}
+
+.blogCategoryButton:disabled {
+	background-color: var(--primary-color);
+	color: white;
+	cursor: not-allowed;
+}

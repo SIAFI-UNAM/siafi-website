@@ -239,3 +239,52 @@ export const getAboutUsInfo = async (): Promise<AboutUsPage> => {
         }`
 	);
 };
+
+/**
+ * Gets the blogs categories from Sanity.
+ * @returns The blogs categories.
+ */
+export const getBlogCategories = async (): Promise<string[]> => {
+	return client.fetch(
+		groq`*[_type == "blogCategory"]{
+            "id": _id,
+            name
+        }`
+	);
+};
+
+/**
+ * Gets 6 blogs from a providing a "page" as parameter, it have a pagination of 6 elements per page.
+ * @param page - The page number.
+ * @param categoryId - The category id to filter the blogs.
+ * @returns The 6 blogs.
+ */
+export const getBlogsByPage = async (
+	page: number,
+	categoryId?: string
+): Promise<BlogInfo[]> => {
+	const categoryFilter = categoryId
+		? `&& category._ref == "${categoryId}"`
+		: "";
+
+	return client.fetch(
+		groq`*[_type == "blog" ${categoryFilter}] | order(publishedAt desc)[${
+			(page - 1) * 6
+		}...${page * 6}]{
+            _id,
+            _createdAt,
+            title,
+            "slug": slug.current,
+            "image": image.asset->url,
+            "category": category -> name,
+            publishedAt,
+            author ->{
+                _id,
+                name,
+                "avatar": avatar.asset->url,
+                bio
+            },
+            content
+        }`
+	);
+};
