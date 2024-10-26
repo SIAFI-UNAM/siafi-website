@@ -1,9 +1,7 @@
 import React from "react";
-import styles from "./BlogCard.module.css";
+import styles from "./BlogCardLanding.module.css";
 import Image from "next/image";
-import { blogImage1, testAuthor } from "@/image-paths";
 import Link from "next/link";
-import { Author } from "@/models/Author";
 import { BlogInfo } from "@/models/Blog";
 import {
 	getDescriptionFromPortableText,
@@ -19,7 +17,7 @@ type Props = {
  *
  * TODO: Turn dynamic the color of the card category.
  */
-export default function BlogCard({ blog }: Props) {
+export default function BlogCardLanding({ blog }: Props) {
 	const dateFormater = new Intl.DateTimeFormat("es-MX", {
 		year: "numeric",
 		month: "long",
@@ -28,9 +26,7 @@ export default function BlogCard({ blog }: Props) {
 
 	return (
 		<Link href={`/blog/${blog.slug}`} className={styles.cardLink}>
-			<div
-				className={`${styles.cardContainer} ${styles["hvr-wobble-horizontal"]}`}
-			>
+			<div className={`${styles.cardContainer}`}>
 				<Image
 					src={blog.image}
 					alt={blog.title}

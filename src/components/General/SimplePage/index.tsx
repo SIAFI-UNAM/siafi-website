@@ -1,5 +1,7 @@
+import type { PortableTextBlock } from "sanity";
 import React from "react";
 import styles from "./SimplePage.module.css";
+import { PortableText } from "@portabletext/react";
 
 interface SimplePageProps {
 	/**
@@ -9,7 +11,7 @@ interface SimplePageProps {
 	/**
 	 * The description of the page.
 	 */
-	description?: string;
+	description?: string | PortableTextBlock[];
 	/**
 	 * The children elements of the page.
 	 */
@@ -30,9 +32,12 @@ const SimplePage = ({
 		<main className={`container ${styles.pageContainer}`}>
 			<header className={styles.header}>
 				{title && <h1 className={styles.pageTitle}>{title}</h1>}
-				{description && (
-					<p className={styles.pageDescription}>{description}</p>
-				)}
+				{description &&
+					(typeof description === "string" ? (
+						<p className={styles.pageDescription}>{description}</p>
+					) : (
+						<PortableText value={description} />
+					))}
 			</header>
 			<div className={styles.content}>{children}</div>
 		</main>

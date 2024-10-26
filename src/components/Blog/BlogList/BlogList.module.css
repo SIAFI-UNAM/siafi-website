@@ -2,6 +2,8 @@
 	display: flex;
 	justify-content: center;
 	padding: 1rem 0;
+	width: 100%;
+	overflow-x: auto;
 }
 
 .blogCategoryButton {
@@ -26,4 +28,49 @@
 	background-color: var(--primary-color);
 	color: white;
 	cursor: not-allowed;
+}
+
+.actionsContainer {
+	display: flex;
+	justify-content: center;
+	padding: 1rem 0;
+	width: 100%;
+}
+
+.viewMoreButton {
+	background-color: var(--primary-color);
+	color: white;
+	border: solid 1px #d8d8d8;
+	border-radius: 2rem;
+	padding: 0.5rem 1rem;
+	margin: 0 0.5rem;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.viewMoreButton:hover {
+	border: solid 1px var(--accent-color);
+	scale: 1.1;
+}
+
+/* Responsive BREAKPOINTS */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
 }

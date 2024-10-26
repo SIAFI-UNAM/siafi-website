@@ -1,17 +1,23 @@
 import BlogList from "@/components/Blog/BlogList";
 import SimplePage from "@/components/General/SimplePage";
-import { getBlogCategories } from "@/sanity/sanity-utils";
+import {
+	getBlogCategories,
+	getBlogListPageInfo,
+	getTotalBlogs,
+} from "@/sanity/sanity-utils";
 import React from "react";
 
 const BlogListPage = async () => {
 	const blogCategories = await getBlogCategories();
+	const blogListPageInfo = await getBlogListPageInfo();
+	const totalBlogs = await getTotalBlogs();
 
 	return (
 		<SimplePage
-			title="Blog"
-			description="Nuestros miembros publican frecuentemente posts interesantes sobre la Inteligencia Artificial"
+			title={blogListPageInfo.title}
+			description={blogListPageInfo.description}
 		>
-			<BlogList blogCategories={blogCategories} />
+			<BlogList blogCategories={blogCategories} totalBlogs={totalBlogs} />
 		</SimplePage>
 	);
 };

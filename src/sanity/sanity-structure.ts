@@ -1,5 +1,11 @@
 import { StructureResolver } from "sanity/structure";
-import { HomeIcon, CogIcon, BookIcon, DiamondIcon } from "@sanity/icons";
+import {
+	HomeIcon,
+	CogIcon,
+	BookIcon,
+	DiamondIcon,
+	DocumentTextIcon,
+} from "@sanity/icons";
 import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 
 /**
@@ -33,6 +39,16 @@ export const sanityCustomStructure: StructureResolver = (S, context) => {
 						.title("Página: Nosotros")
 				),
 			S.listItem()
+				// Blogs & Projects lists pages singleton
+				.title("Páginas de listado de blogs y proyectos")
+				.icon(DocumentTextIcon)
+				.child(
+					S.document()
+						.schemaType("blog_projects_lists_pages")
+						.documentId("blog_projects_lists_pages")
+						.title("Páginas de listado de blogs y proyectos")
+				),
+			S.listItem()
 				// Nosotros page singleton
 				.title("Contacto y otros")
 				.icon(CogIcon)
@@ -57,7 +73,10 @@ export const sanityCustomStructure: StructureResolver = (S, context) => {
 						listItem.getId() as string
 					) &&
 					!["landingPage"].includes(listItem.getId() as string) &&
-					!["executive_board"].includes(listItem.getId() as string)
+					!["executive_board"].includes(listItem.getId() as string) &&
+					!["blog_projects_lists_pages"].includes(
+						listItem.getId() as string
+					)
 				);
 			}),
 		]);

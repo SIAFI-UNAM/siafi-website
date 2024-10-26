@@ -3,11 +3,11 @@ import type { BlogInfo } from "@/models/Blog";
 import React, { useState, useEffect, useCallback } from "react";
 import styles from "./BlogList.module.css";
 import { getBlogsByPage } from "@/sanity/sanity-utils";
-import BlogCard from "../BlogCard";
-import { set } from "sanity";
+import BlogCardList from "../BlogCardList";
 
 interface BlogListProps {
 	blogCategories: Array<{ name: string; id: string }>;
+	totalBlogs: number;
 }
 
 /**
@@ -22,6 +22,7 @@ const BlogList = ({ blogCategories }: BlogListProps) => {
 		blogCatgs[0].id
 	);
 	const [page, setPage] = useState<number>(1);
+	const totalPages = Math.ceil(blogCategories.length / 8);
 
 	const handleCategoryChange = (category: string) => {
 		setPage(1);
@@ -58,12 +59,34 @@ const BlogList = ({ blogCategories }: BlogListProps) => {
 					</button>
 				))}
 			</div>
-			<div className="row">
+			<div className="row mt-3 mb-3 px-3 px-md-0">
 				{blogs.map((blog) => (
-					<div key={blog._id} className="col-12 col-md-4">
-						<BlogCard blog={blog} />
+					<div
+						key={blog._id}
+						className="col-12 col-md-6 col-lg-4 col-xl-3"
+					>
+						<BlogCardList blog={blog} />
 					</div>
 				))}
+			</div>
+
+			<div className={styles.actionsContainer}>
+				{page > 1 && (
+					<button
+						className={styles.viewMoreButton}
+						onClick={() => setPage(page - 1)}
+					>
+						{"< Anterior página"}
+					</button>
+				)}
+				{page < totalPages && (
+					<button
+						className={styles.viewMoreButton}
+						onClick={() => setPage(page + 1)}
+					>
+						{"Siguiente página >"}
+					</button>
+				)}
 			</div>
 		</>
 	);
