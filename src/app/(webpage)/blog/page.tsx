@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import React from "react";
 import BlogList from "@/components/Blog/BlogList";
 import SimplePage from "@/components/General/SimplePage";
 import {
@@ -5,7 +7,10 @@ import {
 	getBlogListPageInfo,
 	getTotalBlogs,
 } from "@/sanity/sanity-utils";
-import React from "react";
+
+export const metadata: Metadata = {
+	title: "Blog",
+};
 
 const BlogListPage = async () => {
 	const blogCategories = await getBlogCategories();

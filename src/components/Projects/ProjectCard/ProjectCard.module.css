@@ -8,7 +8,10 @@
 	cursor: pointer;
 	border: 1px solid var(--project-card-border);
 	overflow: hidden;
-	background-color: ;
+}
+
+.cardContainer.lg {
+	height: 300px;
 }
 
 .cardTitle,
@@ -23,6 +26,10 @@
 	letter-spacing: 0.5px;
 	margin: 0;
 	z-index: 3;
+}
+
+.lg .cardTitle {
+	font-size: 48px;
 }
 
 .cardTitle.secondary,
