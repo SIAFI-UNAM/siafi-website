@@ -277,7 +277,10 @@ export const getBlogsByPage = async (
             _createdAt,
             title,
             "slug": slug.current,
-            "image": image.asset->url,
+            "image": {
+                "url": image.asset->url,
+                "alt": image.alt
+            },
             "category": category -> name,
             publishedAt,
             author ->{
@@ -288,6 +291,35 @@ export const getBlogsByPage = async (
             },
             content
         }`
+	);
+};
+
+/**
+ * Gets a single blog by its slug.
+ * @param slug - The slug of the blog.
+ * @returns The blog information.
+ */
+export const getBlogBySlug = async (slug: string): Promise<BlogInfo | null> => {
+	return client.fetch(
+		groq`*[_type == "blog" && slug.current == "${slug}"]{
+            _id,
+            _createdAt,
+            title,
+            "slug": slug.current,
+            "image": {
+                "url": image.asset->url,
+                "alt": image.alt
+            },
+            "category": category -> name,
+            publishedAt,
+            author ->{
+                _id,
+                name,
+                "avatar": avatar.asset->url,
+                bio
+            },
+            content
+        }[0]`
 	);
 };
 

@@ -30,8 +30,8 @@ export default function BlogCardList({ blog }: Props) {
 		<Link href={`/blog/${blog.slug}`} className={styles.cardLink}>
 			<div className={`${styles.cardContainer}`}>
 				<Image
-					src={blog.image}
-					alt={blog.title}
+					src={blog.image.url}
+					alt={blog.image.alt}
 					className={styles.cardImage}
 					width={250}
 					height={250}
