@@ -1,0 +1,18 @@
+.pageContainer {
+	min-height: 500px;
+}
+
+.pageTitle {
+	font-weight: bolder;
+	font-size: 65px;
+	color: var(--primary-color);
+}
+
+.pageDescription {
+	font-size: 20px;
+	color: var(--secondary-text-color);
+}
+
+.header {
+	padding: 1rem 0;
+}

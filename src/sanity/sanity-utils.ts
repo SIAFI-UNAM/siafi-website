@@ -239,3 +239,126 @@ export const getAboutUsInfo = async (): Promise<AboutUsPage> => {
         }`
 	);
 };
+
+/**
+ * Gets the blogs categories from Sanity.
+ * @returns The blogs categories.
+ */
+export const getBlogCategories = async (): Promise<
+	{ id: string; name: string }[]
+> => {
+	return client.fetch(
+		groq`*[_type == "blogCategory"]{
+            "id": _id,
+            name
+        }`
+	);
+};
+
+/**
+ * Gets 8 blogs from a providing a "page" as parameter, it have a pagination of 6 elements per page.
+ * @param page - The page number.
+ * @param categoryId - The category id to filter the blogs.
+ * @returns The 8 blogs.
+ */
+export const getBlogsByPage = async (
+	page: number,
+	categoryId?: string
+): Promise<BlogInfo[]> => {
+	const categoryFilter = categoryId
+		? `&& category._ref == "${categoryId}"`
+		: "";
+
+	return client.fetch(
+		groq`*[_type == "blog" ${categoryFilter}] | order(publishedAt desc)[${
+			(page - 1) * 8
+		}...${page * 8}]{
+            _id,
+            _createdAt,
+            title,
+            "slug": slug.current,
+            "image": {
+                "url": image.asset->url,
+                "alt": image.alt
+            },
+            "category": category -> name,
+            publishedAt,
+            author ->{
+                _id,
+                name,
+                "avatar": avatar.asset->url,
+                bio
+            },
+            content
+        }`
+	);
+};
+
+/**
+ * Gets a single blog by its slug.
+ * @param slug - The slug of the blog.
+ * @returns The blog information.
+ */
+export const getBlogBySlug = async (slug: string): Promise<BlogInfo | null> => {
+	return client.fetch(
+		groq`*[_type == "blog" && slug.current == "${slug}"]{
+            _id,
+            _createdAt,
+            title,
+            "slug": slug.current,
+            "image": {
+                "url": image.asset->url,
+                "alt": image.alt
+            },
+            "category": category -> name,
+            publishedAt,
+            author ->{
+                _id,
+                name,
+                "avatar": avatar.asset->url,
+                bio
+            },
+            content
+        }[0]`
+	);
+};
+
+/**
+ * Gets the blog list page information from Sanity.
+ * @returns The blog list page information.
+ */
+export const getBlogListPageInfo = async (): Promise<{
+	title: string;
+	description: string;
+}> => {
+	return client.fetch(
+		groq`*[_type == "blog_projects_lists_pages" && _id == "blog_projects_lists_pages"][0]{
+            "title": blogs_page_section.title,
+            "description": blogs_page_section.description
+        }`
+	);
+};
+
+/**
+ * Gets the projects list page information from Sanity.
+ * @returns The projects list page information.
+ */
+export const getProjectsListPageInfo = async (): Promise<{
+	title: string;
+	description: string;
+}> => {
+	return client.fetch(
+		groq`*[_type == "blog_projects_lists_pages" && _id == "blog_projects_lists_pages"][0]{
+            "title": projects_page_section.title,
+            "description": projects_page_section.description
+        }`
+	);
+};
+
+/**
+ * Gets the total number of blogs from Sanity.
+ * @returns The total number of blogs.
+ */
+export const getTotalBlogs = async (): Promise<number> => {
+	return client.fetch(groq`count(*[_type == "blog"])`);
+};

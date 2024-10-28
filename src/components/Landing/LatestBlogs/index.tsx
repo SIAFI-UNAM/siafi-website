@@ -1,4 +1,4 @@
-import BlogCard from "@/components/Blog/BlogCard";
+import BlogCardLanding from "@/components/Blog/BlogCardLanding";
 import PageSection from "@/components/General/PageSection";
 import { blogImage1, testAuthor } from "@/image-paths";
 import type { BlogInfo } from "@/models/Blog";
@@ -21,7 +21,7 @@ export default function LatestBlogs({ blogs }: LatestBlogsProps) {
 						key={blog._id}
 						className="col-12 col-md-6 col-lg-4 mt-4"
 					>
-						<BlogCard blog={blog} />
+						<BlogCardLanding blog={blog} />
 					</div>
 				))}
 				<div className="col d-none d-md-block d-lg-none"></div>

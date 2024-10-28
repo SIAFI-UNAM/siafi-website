@@ -76,6 +76,10 @@
 	color: blue;
 }
 
+.navbarLinks a.active {
+	color: blue;
+}
+
 .menuIcon {
 	color: red;
 	font-size: 40px;

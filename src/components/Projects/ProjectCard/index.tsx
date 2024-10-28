@@ -7,6 +7,7 @@ type Props = {
 	linkTo: string;
 	title?: string;
 	variant?: "primary" | "secondary" | "blank";
+	size?: "sm" | "lg";
 	projectImage?: {
 		alt: string;
 		url: string;
@@ -23,18 +24,19 @@ export default function ProjectCard({
 	linkTo,
 	variant = "primary",
 	projectImage,
+	size = "sm",
 }: Props) {
 	return (
 		<Link href={linkTo}>
-			<div className={styles.cardContainer}>
+			<div className={`${styles.cardContainer} ${styles[size]}`}>
 				<h3 className={`${styles.cardTitle} ${styles[variant]}`}>
 					{title}
 				</h3>
 				{variant !== "blank" && <div className={styles.cardOverlay} />}
 				{projectImage && (
 					<Image
-						width={400}
-						height={200}
+						width={size === "sm" ? 200 : 800}
+						height={size === "sm" ? 150 : 500}
 						src={projectImage.url}
 						alt={projectImage.alt}
 						className={styles.cardImage}

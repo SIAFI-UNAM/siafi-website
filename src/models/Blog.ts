@@ -6,7 +6,10 @@ export type BlogInfo = {
 	_createdAt: Date;
 	title: string;
 	slug: string;
-	image: string;
+	image: {
+		url: string;
+		alt: string;
+	};
 	category: string;
 	publishedAt: string;
 	author: Author;

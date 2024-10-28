@@ -3,6 +3,7 @@
 	--background-color: #fdfdfe;
 	--primary-color: #07f; /* "SIAFI" Blue */
 	--accent-color: #ea0000;
+	--secondary-text-color: #7a7b86;
 	--instagram-gradient: linear-gradient(
 		90deg,
 		#fc466b 56.01%,
@@ -10,17 +11,14 @@
 	);
 	--footer-background: #060026;
 	--social-media-icon-bg: #130f30;
+	--primary-text-color: #000;
 	--black: #000;
 	--white: #fff;
-	/* --navbar-background: linear-gradient(
-		180deg,
-		rgba(252, 248, 255, 0.2) 0%,
-		rgba(252, 248, 255, 0) 100%
-	);*/
 	--navbar-background: #fdfdfe;
 	--avatars-background: #dcdcdc;
 	--project-card-border: #333;
 	--grayscale-900: #121127;
+	--inactive-color: #f9f9f9;
 	/* Font sizes */
 	--body-size: 16px;
 }

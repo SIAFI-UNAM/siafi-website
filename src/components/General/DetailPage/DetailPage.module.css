@@ -1,0 +1,55 @@
+.pageContainer {
+	min-height: 500px;
+}
+
+.pageTitle {
+	font-weight: bolder;
+	font-size: 45px;
+	color: var(--primary-color);
+}
+
+.pageCategory {
+	font-size: 30px;
+	font-family: "Study Alone", "Cabinet Grotesk", Calibri;
+	color: var(--accent-color);
+}
+
+.pageDescription {
+	font-size: 20px;
+	color: var(--secondary-text-color);
+}
+
+.header {
+	padding: 1rem 0;
+	display: flex;
+	align-items: center;
+}
+
+.authorInfo {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.authorInfo img {
+	border-radius: 100%;
+	object-fit: cover;
+}
+
+.authorInfo h3 {
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--primary-text-color);
+}
+
+.authorInfo p,
+.authorInfo h3 {
+	margin: 0;
+}
+
+.coverImage {
+	width: 100%;
+	object-fit: cover;
+	border-radius: 1rem;
+}
