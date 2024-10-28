@@ -113,7 +113,10 @@ export async function getLatestBlogs(): Promise<BlogInfo[]> {
             _createdAt,
             title,
             "slug": slug.current,
-            "image": image.asset->url,
+            "image": {
+                "url": image.asset->url,
+                "alt": image.alt
+            },
             "category": category -> name,
             publishedAt,
             author ->{
