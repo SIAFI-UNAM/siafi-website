@@ -8,7 +8,6 @@ import {
 	heartDrawingIcon,
 	landingBackgroundGradient,
 	robotDrawing,
-	siafiStudentsHero,
 	vrHeadset,
 } from "@/image-paths";
 import TextTransition, { presets } from "react-text-transition";
@@ -29,7 +28,7 @@ export default function Hero({ hero, contact }: HeroProps) {
 	useEffect(() => {
 		const intervalId = setInterval(
 			() => setIndex((index) => (index + 1) % middleWords.length),
-			5000 // every 3 seconds
+			5000, // every 3 seconds
 		);
 		return () => clearTimeout(intervalId);
 	}, [middleWords.length]);
@@ -80,6 +79,7 @@ export default function Hero({ hero, contact }: HeroProps) {
 								src={handsDetectionGIF}
 								alt="Hands detection"
 								priority
+								unoptimized
 							/>
 						</div>
 						<Image

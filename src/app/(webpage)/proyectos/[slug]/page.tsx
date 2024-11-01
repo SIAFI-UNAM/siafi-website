@@ -20,7 +20,8 @@ interface ProjectDetailParams {
 }
 
 export async function generateMetadata({ params }: ProjectDetailParams) {
-	const ProjectInfo = await getProjectBySlug(params.slug);
+	const { slug } = await params;
+	const ProjectInfo = await getProjectBySlug(slug);
 	const projectDescription = ProjectInfo
 		? portableTextToPlainText(ProjectInfo.description).slice(0, 256)
 		: "Blog no encontrado";
@@ -55,7 +56,8 @@ export async function generateMetadata({ params }: ProjectDetailParams) {
  * @returns The project detail page.
  */
 const ProjectDetail = async ({ params }: ProjectDetailParams) => {
-	const projectInfo = await getProjectBySlug(params.slug);
+	const { slug } = await params;
+	const projectInfo = await getProjectBySlug(slug);
 
 	if (!projectInfo) {
 		return (
@@ -91,7 +93,7 @@ const ProjectDetail = async ({ params }: ProjectDetailParams) => {
 			coverImage={projectInfo.image}
 			publicationDate={projectInfo.last_updated}
 			readingTime={getReadingTimeFromPortableText(
-				projectInfo.description
+				projectInfo.description,
 			)}
 			variant="project"
 		>
