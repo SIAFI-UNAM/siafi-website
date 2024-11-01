@@ -78,7 +78,7 @@ const DetailPage = ({
 						/>
 					</div>
 				)}
-				<div className={`${styles.detailInfo} col mt-3 mt-md-0 mb-3`}>
+				<div className={`${styles.detailInfo} col mt-3 mt-md-0`}>
 					{category && (
 						<h2 className={styles.pageCategory}>{category}</h2>
 					)}
@@ -131,7 +131,7 @@ const DetailPage = ({
 					)}
 				</div>
 			</header>
-			<div className={`mt-5`}>{children}</div>
+			<div className={`mt-5 mb-3`}>{children}</div>
 		</main>
 	);
 };
