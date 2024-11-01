@@ -51,14 +51,22 @@ export default function Hero({ hero, contact }: HeroProps) {
 						<p className={styles.heroTitle}>{lowerTitle}</p>
 						<div className={styles.weLoveAIHero}>
 							<p>WE</p>
-							<Image src={heartDrawingIcon} alt="Heart icon" />
+							<Image
+								src={heartDrawingIcon}
+								alt="Heart icon"
+								priority
+							/>
 							<p>AI</p>
 						</div>
 						<div className={styles.arrow}>
-							<Image src={arrowHero} alt="Arrow hero" />
+							<Image src={arrowHero} alt="Arrow hero" priority />
 						</div>
 						<div className={styles.robotDrawing}>
-							<Image src={robotDrawing} alt="Robot hero" />
+							<Image
+								src={robotDrawing}
+								alt="Robot hero"
+								priority
+							/>
 						</div>
 					</div>
 					<div className={`col-12 col-md-6 ${styles.heroImages}`}>
@@ -71,6 +79,7 @@ export default function Hero({ hero, contact }: HeroProps) {
 							<Image
 								src={handsDetectionGIF}
 								alt="Hands detection"
+								priority
 							/>
 						</div>
 						<Image
@@ -79,6 +88,7 @@ export default function Hero({ hero, contact }: HeroProps) {
 							height={500}
 							className={styles.siafiStudents}
 							alt="SIAFI students"
+							priority
 						/>
 					</div>
 				</div>
@@ -90,7 +100,11 @@ export default function Hero({ hero, contact }: HeroProps) {
 				</a>
 			</p>
 			<div className={styles.backgroundGradient}>
-				<Image src={landingBackgroundGradient} alt="gradient" />
+				<Image
+					src={landingBackgroundGradient}
+					alt="gradient"
+					priority
+				/>
 			</div>
 		</section>
 	);

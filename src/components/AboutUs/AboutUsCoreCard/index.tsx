@@ -24,6 +24,7 @@ const AboutUsCoreCard = ({ coreInfo }: AboutUsCoreCardProps) => {
 				width={300}
 				height={300}
 				className={styles.coreImage}
+				loading="lazy"
 			/>
 			<div>
 				<h4 className={styles.coreName}>{coreInfo.name}</h4>
