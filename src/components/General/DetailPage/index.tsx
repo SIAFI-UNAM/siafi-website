@@ -96,8 +96,8 @@ const DetailPage = ({
 								<p>{`${
 									publicationDate
 										? dateFormater.format(
-												new Date(publicationDate)
-										  )
+												new Date(publicationDate),
+											)
 										: ""
 								} · ${readingTime} min lectura`}</p>
 							</div>
@@ -121,8 +121,8 @@ const DetailPage = ({
 									<p>{`Ultima actualización: ${
 										publicationDate
 											? dateFormater.format(
-													new Date(publicationDate)
-											  )
+													new Date(publicationDate),
+												)
 											: ""
 									} · ${readingTime} min lectura`}</p>
 								</div>
@@ -131,7 +131,7 @@ const DetailPage = ({
 					)}
 				</div>
 			</header>
-			<div className={`mt-5`}>{children}</div>
+			<div className={`mt-5 mb-3`}>{children}</div>
 		</main>
 	);
 };

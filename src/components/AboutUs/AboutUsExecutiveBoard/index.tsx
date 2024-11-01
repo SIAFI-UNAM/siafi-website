@@ -63,7 +63,10 @@ export default function AboutUsExecutiveBoard({ members }: Props) {
 					>
 						<Image
 							src={selectedMember.image.url ?? siafiBallGlasses}
-							alt={selectedMember.image.alt}
+							alt={
+								selectedMember.image.alt ??
+								"Miembro de Mesa directiva seleccionado"
+							}
 							width={250}
 							height={250}
 							className={styles.selectedExecMemberPhoto}
@@ -92,7 +95,10 @@ export default function AboutUsExecutiveBoard({ members }: Props) {
 								<Image
 									key={member._id}
 									src={member.image.url ?? siafiBallGlasses}
-									alt={member.image.alt}
+									alt={
+										member.image.alt ??
+										"Miembro de Mesa directiva sin foto"
+									}
 									width={48}
 									height={48}
 									onClick={() => handleMemberClick(indx)}
