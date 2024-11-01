@@ -67,6 +67,7 @@ export default function AboutUsExecutiveBoard({ members }: Props) {
 							width={250}
 							height={250}
 							className={styles.selectedExecMemberPhoto}
+							loading="lazy"
 						/>
 					</div>
 					<div className="col d-none d-md-block"></div>

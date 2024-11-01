@@ -11,6 +11,7 @@ import { apiVersion, dataset, projectId } from "@/sanity/env";
 import { schema } from "@/sanity/schema";
 import { sanityCustomStructure } from "@/sanity/sanity-structure";
 import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
+import { codeInput } from "@sanity/code-input";
 
 export default defineConfig({
 	basePath: "/studio",
@@ -24,5 +25,6 @@ export default defineConfig({
 		// https://www.sanity.io/docs/the-vision-plugin
 		unsplashImageAsset(),
 		visionTool({ defaultApiVersion: apiVersion }),
+		codeInput(),
 	],
 });

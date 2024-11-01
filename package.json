@@ -9,6 +9,8 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@sanity/asset-utils": "^2.0.7",
+		"@sanity/code-input": "^4.1.4",
 		"@sanity/icons": "^3.4.0",
 		"@sanity/image-url": "^1.0.2",
 		"@sanity/orderable-document-list": "^1.2.2",
@@ -17,11 +19,13 @@
 		"ionicons": "^7.2.2",
 		"next": "14.0.4",
 		"next-sanity": "^5.5.11",
+		"next-sanity-image": "^6.1.1",
 		"react": "^18",
 		"react-bootstrap": "^2.10.4",
 		"react-dom": "^18",
 		"react-icons": "^5.0.1",
 		"react-responsive-3d-carousel": "^1.5.0",
+		"react-syntax-highlighter": "^15.6.1",
 		"react-text-transition": "^3.1.0",
 		"sanity": "^3.24.1",
 		"sanity-plugin-asset-source-unsplash": "^3.0.1",
@@ -31,6 +35,7 @@
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
+		"@types/react-syntax-highlighter": "^15.5.13",
 		"eslint": "^8",
 		"eslint-config-next": "14.0.4",
 		"typescript": "^5"

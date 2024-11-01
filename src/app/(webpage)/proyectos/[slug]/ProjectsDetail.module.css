@@ -1,0 +1,14 @@
+.notFoundTitleContainer {
+	display: flex;
+	align-items: center;
+}
+
+.notFoundTitle {
+	font-family: "Study Alone", "Cabinet Grotesk", Calibri;
+	color: var(--accent-color);
+	font-size: 3rem;
+}
+
+.notFoundDescription {
+	font-size: 1.5rem;
+}

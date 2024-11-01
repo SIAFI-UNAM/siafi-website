@@ -31,6 +31,14 @@ interface SimplePageProps {
 	 * The reading time of the blog or page.
 	 */
 	readingTime?: number;
+	/**
+	 * The variant of the detail page. Default value is "blog".
+	 */
+	variant?: "blog" | "project";
+	/**
+	 * The authors of the blog or page. Only visible in "project" variant.
+	 */
+	authors?: string[];
 	children?: React.ReactNode;
 }
 
@@ -46,6 +54,8 @@ const DetailPage = ({
 	author,
 	publicationDate,
 	readingTime,
+	variant = "blog",
+	authors,
 	children,
 }: SimplePageProps) => {
 	const dateFormater = new Intl.DateTimeFormat("es-MX", {
@@ -73,7 +83,7 @@ const DetailPage = ({
 						<h2 className={styles.pageCategory}>{category}</h2>
 					)}
 					{title && <h1 className={styles.pageTitle}>{title}</h1>}
-					{author && (
+					{variant === "blog" && author && (
 						<div className={styles.authorInfo}>
 							<Image
 								src={author.avatar}
@@ -93,9 +103,35 @@ const DetailPage = ({
 							</div>
 						</div>
 					)}
+					{variant === "project" && (
+						<>
+							{authors && (
+								<div className={styles.authors}>
+									<h4>Autores:</h4>
+									<ul>
+										{authors.map((author) => (
+											<li key={author}>{author}</li>
+										))}
+									</ul>
+								</div>
+							)}
+							{publicationDate && (
+								<div className={styles.lastUpdate}>
+									{/* <h3>{author.name}</h3> */}
+									<p>{`Ultima actualización: ${
+										publicationDate
+											? dateFormater.format(
+													new Date(publicationDate)
+											  )
+											: ""
+									} · ${readingTime} min lectura`}</p>
+								</div>
+							)}
+						</>
+					)}
 				</div>
 			</header>
-			<div className={`${styles.content} mt-5`}>{children}</div>
+			<div className={`mt-5`}>{children}</div>
 		</main>
 	);
 };

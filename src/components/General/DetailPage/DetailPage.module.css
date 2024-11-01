@@ -25,6 +25,17 @@
 	align-items: center;
 }
 
+.authors h4 {
+	font-size: 24px;
+	font-family: "Study Alone", "Cabinet Grotesk", Calibri;
+	color: var(--accent-color);
+	font-weight: 600;
+}
+
+.authors li {
+	font-size: 18px;
+}
+
 .authorInfo {
 	display: flex;
 	align-items: center;
@@ -52,4 +63,9 @@
 	width: 100%;
 	object-fit: cover;
 	border-radius: 1rem;
+}
+
+.lastUpdate {
+	color: var(--secondary-text-color);
+	font-style: italic;
 }

@@ -46,6 +46,7 @@ export default function BlogCardList({ blog }: Props) {
 							alt={`${blog.author.name} photo`}
 							width={40}
 							height={40}
+							loading="lazy"
 						/>
 						<div className={styles.authorInfo}>
 							<h4>{blog.author.name}</h4>

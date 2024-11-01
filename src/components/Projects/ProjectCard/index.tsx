@@ -35,11 +35,11 @@ export default function ProjectCard({
 				{variant !== "blank" && <div className={styles.cardOverlay} />}
 				{projectImage && (
 					<Image
-						width={size === "sm" ? 200 : 800}
-						height={size === "sm" ? 150 : 500}
+						fill
 						src={projectImage.url}
 						alt={projectImage.alt}
 						className={styles.cardImage}
+						loading="lazy"
 					/>
 				)}
 			</div>

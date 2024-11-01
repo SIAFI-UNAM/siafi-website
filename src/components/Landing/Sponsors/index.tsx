@@ -39,6 +39,7 @@ export default function Sponsors({ sponsors }: Props) {
 								height={50}
 								src={spon.image.url}
 								alt={spon.image.alt}
+								loading="lazy"
 							/>
 						</div>
 					))}

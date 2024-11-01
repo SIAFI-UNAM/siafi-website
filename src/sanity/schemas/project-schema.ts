@@ -1,6 +1,9 @@
 import type { SchemaTypeDefinition } from "sanity";
 import { FolderIcon } from "@sanity/icons";
 
+/**
+ * The schema definition for projects.
+ */
 export const ProjectSchema: SchemaTypeDefinition = {
 	name: "project",
 	title: "Proyectos",
@@ -65,6 +68,9 @@ export const ProjectSchema: SchemaTypeDefinition = {
 				{ type: "block" },
 				{
 					type: "image",
+				},
+				{
+					type: "code",
 				},
 			],
 		},
