@@ -1,6 +1,10 @@
 import type { SchemaTypeDefinition } from "sanity";
 import { DocumentTextIcon } from "@sanity/icons";
 
+/**
+ * The schema definition for blogs.
+ * @todo: Add YouTube video embeds to the content. https://www.sanity.io/guides/portable-text-how-to-add-a-custom-youtube-embed-block
+ */
 export const BlogSchema: SchemaTypeDefinition = {
 	name: "blog",
 	title: "Blogs",
@@ -69,6 +73,16 @@ export const BlogSchema: SchemaTypeDefinition = {
 				{ type: "block" },
 				{
 					type: "image",
+					fields: [
+						{
+							name: "alt",
+							title: "Texto Alternativo",
+							type: "string",
+						},
+					],
+				},
+				{
+					type: "code",
 				},
 			],
 		},

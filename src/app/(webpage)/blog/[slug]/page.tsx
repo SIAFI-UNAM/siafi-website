@@ -1,6 +1,6 @@
 import DetailPage from "@/components/General/DetailPage";
 import React from "react";
-import { PortableText } from "@portabletext/react";
+import { PortableText, PortableTextReactComponents } from "@portabletext/react";
 import { getBlogBySlug } from "@/sanity/sanity-utils";
 import PageSection from "@/components/General/PageSection";
 import Image from "next/image";
@@ -11,6 +11,7 @@ import {
 	getReadingTimeFromPortableText,
 	portableTextToPlainText,
 } from "@/lib/portableTextUtils";
+import PortableTextCustomComponents from "@/components/Sanity/PortableTextCustomComponents";
 
 interface BlogDetailParams {
 	params: {
@@ -90,7 +91,10 @@ const BlogDetail = async ({ params }: BlogDetailParams) => {
 			publicationDate={blogInfo.publishedAt}
 			readingTime={getReadingTimeFromPortableText(blogInfo.content)}
 		>
-			<PortableText value={blogInfo.content} />
+			<PortableText
+				value={blogInfo.content}
+				components={PortableTextCustomComponents}
+			/>
 		</DetailPage>
 	);
 };
