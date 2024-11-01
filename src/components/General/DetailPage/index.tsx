@@ -78,7 +78,7 @@ const DetailPage = ({
 						/>
 					</div>
 				)}
-				<div className={`${styles.detailInfo} col mt-3 mt-md-0`}>
+				<div className={`${styles.detailInfo} col mt-3 mt-md-0 mb-3`}>
 					{category && (
 						<h2 className={styles.pageCategory}>{category}</h2>
 					)}
@@ -96,8 +96,8 @@ const DetailPage = ({
 								<p>{`${
 									publicationDate
 										? dateFormater.format(
-												new Date(publicationDate)
-										  )
+												new Date(publicationDate),
+											)
 										: ""
 								} · ${readingTime} min lectura`}</p>
 							</div>
@@ -121,8 +121,8 @@ const DetailPage = ({
 									<p>{`Ultima actualización: ${
 										publicationDate
 											? dateFormater.format(
-													new Date(publicationDate)
-											  )
+													new Date(publicationDate),
+												)
 											: ""
 									} · ${readingTime} min lectura`}</p>
 								</div>
