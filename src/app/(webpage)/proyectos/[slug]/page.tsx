@@ -20,7 +20,7 @@ interface ProjectDetailParams {
 }
 
 export async function generateMetadata({ params }: ProjectDetailParams) {
-	const { slug } = await params;
+	const { slug } = params;
 	const ProjectInfo = await getProjectBySlug(slug);
 	const projectDescription = ProjectInfo
 		? portableTextToPlainText(ProjectInfo.description).slice(0, 256)
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: ProjectDetailParams) {
  * @returns The project detail page.
  */
 const ProjectDetail = async ({ params }: ProjectDetailParams) => {
-	const { slug } = await params;
+	const { slug } = params;
 	const projectInfo = await getProjectBySlug(slug);
 
 	if (!projectInfo) {

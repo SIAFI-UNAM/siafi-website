@@ -20,7 +20,7 @@ interface BlogDetailParams {
 }
 
 export async function generateMetadata({ params }: BlogDetailParams) {
-	const { slug } = await params;
+	const { slug } = params;
 	const blogInfo = await getBlogBySlug(slug);
 	const blogDescription = blogInfo
 		? portableTextToPlainText(blogInfo.content).slice(0, 256)
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: BlogDetailParams) {
  * @returns The blog detail page.
  */
 const BlogDetail = async ({ params }: BlogDetailParams) => {
-	const { slug } = await params;
+	const { slug } = params;
 	const blogInfo = await getBlogBySlug(slug);
 
 	if (!blogInfo) {
