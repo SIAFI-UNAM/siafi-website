@@ -19,7 +19,7 @@
 		"@sanity/vision": "^3.24.1",
 		"bootstrap": "^5.3.2",
 		"ionicons": "^7.2.2",
-		"next": "^15.0.2",
+		"next": "^14.2.16",
 		"next-sanity": "^9.8.8",
 		"next-sanity-image": "^6.1.1",
 		"react": "^18",
