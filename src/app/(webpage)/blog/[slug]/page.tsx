@@ -1,6 +1,6 @@
 import DetailPage from "@/components/General/DetailPage";
 import React from "react";
-import { PortableText, PortableTextReactComponents } from "@portabletext/react";
+import { PortableText } from "@portabletext/react";
 import { getBlogBySlug } from "@/sanity/sanity-utils";
 import PageSection from "@/components/General/PageSection";
 import Image from "next/image";
@@ -53,7 +53,6 @@ export async function generateMetadata({ params }: BlogDetailParams) {
  * This page shows the details of a blog post.
  * @param props - The props of the component.
  * @returns The blog detail page.
- * @todo Add images to portable text using the Image component. https://stackoverflow.com/questions/73000501/how-to-display-images-from-block-content-rich-text-in-portable-text
  */
 const BlogDetail = async ({ params }: BlogDetailParams) => {
 	const blogInfo = await getBlogBySlug(params.slug);
