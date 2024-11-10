@@ -73,6 +73,7 @@ export default function NavBar() {
 								className={
 									link.url === pathname ? styles.active : ""
 								}
+								onClick={handleMobileMenu}
 							>
 								{link.title}
 							</Link>
