@@ -1,7 +1,7 @@
 import DetailPage from "@/components/General/DetailPage";
 import React from "react";
 import { PortableText } from "@portabletext/react";
-import { getProjectBySlug } from "@/sanity/sanity-utils";
+import { getProjectBySlug, getProjects } from "@/sanity/sanity-utils";
 import PageSection from "@/components/General/PageSection";
 import Image from "next/image";
 import { heartbreakDoodle, siafiBallSad } from "@/image-paths";
@@ -17,6 +17,14 @@ interface ProjectDetailParams {
 	params: {
 		slug: string;
 	};
+}
+
+export async function generateStaticParams() {
+	const allProjects = await getProjects();
+
+	return allProjects.map((project) => ({
+		slug: project.slug,
+	}));
 }
 
 export async function generateMetadata({ params }: ProjectDetailParams) {

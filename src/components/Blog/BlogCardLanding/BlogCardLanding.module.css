@@ -93,6 +93,8 @@
 	width: 48px;
 	border-radius: 100%;
 	margin-right: 16px;
+	vertical-align: middle;
+	object-fit: cover;
 }
 
 .authorInfo h4 {

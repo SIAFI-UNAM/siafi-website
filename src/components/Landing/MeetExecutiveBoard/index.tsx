@@ -78,8 +78,8 @@ export default function MeetExecutiveBoard({ members }: Props) {
 								selectedMember.image.alt ??
 								"Miembro de Mesa directiva seleccionado"
 							}
-							width={48}
-							height={48}
+							width={100}
+							height={100}
 							className={styles.selectedExecMemberPhoto}
 						/>
 						<div className={styles.excecMemberAvatarInfo}>
@@ -104,8 +104,8 @@ export default function MeetExecutiveBoard({ members }: Props) {
 									member.image.alt ??
 									"Miembro de Mesa directiva sin foto"
 								}
-								width={48}
-								height={48}
+								width={85}
+								height={85}
 								onClick={() => handleMemberClick(indx)}
 								className={`${styles.execMemberPhoto} ${
 									activeMember === indx ? styles.active : ""

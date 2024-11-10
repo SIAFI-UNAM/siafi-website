@@ -1,7 +1,7 @@
 import DetailPage from "@/components/General/DetailPage";
 import React from "react";
 import { PortableText } from "@portabletext/react";
-import { getBlogBySlug } from "@/sanity/sanity-utils";
+import { getBlogBySlug, getBlogs } from "@/sanity/sanity-utils";
 import PageSection from "@/components/General/PageSection";
 import Image from "next/image";
 import { heartbreakDoodle, siafiBallSad } from "@/image-paths";
@@ -17,6 +17,14 @@ interface BlogDetailParams {
 	params: {
 		slug: string;
 	};
+}
+
+export async function generateStaticParams() {
+	const allBlogs = await getBlogs();
+
+	return allBlogs.map((blog) => ({
+		slug: blog.slug,
+	}));
 }
 
 export async function generateMetadata({ params }: BlogDetailParams) {

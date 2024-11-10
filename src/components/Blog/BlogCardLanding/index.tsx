@@ -14,8 +14,8 @@ type Props = {
 
 /**
  * Card for a blog post.
- *
- * TODO: Turn dynamic the color of the card category.
+ * @param {Props} props - The props of the component.
+ * @param {BlogInfo} props.blog - The blog post information.
  */
 export default function BlogCardLanding({ blog }: Props) {
 	const dateFormater = new Intl.DateTimeFormat("es-MX", {
@@ -48,9 +48,9 @@ export default function BlogCardLanding({ blog }: Props) {
 						<div className={styles.authorInfo}>
 							<h4>{blog.author.name}</h4>
 							<p>{`${dateFormater.format(
-								new Date(blog.publishedAt)
+								new Date(blog.publishedAt),
 							)} · ${getReadingTimeFromPortableText(
-								blog.content
+								blog.content,
 							)} min lectura`}</p>
 						</div>
 					</div>

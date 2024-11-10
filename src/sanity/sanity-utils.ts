@@ -37,7 +37,7 @@ export async function getLandingInfo(): Promise<LandingInfo> {
                 "title": contact.title,
                 "subtitle": contact.subtitle
             }
-        }`
+        }`,
 	);
 }
 
@@ -52,7 +52,7 @@ export async function getHeroInfo(): Promise<HeroInfo> {
             "middleWords": hero.changing_words,
             "lowerTitle": hero.down_title,
             "siafiGroupImage": hero.siafi_group_image.asset->url
-        }`
+        }`,
 	);
 }
 
@@ -73,7 +73,7 @@ export async function getContactInfo(): Promise<Contact> {
             "tiktok": social_media.tiktok,
             "twitter": social_media.twitter,
             "github": social_media.github
-        }`
+        }`,
 	);
 }
 
@@ -98,7 +98,7 @@ export async function getBlogs(): Promise<BlogInfo[]> {
                 bio
             },
             content
-        }`
+        }`,
 	);
 }
 
@@ -126,7 +126,7 @@ export async function getLatestBlogs(): Promise<BlogInfo[]> {
                 bio
             },
             content
-        }`
+        }`,
 	);
 }
 
@@ -148,7 +148,7 @@ export async function getExecutiveBoardMembers(): Promise<Member[]> {
             "description": bio,
             "role": position,
             email
-        }`
+        }`,
 	);
 }
 
@@ -169,7 +169,7 @@ export async function getLandingProjects(): Promise<ProjectInfo[]> {
             },
             "last_updated": _updatedAt,
             authors
-        }`
+        }`,
 	);
 }
 
@@ -190,7 +190,7 @@ export async function getProjects(): Promise<ProjectInfo[]> {
             },
             "last_updated": _updatedAt,
             authors
-        }`
+        }`,
 	);
 }
 
@@ -200,7 +200,7 @@ export async function getProjects(): Promise<ProjectInfo[]> {
  * @returns The blog information.
  */
 export const getProjectBySlug = async (
-	slug: string
+	slug: string,
 ): Promise<ProjectInfo | null> => {
 	return client.fetch(
 		groq`*[_type == "project" && slug.current == "${slug}"]{
@@ -214,7 +214,7 @@ export const getProjectBySlug = async (
             },
             "last_updated": _updatedAt,
             authors
-        }[0]`
+        }[0]`,
 	);
 };
 
@@ -232,7 +232,7 @@ export const getSponsors = async (): Promise<SponsorInfo[]> => {
                 "alt": partner_logo.alt
             },
             description
-        }`
+        }`,
 	);
 };
 
@@ -263,7 +263,7 @@ export const getAboutUsInfo = async (): Promise<AboutUsPage> => {
                     }
                 }
             },
-        }`
+        }`,
 	);
 };
 
@@ -278,7 +278,7 @@ export const getBlogCategories = async (): Promise<
 		groq`*[_type == "blogCategory"]{
             "id": _id,
             name
-        }`
+        }`,
 	);
 };
 
@@ -290,7 +290,7 @@ export const getBlogCategories = async (): Promise<
  */
 export const getBlogsByPage = async (
 	page: number,
-	categoryId?: string
+	categoryId?: string,
 ): Promise<BlogInfo[]> => {
 	const categoryFilter = categoryId
 		? `&& category._ref == "${categoryId}"`
@@ -317,7 +317,9 @@ export const getBlogsByPage = async (
                 bio
             },
             content
-        }`
+        }`,
+		{},
+		{ cache: "no-cache" },
 	);
 };
 
@@ -346,7 +348,9 @@ export const getBlogBySlug = async (slug: string): Promise<BlogInfo | null> => {
                 bio
             },
             content
-        }[0]`
+        }[0]`,
+		{},
+		{ cache: "no-cache" },
 	);
 };
 
@@ -362,7 +366,7 @@ export const getBlogListPageInfo = async (): Promise<{
 		groq`*[_type == "blog_projects_lists_pages" && _id == "blog_projects_lists_pages"][0]{
             "title": blogs_page_section.title,
             "description": blogs_page_section.description
-        }`
+        }`,
 	);
 };
 
@@ -378,7 +382,8 @@ export const getProjectsListPageInfo = async (): Promise<{
 		groq`*[_type == "blog_projects_lists_pages" && _id == "blog_projects_lists_pages"][0]{
             "title": projects_page_section.title,
             "description": projects_page_section.description
-        }`
+        }`,
+		{},
 	);
 };
 

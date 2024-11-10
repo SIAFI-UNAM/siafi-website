@@ -69,6 +69,7 @@
 	border-radius: 100%;
 	object-fit: cover;
 	background: var(--avatars-background);
+	vertical-align: middle;
 }
 
 .execMemberPhoto {
@@ -77,6 +78,7 @@
 	border-radius: 100%;
 	object-fit: cover;
 	background: var(--avatars-background);
+	vertical-align: middle;
 }
 
 .execMemberAvatar {

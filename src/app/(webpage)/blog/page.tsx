@@ -10,8 +10,16 @@ import {
 
 export const metadata: Metadata = {
 	title: "Blog",
+	description:
+		"Bienvenido al blog de SIAFI, aquí encontrarás artículos sobre Inteligencia Artificial, Machine Learning, Deep Learning y más.",
 };
 
+export const revalidate = 60;
+
+/**
+ * This page shows a list of blog posts.
+ * @returns The BlogListPage component.
+ */
 const BlogListPage = async () => {
 	const blogCategories = await getBlogCategories();
 	const blogListPageInfo = await getBlogListPageInfo();
