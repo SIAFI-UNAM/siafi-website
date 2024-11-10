@@ -46,7 +46,9 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	text-align: center;
-	font-family: Cabinet Grotesk, Calibri;
+	font-family:
+		Cabinet Grotesk,
+		Calibri;
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 500;
@@ -59,7 +61,9 @@
 	list-style: none;
 	text-transform: uppercase;
 	text-align: center;
-	font-family: Cabinet Grotesk, Calibri;
+	font-family:
+		Cabinet Grotesk,
+		Calibri;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 500;
@@ -67,16 +71,19 @@
 	letter-spacing: 0.36px;
 }
 
-.navbarLinks a {
+.navbarLinks a,
+.navbarLinksList li a {
 	text-decoration: none;
 	color: var(--Negro, #000);
 }
 
-.navbarLinks a:hover {
+.navbarLinks a:hover,
+.navbarLinksList li a:hover {
 	color: blue;
 }
 
-.navbarLinks a.active {
+.navbarLinks a.active,
+.navbarLinksList li a.active {
 	color: blue;
 }
 

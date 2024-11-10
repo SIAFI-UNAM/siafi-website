@@ -51,3 +51,4 @@ export { default as demoSponsor } from "@img/sponsors/demo-sponsor.svg";
 
 // Misc
 export { default as heartbreakDoodle } from "@img/misc/heartbreak.svg";
+export { default as chrisleyMemoji } from "@img/misc/chrisley-memoji.png";
