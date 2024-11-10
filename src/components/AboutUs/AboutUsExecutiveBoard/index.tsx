@@ -99,8 +99,8 @@ export default function AboutUsExecutiveBoard({ members }: Props) {
 										member.image.alt ??
 										"Miembro de Mesa directiva sin foto"
 									}
-									width={48}
-									height={48}
+									width={85}
+									height={85}
 									onClick={() => handleMemberClick(indx)}
 									className={`${styles.execMemberPhoto} ${
 										activeMember === indx

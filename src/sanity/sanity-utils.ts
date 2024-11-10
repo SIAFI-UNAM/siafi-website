@@ -279,8 +279,6 @@ export const getBlogCategories = async (): Promise<
             "id": _id,
             name
         }`,
-		{},
-		{ cache: "no-cache" },
 	);
 };
 
@@ -386,7 +384,6 @@ export const getProjectsListPageInfo = async (): Promise<{
             "description": projects_page_section.description
         }`,
 		{},
-		{ cache: "no-cache" },
 	);
 };
 
@@ -395,9 +392,5 @@ export const getProjectsListPageInfo = async (): Promise<{
  * @returns The total number of blogs.
  */
 export const getTotalBlogs = async (): Promise<number> => {
-	return client.fetch(
-		groq`count(*[_type == "blog"])`,
-		{},
-		{ cache: "no-cache" },
-	);
+	return client.fetch(groq`count(*[_type == "blog"])`);
 };
