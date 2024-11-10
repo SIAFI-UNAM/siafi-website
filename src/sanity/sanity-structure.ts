@@ -26,7 +26,7 @@ export const sanityCustomStructure: StructureResolver = (S, context) => {
 					S.document()
 						.schemaType("landingPage")
 						.documentId("landingPage")
-						.title("Página de inicio (Landing)")
+						.title("Página de inicio (Landing)"),
 				),
 			S.listItem()
 				// Nosotros page singleton
@@ -36,7 +36,7 @@ export const sanityCustomStructure: StructureResolver = (S, context) => {
 					S.document()
 						.schemaType("about_us")
 						.documentId("about_us")
-						.title("Página: Nosotros")
+						.title("Página: Nosotros"),
 				),
 			S.listItem()
 				// Blogs & Projects lists pages singleton
@@ -46,7 +46,7 @@ export const sanityCustomStructure: StructureResolver = (S, context) => {
 					S.document()
 						.schemaType("blog_projects_lists_pages")
 						.documentId("blog_projects_lists_pages")
-						.title("Páginas de listado de blogs y proyectos")
+						.title("Páginas de listado de blogs y proyectos"),
 				),
 			S.listItem()
 				// Nosotros page singleton
@@ -56,7 +56,7 @@ export const sanityCustomStructure: StructureResolver = (S, context) => {
 					S.document()
 						.schemaType("contact_and_others")
 						.documentId("contact_and_others")
-						.title("Contacto y otros")
+						.title("Contacto y otros"),
 				),
 			S.divider(),
 			// Orderable items
@@ -70,13 +70,14 @@ export const sanityCustomStructure: StructureResolver = (S, context) => {
 			...S.documentTypeListItems().filter((listItem) => {
 				return (
 					!["contact_and_others"].includes(
-						listItem.getId() as string
+						listItem.getId() as string,
 					) &&
 					!["landingPage"].includes(listItem.getId() as string) &&
 					!["executive_board"].includes(listItem.getId() as string) &&
 					!["blog_projects_lists_pages"].includes(
-						listItem.getId() as string
-					)
+						listItem.getId() as string,
+					) &&
+					!["about_us"].includes(listItem.getId() as string)
 				);
 			}),
 		]);
