@@ -1,0 +1,16 @@
+.creditsPage h2 {
+	font-family: "Study Alone", "Cabinet Grotesk", Calibri;
+	color: var(--accent-color);
+	font-size: 2rem;
+}
+
+.developerInfo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 20px;
+
+	font-size: 1.25rem;
+	/* font-weight: bold; */
+}
