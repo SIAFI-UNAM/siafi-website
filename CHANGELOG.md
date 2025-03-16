@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2025-03-15
+
+## Added
+- Added autoscroll to the executive board carrousel
+
+## Fixed
+- Fixed wrong aspect radio on executive board carrousel images
+- Fixed wrong object fit on project card images
+- Fixed styles for mobile view on executive board views
+
 ## [1.0.0] - 2025-03-15
 
 Please note that the original realase date was on 2024-11-13, but the repo was not updated with the `CHANGELOG.md` and npm version was not updated until now.
