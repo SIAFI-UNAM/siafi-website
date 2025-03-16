@@ -28,7 +28,16 @@ export default function AboutUsExecutiveBoard({ members }: Props) {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setActiveMember((prev) => (prev + 1) % members.length);
+			setActiveMember((prev) => {
+				const nextMember = (prev + 1) % members.length;
+				const carrousel = document.getElementById("membersCarrousel");
+
+				if (carrousel) {
+					carrousel.scrollLeft = 60 * nextMember;
+				}
+
+				return nextMember;
+			});
 		}, 5000);
 		setIntervalId(interval);
 		return () => clearInterval(interval);
@@ -90,25 +99,36 @@ export default function AboutUsExecutiveBoard({ members }: Props) {
 						<div className={styles.execMemberDescription}>
 							<PortableText value={selectedMember.description} />
 						</div>
-						<div className={styles.execMembersCarrousel}>
-							{members.map((member, indx) => (
-								<Image
-									key={member._id}
-									src={member.image.url ?? siafiBallGlasses}
-									alt={
-										member.image.alt ??
-										"Miembro de Mesa directiva sin foto"
-									}
-									width={85}
-									height={85}
-									onClick={() => handleMemberClick(indx)}
-									className={`${styles.execMemberPhoto} ${
-										activeMember === indx
-											? styles.active
-											: ""
-									}`}
-								/>
-							))}
+						<div
+							className={styles.execMembersCarrouselContainer}
+							id="membersCarrousel"
+						>
+							<div className={styles.execMembersCarrousel}>
+								{members.map((member, indx) => (
+									<div
+										className={`${styles.execMemberPhoto} ${
+											activeMember === indx
+												? styles.active
+												: ""
+										}`}
+										onClick={() => handleMemberClick(indx)}
+									>
+										<Image
+											key={member._id}
+											src={
+												member.image.url ??
+												siafiBallGlasses
+											}
+											alt={
+												member.image.alt ??
+												"Miembro de Mesa directiva sin foto"
+											}
+											width={85}
+											height={85}
+										/>
+									</div>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>

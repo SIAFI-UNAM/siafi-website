@@ -51,6 +51,10 @@
 	bottom: 35%;
 }
 
+.execMembers {
+	overflow-x: hidden;
+}
+
 .execMembers h1 {
 	color: var(--black);
 	font-family: "Cabinet Grotesk";
@@ -73,12 +77,20 @@
 }
 
 .execMemberPhoto {
+	position: relative;
 	width: 60px;
 	height: 60px;
 	border-radius: 100%;
-	object-fit: cover;
 	background: var(--avatars-background);
+	overflow: hidden;
+}
+
+.execMemberPhoto > img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
 	vertical-align: middle;
+	object-fit: cover;
 }
 
 .execMemberAvatar {
@@ -90,16 +102,6 @@
 .execMemberAvatar .execMemberPhoto {
 	width: 72px;
 	height: 72px;
-}
-
-.excecMemberAvatarInfo h4 {
-	color: var(--black);
-	font-family: "Cabinet Grotesk";
-	font-size: 25px;
-	font-style: normal;
-	font-weight: 500;
-	letter-spacing: 1px;
-	margin: 0;
 }
 
 .excecMemberAvatarInfo a {
@@ -117,9 +119,19 @@
 	text-decoration: underline;
 }
 
+.execMemberRole {
+	font-family: "Cabinet Grotesk";
+	font-size: 25px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	margin: 0;
+	font-style: italic;
+	color: var(--secondary-text-color);
+}
+
 .execMemberDescription {
 	color: var(--black);
-	height: 150px;
+	min-height: 50px;
 	max-height: 150px;
 	font-family: "Cabinet Grotesk";
 	font-size: 18px;
@@ -131,13 +143,17 @@
 	margin-top: 2rem;
 }
 
+.execMembersCarrouselContainer {
+	width: 100%;
+	overflow-x: auto;
+}
+
 .execMembersCarrousel {
 	margin-top: 4rem;
-	width: 100%;
+	width: fit-content;
 	display: flex;
 	gap: 2rem;
 	align-items: center;
-	overflow-x: auto;
 }
 
 .execMembersCarrousel .execMemberPhoto.active {

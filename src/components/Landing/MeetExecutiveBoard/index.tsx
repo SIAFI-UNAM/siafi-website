@@ -14,9 +14,9 @@ type Props = {
 
 /**
  * This component displays the executive board members of SIAFI on the landing page.
- * @param {Props} props - The props of the component.
- * @param {Array<Member>} props.members - The members of the executive board.
- * @returns {JSX.Element} MeetExecutiveBoard component.
+ * @param props - The props of the component.
+ * @param props.members - The members of the executive board.
+ * @returns MeetExecutiveBoard component.
  * @todo Add arrow functionality to the carousel.
  * @todo Add degree to the member information.
  */
@@ -31,7 +31,16 @@ export default function MeetExecutiveBoard({ members }: Props) {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setActiveMember((prev) => (prev + 1) % members.length);
+			setActiveMember((prev) => {
+				const nextMember = (prev + 1) % members.length;
+				const carrousel = document.getElementById("membersCarrousel");
+
+				if (carrousel) {
+					carrousel.scrollLeft = 60 * nextMember;
+				}
+
+				return nextMember;
+			});
 		}, 5000);
 		setIntervalId(interval);
 		return () => clearInterval(interval);
@@ -83,7 +92,9 @@ export default function MeetExecutiveBoard({ members }: Props) {
 							className={styles.selectedExecMemberPhoto}
 						/>
 						<div className={styles.excecMemberAvatarInfo}>
-							<h4>{selectedMember.role}</h4>
+							<h4 className={styles.execMemberRole}>
+								{selectedMember.role}
+							</h4>
 							<a
 								href={selectedMember.socialMediaLink}
 								target="_blank"
@@ -95,23 +106,35 @@ export default function MeetExecutiveBoard({ members }: Props) {
 					<div className={styles.execMemberDescription}>
 						<PortableText value={selectedMember.description} />
 					</div>
-					<div className={styles.execMembersCarrousel}>
-						{members.map((member, indx) => (
-							<Image
-								key={member._id}
-								src={member.image.url ?? siafiBallGlasses}
-								alt={
-									member.image.alt ??
-									"Miembro de Mesa directiva sin foto"
-								}
-								width={85}
-								height={85}
-								onClick={() => handleMemberClick(indx)}
-								className={`${styles.execMemberPhoto} ${
-									activeMember === indx ? styles.active : ""
-								}`}
-							/>
-						))}
+					<div
+						className={styles.execMembersCarrouselContainer}
+						id="membersCarrousel"
+					>
+						<div className={styles.execMembersCarrousel}>
+							{members.map((member, indx) => (
+								<div
+									className={`${styles.execMemberPhoto} ${
+										activeMember === indx
+											? styles.active
+											: ""
+									}`}
+									onClick={() => handleMemberClick(indx)}
+								>
+									<Image
+										key={member._id}
+										src={
+											member.image.url ?? siafiBallGlasses
+										}
+										alt={
+											member.image.alt ??
+											"Miembro de Mesa directiva sin foto"
+										}
+										width={85}
+										height={85}
+									/>
+								</div>
+							))}
+						</div>
 					</div>
 				</div>
 			</div>
