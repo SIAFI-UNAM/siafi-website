@@ -1,3 +1,5 @@
+![SIAFI Logo](./public/siafi_brand.png)
+
 # SIAFI Website
 
 Bienvenido al repositorio del sitio web de SIAFI. Este proyecto está desarrollado con React y Next.js, y tiene como objetivo proporcionar información sobre la Sociedad de Inteligencia Artificial y sus actividades.
@@ -8,11 +10,12 @@ Para entrar al CMS de Sanity, ve a [siafi-unam.org/studio](https://siafi-unam.or
 
 ## Tecnologías Utilizadas
 
-- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
-- **Next.js**: Framework de React para aplicaciones web.
-- **Sanity.io**: Plataforma de gestión de contenido.
-- **CSS Modules**: Para el estilo de los componentes.
-- **Vercel**: Plataforma de despliegue y hosting del sitio.
+- **[React](https://es.react.dev/)**: Biblioteca de JavaScript para construir interfaces de usuario.
+- **[Next.js](https://nextjs.org/)**: Framework de React para aplicaciones web.
+- **[Sanity.io](https://www.sanity.io/)**: CMS (Plataforma de gestión de contenido) para administrar el contenido de forma code-less.
+- **[CSS Modules](https://github.com/css-modules/css-modules)**: Para el estilo de los componentes.
+- **[Vercel](https://vercel.com/)**: Plataforma de despliegue y hosting del sitio.
+- **[Bootstrap](https://getbootstrap.com/)**: Framework de CSS para el diseño de la página (principalmente utilizado para el layout).
 
 ## Instalación
 
@@ -82,10 +85,12 @@ Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue estos 
    
    > 💡 Te recomiendo esta extensión de VSCode para tus commits 👉🏼 [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
 4. ⚠️ Actualiza el archivo `CHANGELOG.md` con tus cambios y si es necesario el archivo `.env.example` con el nombre de las nuevas variables de entorno.
+    > *Nota: Aún no le coloques versión a el archivo CHANGELOG, escribe tus cambios debajo de UNRELEASED CHANGES y cuando sea mezclado se le colocara el versioning*
 5. Sube tus cambios a tu fork.
 6. Abre un Pull Request de tu rama en tu fork a la rama `development` en este repositorio. **NO LO HAGAS A LA RAMA `main`**.
 7. Los miembros de SIAFI revisarán tu Pull Request y te darán retroalimentación.
 8. Una vez que tu Pull Request sea aprobado, será fusionado a la rama `development` y se desplegará en producción (main) más adelante. 🚀
+9. Un miembro de SIAFI se encargará de actualizar el archivo `CHANGELOG.md` con la versión correspondiente, actualizar la versión del `package.json` (`npm version [major/minor/patch]`) y de hacer el despliegue a producción.
 
 ## Créditos
 
