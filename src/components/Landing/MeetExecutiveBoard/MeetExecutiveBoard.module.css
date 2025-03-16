@@ -48,11 +48,15 @@
 	display: none;
 	position: absolute;
 	right: -150px;
-	bottom: 35%;
+	bottom: 25%;
 }
 
 .execMembers {
 	overflow-x: hidden;
+}
+
+.execMemberInfo {
+	min-height: 221px;
 }
 
 .execMembers h1 {
@@ -149,7 +153,7 @@
 }
 
 .execMembersCarrousel {
-	margin-top: 4rem;
+	margin-top: 2rem;
 	width: fit-content;
 	display: flex;
 	gap: 2rem;
@@ -173,7 +177,6 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 	.meetExecBox {
-		position: relative;
 		display: flex;
 		/* height: 541px; */
 		padding: 16px;
@@ -196,6 +199,10 @@
 		margin: 0;
 	}
 
+	.meetExecTitle {
+		position: relative;
+	}
+
 	.meetExecBox h1 {
 		width: 100%;
 		color: var(--black);
@@ -205,13 +212,12 @@
 		font-weight: 700;
 		letter-spacing: 2.16px;
 		margin: 0;
-		margin-bottom: 8.5rem;
 	}
 
 	.crown {
 		position: absolute;
-		right: 5px;
-		bottom: 235px;
+		right: 0px;
+		bottom: 50px;
 		scale: 0.7;
 	}
 }
@@ -223,16 +229,28 @@
 	}
 	.crown {
 		position: absolute;
-		right: 100px;
-		bottom: 250px;
+		right: -25px;
+		bottom: 50px;
 		scale: 0.7;
 	}
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+	.crown {
+		position: absolute;
+		right: 20px;
+		bottom: 50px;
+		scale: 0.7;
+	}
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
+	.crown {
+		position: absolute;
+		right: 80px;
+		bottom: 50px;
+		scale: 0.7;
+	}
 }

@@ -63,44 +63,50 @@ export default function MeetExecutiveBoard({ members }: Props) {
 				<div
 					className={`col-12 col-md-6 col-lg-4 ${styles.meetExecBox}`}
 				>
-					<h2>Conoce a la</h2>
-					<h1>Mesa Directiva</h1>
-					<Image
-						src={drawedCrown}
-						alt="Corona"
-						className={styles.crown}
-					/>
+					<div className={styles.meetExecTitle}>
+						<h2>Conoce a la</h2>
+						<h1>Mesa Directiva</h1>
+						<Image
+							src={drawedCrown}
+							alt="Corona"
+							className={styles.crown}
+						/>
+					</div>
 					<Image
 						src={drawedArrow}
-						alt="Corona"
+						alt="Flecha"
 						className={styles.arrow}
 					/>
 					<CTAButton link="/nosotros" text="Estructura de SIAFI" />
 				</div>
 				<div className="col d-none d-lg-block"></div>
 				<div className={`col-12 col-md-6 ${styles.execMembers}`}>
-					<h1>{selectedMember.name}</h1>
-					<div className={styles.execMemberAvatar}>
-						<Image
-							src={selectedMember.image.url ?? siafiBallGlasses}
-							alt={
-								selectedMember.image.alt ??
-								"Miembro de Mesa directiva seleccionado"
-							}
-							width={100}
-							height={100}
-							className={styles.selectedExecMemberPhoto}
-						/>
-						<div className={styles.excecMemberAvatarInfo}>
-							<h4 className={styles.execMemberRole}>
-								{selectedMember.role}
-							</h4>
-							<a
-								href={selectedMember.socialMediaLink}
-								target="_blank"
-							>
-								{selectedMember.username}
-							</a>
+					<div className={styles.execMemberInfo}>
+						<h1>{selectedMember.name}</h1>
+						<div className={styles.execMemberAvatar}>
+							<Image
+								src={
+									selectedMember.image.url ?? siafiBallGlasses
+								}
+								alt={
+									selectedMember.image.alt ??
+									"Miembro de Mesa directiva seleccionado"
+								}
+								width={100}
+								height={100}
+								className={styles.selectedExecMemberPhoto}
+							/>
+							<div className={styles.excecMemberAvatarInfo}>
+								<h4 className={styles.execMemberRole}>
+									{selectedMember.role}
+								</h4>
+								<a
+									href={selectedMember.socialMediaLink}
+									target="_blank"
+								>
+									{selectedMember.username}
+								</a>
+							</div>
 						</div>
 					</div>
 					<div className={styles.execMemberDescription}>

@@ -136,7 +136,7 @@ export async function getLatestBlogs(): Promise<BlogInfo[]> {
  */
 export async function getExecutiveBoardMembers(): Promise<Member[]> {
 	return client.fetch(
-		groq`*[_type == "executive_board"]{
+		groq`*[_type == "executive_board"]|order(orderRank){
             _id,
             name,
             username,

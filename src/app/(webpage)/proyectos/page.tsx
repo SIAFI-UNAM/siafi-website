@@ -21,7 +21,7 @@ const ProyectosPage = async () => {
 			title={projectsListInfo.title}
 			description={projectsListInfo.description}
 		>
-			<div className="row g-2">
+			<div className="row g-2 mb-4">
 				{projects.map((proj) => (
 					<div key={proj._id} className="col-12 col-md-6">
 						<ProjectCard
