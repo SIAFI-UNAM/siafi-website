@@ -14,6 +14,10 @@
 	height: 300px;
 }
 
+.cardImage {
+	object-fit: cover;
+}
+
 .cardTitle,
 .cardTitle.primary {
 	position: absolute;
