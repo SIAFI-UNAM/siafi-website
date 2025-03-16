@@ -18,7 +18,6 @@ export { default as vrHeadset } from "@img/landing/vr-headset.png";
 export { default as handsDetectionGIF } from "@img/landing/hands-detection.gif";
 export { default as siafiStudentsHero } from "@img/landing/siafi-students.png";
 export { default as siafiGroup } from "@img/siafi-photos/siafi-group.png";
-export { default as demoExecMember } from "@img/landing/demo-exec-memoji.png";
 export { default as demoProjectLogo } from "@img/landing/demo-project.svg";
 
 // Footer Assets
