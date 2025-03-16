@@ -7,12 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2025-03-16
+
+### Fixed
+- Fixed executive board members sanity fetch not using orderRank, that was causing the members to be displayed in the wrong order.
+- Fixed styles for executive board members carrousel on mobile view & desktop view.
+- Add missing margin bottom on projects card list.
+- Delete unused images from the project.
+
+### Changed
+- Updated README file.
+
 ## [1.1.0] - 2025-03-15
 
-## Added
+### Added
 - Added autoscroll to the executive board carrousel
 
-## Fixed
+### Fixed
 - Fixed wrong aspect radio on executive board carrousel images
 - Fixed wrong object fit on project card images
 - Fixed styles for mobile view on executive board views
