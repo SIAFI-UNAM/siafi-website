@@ -36,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			description: metaDescription,
 			images: [
 				{
-					url: "/SIAFI_brand.png",
+					url: "/siafi-brand.png",
 					width: 1200,
 					height: 628,
 					alt: "SIAFI UNAM",
@@ -47,7 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			card: "summary_large_image",
 			title: metaTitle,
 			description: metaDescription,
-			images: ["/SIAFI_brand.png"],
+			images: ["/siafi-brand.png"],
 			site: "@siafi_unam",
 		},
 	};
