@@ -4,7 +4,6 @@ export { default as logoSIAFIWhite } from "@img/logos/siafi-logo-white.svg";
 export { default as logoCIA } from "@img/logos/cia-logo.png";
 export { default as logoDIMEI } from "@img/logos/dimei-logo.png";
 export { default as logoFI } from "@img/logos/fi-logo.png";
-export { default as SIAFIBrand } from "../public/SIAFI_brand.png";
 
 // SIAFI BALL
 export { default as siafiBallGlasses } from "@img/siafi-ball/siafi-ball-glasses.png";
