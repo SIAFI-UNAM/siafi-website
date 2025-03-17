@@ -1,4 +1,4 @@
-![SIAFI Logo](./public/siafi_brand.png)
+![SIAFI Logo](./public/siafi-brand.png)
 
 # SIAFI Website
 
