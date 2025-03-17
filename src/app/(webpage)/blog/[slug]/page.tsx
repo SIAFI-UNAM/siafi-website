@@ -50,10 +50,11 @@ export async function generateMetadata({ params }: BlogDetailParams) {
 			],
 		},
 		twitter: {
-			card: "sumary_large_image",
+			card: "summary_large_image",
 			title: blogTitle,
 			description: blogDescription,
 			images: [blogInfo?.image.url],
+			site: "@siafi_unam",
 		},
 	};
 }

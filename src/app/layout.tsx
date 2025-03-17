@@ -9,16 +9,49 @@ import "@styles/globals.css";
 import "@assets/fonts/CabinetGrotesk/font.css";
 import "@assets/fonts/Poppins/font.css";
 import "@assets/fonts/StudyAlone/font.css";
+import { getMetadataInfo } from "@/sanity/sanity-utils";
 
-export const metadata: Metadata = {
-	title: {
-		template: "%s | SIAFI UNAM",
-		default:
-			"SIAFI UNAM - Sociedad de Inteligencia Artificial de la Facultad de Ingeniería de la UNAM",
-	},
-	description:
-		"SIAFI es una sociedad de estudiantes de la Facultad de Ingeniería de la UNAM que busca promover la Inteligencia Artificial en la comunidad universitaria.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+	const metadata = await getMetadataInfo();
+
+	const metaTitle =
+		metadata.title ||
+		"SIAFI UNAM - Sociedad de Inteligencia Artificial de la Facultad de Ingeniería de la UNAM";
+
+	const metaDescription =
+		metadata.description ||
+		"SIAFI es una sociedad de estudiantes de la Facultad de Ingeniería de la UNAM que busca promover la Inteligencia Artificial en la comunidad universitaria.";
+
+	return {
+		title: {
+			template: "%s | SIAFI UNAM",
+			default: metaTitle,
+		},
+		description: metaDescription,
+		openGraph: {
+			type: "website",
+			locale: "es_MX",
+			url: "https://siafi-unam.org",
+			title: metaTitle,
+			description: metaDescription,
+			images: [
+				{
+					url: "/SIAFI_brand.png",
+					width: 1200,
+					height: 628,
+					alt: "SIAFI UNAM",
+				},
+			],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: metaTitle,
+			description: metaDescription,
+			images: ["/SIAFI_brand.png"],
+			site: "@siafi_unam",
+		},
+	};
+}
 
 export default function RootLayout({
 	children,

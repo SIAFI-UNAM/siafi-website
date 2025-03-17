@@ -7,6 +7,7 @@ import type { Member } from "@/models/Member";
 import type { ProjectInfo } from "@/models/Project";
 import { SponsorInfo } from "@/models/Sponsor";
 import { AboutUsPage } from "@/models/AboutUs";
+import { MetaData } from "@/models/MetaData";
 
 /**
  * Gets the landing page information from Sanity.
@@ -394,3 +395,16 @@ export const getProjectsListPageInfo = async (): Promise<{
 export const getTotalBlogs = async (): Promise<number> => {
 	return client.fetch(groq`count(*[_type == "blog"])`);
 };
+
+/**
+ * Gets the metadata info from Sanity.
+ * @returns The metadata information.
+ */
+export async function getMetadataInfo(): Promise<MetaData> {
+	return client.fetch(
+		groq`*[_type == "contact_and_others" && _id == "contact_and_others"][0]{
+            "title": metadata.title,
+            "description": metadata.description
+        }`,
+	);
+}

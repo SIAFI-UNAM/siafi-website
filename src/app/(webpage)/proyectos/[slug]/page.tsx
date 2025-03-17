@@ -50,10 +50,11 @@ export async function generateMetadata({ params }: ProjectDetailParams) {
 			],
 		},
 		twitter: {
-			card: "sumary_large_image",
+			card: "summary_large_image",
 			title: projectTitle,
 			description: projectDescription,
 			images: [ProjectInfo?.image.url],
+			site: "@siafi_unam",
 		},
 	};
 }
