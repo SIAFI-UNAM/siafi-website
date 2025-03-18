@@ -46,7 +46,7 @@ export default function OurProjects({
 						<div className="col-4">
 							<ProjectCard
 								title="Ver + proyectos"
-								linkTo="#proyectos"
+								linkTo="/proyectos"
 								variant="blank"
 							></ProjectCard>
 						</div>
