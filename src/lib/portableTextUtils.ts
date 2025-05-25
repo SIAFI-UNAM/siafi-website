@@ -4,63 +4,42 @@ import {
 	PortableTextSpan,
 } from "sanity";
 
+/**
+ * Utility function to convert Portable Text blocks to plain text.
+ * @param blocks - An array of Portable Text blocks.
+ * @returns A string representing the plain text content of the blocks.
+ */
 export function portableTextToPlainText(
-	blocks: Array<PortableTextBlock> = []
+	blocks: Array<PortableTextBlock> = [],
 ): string {
-	return (
-		blocks
-			// loop through each block
-			.map((block) => {
-				// if it's not a text block with children,
-				// return nothing
-				if (block._type !== "block" || !block.children) {
-					return "";
-				}
-				// loop through the children spans, and join the
-				// text strings
-				return (
-					block.children as Array<
-						PortableTextObject | PortableTextSpan
-					>
-				)
-					.map((child) => child.text)
-					.join("");
-			})
-			// join the paragraphs leaving split by two linebreaks
-			.join("\n\n")
-	);
+	return blocks
+		.map((block) => {
+			if (block._type !== "block" || !block.children) {
+				return "";
+			}
+
+			return (
+				block.children as Array<PortableTextObject | PortableTextSpan>
+			)
+				.map((child) => child.text)
+				.join("");
+		})
+		.join("\n\n");
 }
 
+/**
+ * Utility function to create a description for meta tags from Portable Text blocks (max 150 characters).
+ * @param blocks - An array of Portable Text blocks.
+ * @returns A string representing the description content of the blocks.
+ */
 export function getDescriptionFromPortableText(
-	blocks: Array<PortableTextBlock> = []
+	blocks: Array<PortableTextBlock> = [],
 ): string {
-	return (
-		blocks
-			// loop through each block
-			.map((block) => {
-				// if it's not a text block with children,
-				// return nothing
-				if (block._type !== "block" || !block.children) {
-					return "";
-				}
-				// loop through the children spans, and join the
-				// text strings
-				return (
-					block.children as Array<
-						PortableTextObject | PortableTextSpan
-					>
-				)
-					.map((child) => child.text)
-					.join("");
-			})
-			// join the paragraphs leaving split by two linebreaks
-			.join(" ")
-			.substring(0, 150)
-	);
+	return portableTextToPlainText(blocks).substring(0, 150);
 }
 
 export const getReadingTimeFromPortableText = (
-	blocks: Array<PortableTextBlock> = []
+	blocks: Array<PortableTextBlock> = [],
 ) => {
 	const wordsPerMinute = 200; // average reading speed
 	const totalWords = blocks
@@ -68,7 +47,7 @@ export const getReadingTimeFromPortableText = (
 		.map((block) =>
 			(block.children as Array<PortableTextObject | PortableTextSpan>)
 				.map((child: any) => child.text)
-				.join(" ")
+				.join(" "),
 		)
 		.join(" ")
 		.split(/\s+/).length;

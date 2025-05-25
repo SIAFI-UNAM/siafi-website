@@ -19,7 +19,7 @@ export default function LatestBlogs({ blogs }: LatestBlogsProps) {
 				{blogs.map((blog) => (
 					<div
 						key={blog._id}
-						className="col-12 col-md-6 col-lg-4 mt-4"
+						className="col-12 col-md-6 col-lg-4 mt-4 px-md-0 px-lg-3 px-5"
 					>
 						<BlogCardLanding blog={blog} />
 					</div>

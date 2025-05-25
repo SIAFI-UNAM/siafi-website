@@ -84,23 +84,28 @@ const DetailPage = ({
 					)}
 					{title && <h1 className={styles.pageTitle}>{title}</h1>}
 					{variant === "blog" && author && (
-						<div className={styles.authorInfo}>
-							<Image
-								src={author.avatar}
-								alt={`${author.name} photo`}
-								width={60}
-								height={60}
-							/>
-							<div className={styles.authorName}>
-								<h3>{author.name}</h3>
-								<p>{`${
-									publicationDate
-										? dateFormater.format(
-												new Date(publicationDate),
-											)
-										: ""
-								} · ${readingTime} min lectura`}</p>
+						<div className="mt-3 d-flex flex-column gap-3">
+							<p className={styles.authorPresentation}>
+								Escrito por:
+							</p>
+							<div className={styles.authorInfo}>
+								<Image
+									src={author.avatar}
+									alt={`${author.name} photo`}
+									width={60}
+									height={60}
+								/>
+								<div className={styles.authorName}>
+									<h3>{author.name}</h3>
+								</div>
 							</div>
+							<p className={styles.pageInformation}>{`${
+								publicationDate
+									? dateFormater.format(
+											new Date(publicationDate),
+										)
+									: ""
+							} · ${readingTime} min lectura`}</p>
 						</div>
 					)}
 					{variant === "project" && (
@@ -131,7 +136,7 @@ const DetailPage = ({
 					)}
 				</div>
 			</header>
-			<div className={`mt-5 mb-3`}>{children}</div>
+			<div className={`${styles.pageBody} mt-3 mb-3`}>{children}</div>
 		</main>
 	);
 };

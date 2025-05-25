@@ -13,9 +13,9 @@ type Props = {
 	link: string;
 	/**
 	 * The variant of the social media icon.
-	 * @default "dark"
+	 * @default "transparent"
 	 */
-	variant?: "dark" | "light";
+	variant?: "transparent" | "light";
 };
 
 /**
@@ -26,7 +26,7 @@ type Props = {
 export default function SocialMediaIcon({
 	icon,
 	link,
-	variant = "dark",
+	variant = "transparent",
 }: Props) {
 	return (
 		<a href={link} target="_blank">
