@@ -1,27 +1,24 @@
 .blogCategoriesContainer {
 	display: flex;
-	justify-content: center;
-	padding: 1rem 0;
+	padding-bottom: 1rem;
 	width: 100%;
 	overflow-x: auto;
+	gap: 0.5rem;
 }
 
 .blogCategoryButton {
 	background-color: var(--inactive-color);
 	color: var(--primary-text-color);
-	border: solid 1px #d8d8d8;
+	border: none;
 	border-radius: 2rem;
 	padding: 0.5rem 1rem;
-	margin: 0 0.5rem;
 	cursor: pointer;
 	transition: all 0.3s;
 }
 
 .blogCategoryButton:hover {
-	background-color: var(--primary-color);
+	background-color: var(--primary-color-shade);
 	color: white;
-	border: solid 1px var(--accent-color);
-	scale: 1.1;
 }
 
 .blogCategoryButton:disabled {

@@ -37,7 +37,7 @@ export default function BlogCardLanding({ blog }: Props) {
 				<div className={styles.cardContent}>
 					<h4>{blog.category}</h4>
 					<h2>{blog.title}</h2>
-					<p>{getDescriptionFromPortableText(blog.content)}</p>
+					<p>Escrito por:</p>
 					<div className={styles.cardAuthor}>
 						<Image
 							src={blog.author.avatar}

@@ -59,15 +59,14 @@
 	font-family: Poppins;
 	font-size: 18px;
 	font-style: normal;
-	font-weight: 600;
+	/* font-weight: 600; */
 	margin: 0;
 }
 
-.cardContent > p {
+.cardAuthorTitle {
 	color: rgba(18, 17, 39, 0.56);
 	font-family: Poppins;
 	font-size: 16px;
-	font-style: normal;
 	font-weight: 400;
 	margin: 0;
 	width: 100%;
@@ -118,10 +117,6 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-	.cardContent > p {
-		height: 70px;
-		max-height: 70px;
-	}
 }
 
 /* Large devices (desktops, 992px and up) */

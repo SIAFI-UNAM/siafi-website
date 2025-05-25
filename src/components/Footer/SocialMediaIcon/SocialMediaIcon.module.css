@@ -13,14 +13,11 @@
 }
 
 .iconContainer img {
-	max-height: 20px;
-	max-width: 20px;
-	object-fit: contain;
+	height: 75%;
 	width: auto;
-}
-
-.iconContainer.dark {
-	background: var(--social-media-icon-bg);
+	padding: 5px;
+	object-fit: contain;
+	max-width: 35px;
 }
 
 .iconContainer.light {

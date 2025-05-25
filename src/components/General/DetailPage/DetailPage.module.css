@@ -40,7 +40,6 @@
 	display: flex;
 	align-items: center;
 	gap: 1rem;
-	margin-top: 2rem;
 }
 
 .authorInfo img {
@@ -68,4 +67,43 @@
 .lastUpdate {
 	color: var(--secondary-text-color);
 	font-style: italic;
+}
+
+.authorPresentation {
+	font-size: 18px;
+	color: var(--secondary-text-color);
+	margin: 0;
+}
+
+.pageInformation {
+	font-size: 18px;
+}
+
+.pageBody p {
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+.pageBody h2 {
+	margin-top: 1.5rem;
+	font-size: 26px;
+	color: var(--accent-color);
+}
+
+.pageBody h3,
+.pageBody h4,
+.pageBody h5,
+.pageBody h6 {
+	margin-top: 1rem;
+	font-size: 22px;
+	color: var(--secondary-text-color);
+	font-style: italic;
+}
+
+.pageBody img {
+	max-width: 650px;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 1rem;
 }
